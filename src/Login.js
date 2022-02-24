@@ -2,6 +2,22 @@ import React from 'react'
 import "./Login.css"
 
 function Login() {
+    /* const [state, dispatch] = useStateValue();
+
+    const signIn = () => {
+        // SIGN IN ................
+        auth
+            .signInWithPopup(provider)
+            .then((result) => {
+    
+                dispatch({
+                    type: actionTypes.SET_USER,
+                    user: result.user
+                })
+            })
+            .catch((error) => alert(error.message))
+    } */
+
   return (
     <div>
         <div className="login">
@@ -15,7 +31,7 @@ function Login() {
             </div>
             <div className="login__form">  
                 <form>
-                    <div className="login__input">
+                    {/* <div className="login__input">
                         <input 
                             className="login__email"
                             placeholder="Email hoặc số điện thoại"
@@ -26,14 +42,14 @@ function Login() {
                             className="login__password"
                             placeholder="Mật khẩu"
                         />
-                    </div>
+                    </div> */}
                     <div className="login__btn">
-                        <button>
-                            Đăng nhập
+                        <button type="submit">
+                            Đăng nhập bằng email
                         </button>
                     </div>
                     <div className="login__forget">
-                        <a className="login__forget" href="#">Quên mật khẩu?</a>
+                        <a className="login__forget" href="/">Quên mật khẩu?</a>
                     </div>
                     <div className="login__seperate">
                         <hr />

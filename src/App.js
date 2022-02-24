@@ -7,12 +7,13 @@ import Login from "./Login";
 import "./App.css";
 
 function App() {
-  const user = "Nguyen Minh Huy";
+  /* const [{ user }, dispatch] = useStateValue(); */
+
   return (
     <div className="app">
-      {!user ? (
+      {/* {!user ? (
         <Login />
-      ) : (
+      ) : ( */}
        <>
         <Header />
 
@@ -22,7 +23,7 @@ function App() {
           <Advertisement />
         </div>
        </> 
-      )} 
+      {/* )} */}
     </div>
   );
 }

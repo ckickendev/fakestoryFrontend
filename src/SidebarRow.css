@@ -1,8 +1,9 @@
 .sidebarRow {
     display: flex;
     align-items: center;
-    padding-left: 10px;
     cursor: pointer;
+    margin-bottom: 6px;
+    padding: 6px;
 }
 
 .sidebarRow:hover {
@@ -12,7 +13,8 @@
 
 .sidebarRow > h4 {
     margin-left: 10px;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .sidebarRow > .MuiSvgIcon-root {
