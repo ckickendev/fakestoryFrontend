@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 import Feed from "./Feed";
 import Advertisement from "./Advertisement";
 import Login from "./Login";
-import "./App.css";
+import "./css/App.css";
 
 function App() {
   /* const [{ user }, dispatch] = useStateValue(); */
@@ -14,19 +14,18 @@ function App() {
       {/* {!user ? (
         <Login />
       ) : ( */}
-       <>
+      <>
         <Header />
 
-        <div className="app__body"> 
+        <div className="app__body">
           <Sidebar />
           <Feed />
           <Advertisement />
         </div>
-       </> 
+      </>
       {/* )} */}
     </div>
   );
 }
 
 export default App;
-
