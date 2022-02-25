@@ -16,10 +16,14 @@ function Header() {
   return (
     <div className="header">
       <div className="header__left">
-        <img
-          src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.sgv.png"
-          alt="Fakebook"
-        />
+        <a href="/">
+          <img
+            className="imgHeader"
+            src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.sgv.png"
+            alt="Fakebook"
+          />
+        </a>
+
         <div className="header__input">
           <SearchIcon />
           <input type="text" placeholder="Tìm kiếm trên fakebook" />
@@ -47,7 +51,9 @@ function Header() {
       <div className="header__right">
         <div className="header__info">
           <Avatar src="https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.6435-9/168600690_132095425540608_6073473717300407730_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=vg7DV1MP-BYAX9JsA28&_nc_ht=scontent.fsgn2-3.fna&oh=00_AT-je9MJKVwSjpgQl2fVG_2P2wRDpvEf6QAw5nXU4mQYKw&oe=623B24D4" />
-          <h4>Huy</h4>
+          <a href="/profile">
+            <h4>Huy</h4>
+          </a>
         </div>
 
         <IconButton className="header__right-icon">

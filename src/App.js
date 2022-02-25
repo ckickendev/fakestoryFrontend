@@ -1,10 +1,9 @@
 import React from "react";
 import Header from "./Header";
-import Sidebar from "./Sidebar";
-import Feed from "./Feed";
-import Advertisement from "./Advertisement";
-import Login from "./Login";
 import "./css/App.css";
+import { Routes, Route } from "react-router-dom";
+import Profile from "./components/profile/Profile";
+import Index from "./components/index/Index";
 
 function App() {
   /* const [{ user }, dispatch] = useStateValue(); */
@@ -18,9 +17,10 @@ function App() {
         <Header />
 
         <div className="app__body">
-          <Sidebar />
-          <Feed />
-          <Advertisement />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
         </div>
       </>
       {/* )} */}
