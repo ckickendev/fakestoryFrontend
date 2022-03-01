@@ -1,6 +1,6 @@
 import React from "react";
 import { Avatar } from "@mui/material";
-import "./css/Story.css";
+import "../../css/Story.css";
 
 function Story({ img, profSrc, title }) {
   return (

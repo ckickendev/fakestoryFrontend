@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "./Header";
+import Header from "../src/components/main/Header";
 import "./css/App.css";
 import { Routes, Route } from "react-router-dom";
-import Profile from "./components/profile/Profile";
-import Index from "./components/index/Index";
+import Profile from "./nav/Profile";
+import Main from "./nav/Main";
 
 function App() {
   /* const [{ user }, dispatch] = useStateValue(); */
@@ -18,7 +18,7 @@ function App() {
 
         <div className="app__body">
           <Routes>
-            <Route path="/" element={<Index />} />
+            <Route path="/" element={<Main />} />
             <Route path="/profile" element={<Profile />} />
           </Routes>
         </div>

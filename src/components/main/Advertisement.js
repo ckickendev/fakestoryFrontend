@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/Advertisement.css";
+import "../../css/Advertisement.css";
 
 function Advertisement() {
   return (

@@ -6,7 +6,7 @@ import GroupsRoundedIcon from "@mui/icons-material/GroupsRounded";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
 import KeyboardArrowDownSharpIcon from "@mui/icons-material/KeyboardArrowDownSharp";
-import "./css/Sidebar.css";
+import "../../css/Sidebar.css";
 
 function Sidebar() {
   return (

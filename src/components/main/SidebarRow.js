@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/SidebarRow.css";
+import "../../css/SidebarRow.css";
 import { Avatar } from "@mui/material";
 
 function SidebarRow({ src, Icon, title }) {
@@ -7,7 +7,6 @@ function SidebarRow({ src, Icon, title }) {
     <div className="sidebarRow">
       {src && <Avatar src={src} />}
       {Icon && <Icon />}
-
       <h4>{title}</h4>
     </div>
   );

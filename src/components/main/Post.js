@@ -3,7 +3,7 @@ import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import { Avatar } from "@mui/material";
-import "./css/Post.css";
+import "../../css/Post.css";
 
 function Post({ profAva, image, username, timestamp, message }) {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import StoryReel from "./StoryReel";
 import MessageSender from "./MessageSender";
 import Post from "./Post";
-import "./css/Feed.css";
+import "../../css/Feed.css";
 
 function Feed() {
   return (

@@ -3,7 +3,7 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import ImageIcon from "@mui/icons-material/Image";
 import SentimentVerySatisfiedIcon from "@mui/icons-material/SentimentVerySatisfied";
 import { Avatar } from "@mui/material";
-import "./css/MessageSender.css";
+import "../../css/MessageSender.css";
 
 function MessageSender() {
   const [input, setInput] = useState("");

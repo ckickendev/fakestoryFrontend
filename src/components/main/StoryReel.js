@@ -1,6 +1,6 @@
 import React from "react";
 import Story from "./Story";
-import "./css/StoryReel.css";
+import "../../css/StoryReel.css";
 
 function StoryReel() {
   return (

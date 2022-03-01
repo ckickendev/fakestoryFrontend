@@ -10,7 +10,7 @@ import ForumSharpIcon from "@mui/icons-material/ForumSharp";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import { Avatar, IconButton } from "@mui/material";
-import "./css/Header.css";
+import "../../css/Header.css";
 
 function Header() {
   return (
