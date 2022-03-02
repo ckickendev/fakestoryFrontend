@@ -1,0 +1,6 @@
+.subFeed {
+  flex: 0.6;
+  padding: 30px 65px;
+  display: flex;
+  flex-direction: column;
+}
