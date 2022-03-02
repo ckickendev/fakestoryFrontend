@@ -49,7 +49,7 @@ const RightBarProfile = () => {
           <div className="rightbarNav">
             <h4 className="rightbarTitle">Photos</h4>
             <a href="" className="buttonFriends">
-              See All Photos
+              See All My Photos
             </a>
           </div>
           <div className="rightbarFollowings">
