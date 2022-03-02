@@ -8,12 +8,13 @@ import "./App.css";
 
 function App() {
   /* const [{ user }, dispatch] = useStateValue(); */
+  const user = null;
 
   return (
     <div className="app">
-      {/* {!user ? (
+      {!user ? (
         <Login />
-      ) : ( */}
+      ) : (
        <>
         <Header />
 
@@ -23,7 +24,7 @@ function App() {
           <Advertisement />
         </div>
        </> 
-      {/* )} */}
+      )}
     </div>
   );
 }
