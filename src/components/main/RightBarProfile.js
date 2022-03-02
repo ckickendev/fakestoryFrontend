@@ -86,52 +86,64 @@ const RightBarProfile = () => {
           </div>
           <div className="rightbarFollowings">
             <div className="rightbarFollowing">
-              <img
-                src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
-                alt="img"
-                className="rightbarFollowingImg"
-              />
-              <span className="rightbarFollowingName">Hoàng Thịnh</span>
+              <a href="">
+                <img
+                  src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
+                  alt="img"
+                  className="rightbarFollowingImg"
+                />
+                <span className="rightbarFollowingName">Hoàng Thịnh</span>
+              </a>
             </div>
             <div className="rightbarFollowing">
-              <img
-                src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
-                alt="img"
-                className="rightbarFollowingImg"
-              />
-              <span className="rightbarFollowingName">Hoàng Thịnh</span>
+              <a href="">
+                <img
+                  src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
+                  alt="img"
+                  className="rightbarFollowingImg"
+                />
+                <span className="rightbarFollowingName">Hoàng Thịnh</span>
+              </a>
             </div>
             <div className="rightbarFollowing">
-              <img
-                src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
-                alt="img"
-                className="rightbarFollowingImg"
-              />
-              <span className="rightbarFollowingName">Hoàng Thịnh</span>
+              <a href="">
+                <img
+                  src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
+                  alt="img"
+                  className="rightbarFollowingImg"
+                />
+                <span className="rightbarFollowingName">Hoàng Thịnh</span>
+              </a>
             </div>
             <div className="rightbarFollowing">
-              <img
-                src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
-                alt="img"
-                className="rightbarFollowingImg"
-              />
-              <span className="rightbarFollowingName">Hoàng Thịnh</span>
+              <a href="">
+                <img
+                  src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
+                  alt="img"
+                  className="rightbarFollowingImg"
+                />
+                <span className="rightbarFollowingName">Hoàng Thịnh</span>
+              </a>
             </div>
             <div className="rightbarFollowing">
-              <img
-                src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
-                alt="img"
-                className="rightbarFollowingImg"
-              />
-              <span className="rightbarFollowingName">Hoàng Thịnh</span>
+              <a href="">
+                <img
+                  src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
+                  alt="img"
+                  className="rightbarFollowingImg"
+                />
+                <span className="rightbarFollowingName">Hoàng Thịnh</span>
+              </a>
             </div>
             <div className="rightbarFollowing">
-              <img
-                src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
-                alt="img"
-                className="rightbarFollowingImg"
-              />
-              <span className="rightbarFollowingName">Hoàng Thịnh</span>
+              <a href="">
+                <img
+                  src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
+                  alt="img"
+                  className="rightbarFollowingImg"
+                />
+                <span className="rightbarFollowingName">Hoàng Thịnh</span>
+              </a>
             </div>
           </div>
         </div>
