@@ -5,15 +5,16 @@ import { Routes, Route } from "react-router-dom";
 import Profile from "./nav/Profile";
 import Main from "./nav/Main";
 import Login from "./components/login/Login";
+import Register from "./components/login/Register"
+import Group from "./nav/Group"
 
 function App() {
   /* const [{ user }, dispatch] = useStateValue(); */
 
-  const user = undefined;
+  const user = null;
   return (
     <div className="app">
-
-      { !user ? (
+      {/* {!user ? (
         <Login />
       ) : (
       <>
@@ -25,7 +26,8 @@ function App() {
           </Routes>
         </div>
       </>
-      )}
+      )} */}
+      <Group />
       
     </div>
   );

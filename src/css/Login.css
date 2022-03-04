@@ -41,7 +41,7 @@
 }
 
 .login__input > input {
-    width: 330px;
+    width: 100%;
     font-size: 16px;
     padding: 14px 18px;
     border: 1px solid rgb(216, 216, 216);
