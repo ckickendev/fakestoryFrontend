@@ -14,7 +14,7 @@ function App() {
   const user = null;
   return (
     <div className="app">
-      {/* {!user ? (
+      {!user ? (
         <Login />
       ) : (
       <>
@@ -26,7 +26,7 @@ function App() {
           </Routes>
         </div>
       </>
-      )} */}
+      )}
       <Group />
       
     </div>
