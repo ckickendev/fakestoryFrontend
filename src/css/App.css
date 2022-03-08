@@ -1,7 +1,16 @@
 .app {
+<<<<<<< HEAD
     background-color: #f0f2f5;
 }
 
 .app__body {
     display: flex;
 }
+=======
+  background-color: #f0f2f5;
+}
+
+.app__body {
+  display: flex;
+}
+>>>>>>> e515c125dd72fb8fa407c7ffab3ac2dd4e603541
