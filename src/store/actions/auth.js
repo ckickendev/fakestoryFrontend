@@ -17,8 +17,9 @@ export const login = async (username, password) => {
     response.json().then((data) => {
       if(data.content === undefined){
         console.log(data);
-        document.cookie = `username=${data.id};max-age=60*60*24`;
-        
+        document.cookie = `id=${data.id};max-age=60*60*24`;
+        document.cookie = `username=${data.username};max-age=60*60*24`;
+        window.location.href = "http://localhost:3000/";
       }else{
         mess = data.content;
         console.log(data);

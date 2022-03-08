@@ -4,12 +4,12 @@ import "../../css/Register.css";
 function Register() {
   return (
     <div className="register">
-      <h1 class="register__title">Register</h1>
+      <h1 className="register__title">Register</h1>
       <form
         action="http://localhost:8080/FakeStory/api/admin/user"
         method="post"
       >
-        <div class="form__control">
+        <div className="form__control">
           <input
             type="text"
             id="fullname"
@@ -19,7 +19,7 @@ function Register() {
           <span></span>
           <small></small>
         </div>
-        <div class="form__control">
+        <div className="form__control">
           <input
             type="email"
             id="username"
@@ -41,7 +41,7 @@ function Register() {
         <input type="hidden" name="country" value="none" />
         <input type="hidden" name="phone" value="none" />
 
-        <div class="form__control">
+        <div className="form__control">
           <input
             type="password"
             id="password"
@@ -51,7 +51,7 @@ function Register() {
           <span></span>
           <small></small>
         </div>
-        <div class="form__control">
+        <div className="form__control">
           <input
             type="password"
             id="confirm-password"
@@ -61,8 +61,8 @@ function Register() {
           <small></small>
         </div>
 
-        <button class="submit">Login</button>
-        <div class="form__signup">
+        <button className="submit">Login</button>
+        <div className="form__signup">
           Not a member?
           <a href="#">Signup</a>
         </div>

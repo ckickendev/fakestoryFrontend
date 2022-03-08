@@ -7,11 +7,12 @@ import Main from "./nav/Main";
 import Login from "./components/login/Login";
 // import Register from "./components/login/Register";
 import { createStore, combineReducers } from "redux";
-import Group from "./nav/Group"
+// import Group from "./nav/Group"
 import { Provider } from "react-redux";
 import authReducer from "./store/reducers/auth";
 import Register from "./components/register/Register"
-import Page from "./nav/Page"
+// import Page from "./nav/Page"
+import checkLogin from "./components/login/LogicLogin";
 
 
 const rootReducer = combineReducers({
@@ -21,13 +22,11 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer);
 
 function App() {
-  /* const [{ user }, dispatch] = useStateValue(); */
-
-  const user = 'huy';
+  const isLogin = checkLogin();
   return (
     <Provider store={store}>
       <div className="app">
-        {!user ? (  
+        {!isLogin ? (  
           <Login />
         ) : (
           <>
@@ -37,7 +36,7 @@ function App() {
                 <Route path="/login" element={<Login/>} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/home" element={<Main />} />
+                <Route path="/" element={<Main />} />
               </Routes>
             </div>
           </>
