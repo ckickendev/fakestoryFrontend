@@ -3,8 +3,10 @@ import { useState } from "react";
 import "../../css/Login.css";
 import isEmpty from 'validator/lib/isEmpty';
 import isEmail from "validator/lib/isEmail";
-
+// import { useDispatch } from "react-redux";
+import {login } from "../../store/actions/auth";
 function Login() {
+    // const dispatch = useDispatch();
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [validate, setValidate] = useState('')
@@ -16,6 +18,7 @@ function Login() {
 
     const handlePasswordChange = (e) => {
         const value = e.target.value
+        // console.log("alo");
         setPassword(value)
     }
 
@@ -36,11 +39,15 @@ function Login() {
         return true
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         const isValid = validateAll()
-        if (!isValid) return
-
-        //call API LOGIN
+        
+        console.log(isValid);
+        if (!isValid) {
+            return
+        }else{
+            login(email, password);
+        }
     }
 
     return (
