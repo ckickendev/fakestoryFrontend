@@ -1,108 +1,124 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import "../../css/Login.css";
-import isEmpty from 'validator/lib/isEmpty';
+import isEmpty from "validator/lib/isEmpty";
 import isEmail from "validator/lib/isEmail";
 // import { useDispatch } from "react-redux";
-import {login } from "../../store/actions/auth";
+import { login } from "../../store/actions/auth";
 function Login() {
-    // const dispatch = useDispatch();
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [validate, setValidate] = useState('')
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [validate, setValidate] = useState("");
+  const [mess, setMess] = useState("hello");
 
-    const handleEmailChange = (e) => {
-        const value = e.target.value
-        setEmail(value)
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+  };
+
+  const handlePasswordChange = (e) => {
+    const value = e.target.value;
+    setPassword(value);
+  };
+
+  const validateAll = () => {
+    const messages = {};
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (isEmpty(email)) {
+      messages.email = "Please input your email";
+    } else if (!email.match(mailformat)) {
+      messages.email = "Your email is incorrect";
     }
 
-    const handlePasswordChange = (e) => {
-        const value = e.target.value
-        // console.log("alo");
-        setPassword(value)
+    if (isEmpty(password)) {
+      messages.password = "Please input your password";
     }
 
-    const validateAll = () => {
-        const messages = {}
-        if (isEmpty(email)) {
-            messages.email = "Please input your email"
-        } else if (!isEmail(email)) {
-            messages.email = "Your email is incorrect"
+    setValidate(messages);
+    if (Object.keys(messages).length > 0) return false;
+    return true;
+  };
+
+  const handleSubmit = async () => {
+    const isValid = validateAll();
+    if (!isValid) {
+      return;
+    } else {
+      // await login(email, password);
+      await login(email, password).then((data) => {
+        console.log(data);
+        if (data.content === undefined) {
+          document.cookie = `id=${data.id};max-age=60*60*24`;
+          document.cookie = `username=${data.username};max-age=60*60*24`;
+          window.location.href = "http://localhost:3000/";
+        } else {
+          const message = data.content;
+          console.log(message);
+          setMess(message);
         }
-
-        if (isEmpty(password)) {
-            messages.password = "Please input your password"
-        }
-
-        setValidate(messages)
-        if (Object.keys(messages).length > 0) return false
-        return true
+      });
     }
+  };
 
-    const handleSubmit = async () => {
-        const isValid = validateAll()
-        
-        console.log(isValid);
-        if (!isValid) {
-            return
-        }else{
-            login(email, password);
-        }
-    }
-
-    return (
-        <div>
-            <div className="login">
-                <div className="login__intro">
-                    <img
-                        className="login__logo"
-                        src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"
-                        alt="fakebook"
-                    />
-                    <p>Facebook giúp bạn connect và share với everyone in life của bạn.</p>
-                </div>
-                <div className="login__form">
-                    <form action="http://localhost:8080/FakeStory/api/login" method="POST">
-                        <div className="login__input">
-                            <input
-                                className="login__email"
-                                placeholder="Email hoặc số điện thoại"
-                                onChange={handleEmailChange}
-                                name="username"
-                            />
-                        </div>
-                        <p className="login_err">{validate.email}</p>
-                        <div className="login__input">
-                            <input
-                                className="login__password"
-                                placeholder="Mật khẩu"
-                                onChange={handlePasswordChange}
-                                name="password"
-                            />
-                        </div>
-                        <p className="login_err">{validate.password}</p>
-                        <div className="login__btn">
-                            <button
-                                type="button"
-                                onClick={handleSubmit}
-                            >
-                                Đăng nhập
-                            </button>
-                        </div>
-                        <div className="login__forget">
-                            <a className="login__forget" href="/">Quên mật khẩu?</a>
-                        </div>
-                        <div className="login__seperate">
-                            <hr />
-                        </div>
-                        <div className="login__regis">
-                            <button>Tạo tài khoản</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+  //   const hello = "hello";
+  return (
+    <div>
+      <div className="login">
+        <div className="login__intro">
+          <img
+            className="login__logo"
+            src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"
+            alt="fakebook"
+          />
+          <p>
+            Facebook giúp bạn connect và share với everyone in life của bạn.
+          </p>
         </div>
-    )
+        <div className="login__form">
+          <form
+            action="http://localhost:8080/FakeStory/api/login"
+            method="POST"
+          >
+            <div className="login__input">
+              <input
+                className="login__email"
+                placeholder="Email hoặc số điện thoại"
+                onChange={handleEmailChange}
+                name="username"
+              />
+            </div>
+            <p className="login_err">{validate.email}</p>
+            <div className="login__input">
+              <input
+                className="login__password"
+                placeholder="Mật khẩu"
+                onChange={handlePasswordChange}
+                name="password"
+              />
+            </div>
+            <p className="login_err">{validate.password}</p>
+            <div className="login__btn">
+              <button type="button" onClick={handleSubmit}>
+                Đăng nhập
+              </button>
+            </div>
+            <p>{mess}</p>
+            <div className="login__forget">
+              <a className="login__forget" href="/">
+                Quên mật khẩu?
+              </a>
+            </div>
+            <div className="login__seperate">
+              <hr />
+            </div>
+            <div className="login__regis">
+              <button>Tạo tài khoản</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Login;
