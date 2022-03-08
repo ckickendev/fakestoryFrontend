@@ -3,10 +3,6 @@
   margin: 0 auto;
 }
 
-.profileRight {
-  flex: 2;
-}
-
 .profileRightTop {
   background-color: white;
 }
@@ -14,7 +10,7 @@
 .profileCover {
   height: 320px;
   position: relative;
-  width: 1250px;
+  width: 1400px;
 }
 
 .profileCoverImg {
@@ -56,5 +52,23 @@
 
 .profileRightBottom {
   display: flex;
-  margin: 0;
+}
+
+.profileNav {
+  margin: 0rem 4rem;
+  padding: 2em 0em;
+  border-top: 1px solid rgb(211, 211, 211);
+}
+
+.profileNav a {
+  padding: 1.5em;
+  color: #515365;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.profileNav a:hover {
+  color: rgb(41, 41, 223);
+  background-color: rgb(216, 216, 216);
+  border-radius: 7px;
 }

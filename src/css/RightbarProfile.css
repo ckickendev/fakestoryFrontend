@@ -18,7 +18,12 @@
 
 .rightbarInfoValue {
   font-weight: 300;
-  font-size: 15px;
+  font-size: 16px;
+}
+
+.rightbarInfoValue b {
+  font-weight: 600;
+  color: black;
 }
 
 .rightBarInfoKey {
@@ -62,6 +67,10 @@
   border-radius: 10px;
 }
 
+.subWrapper a {
+  text-decoration: none;
+}
+
 .rightbarNav {
   display: flex;
   justify-content: space-between;
@@ -70,17 +79,16 @@
 
 .button {
   display: block;
-  text-align: center;
   text-decoration: none;
   background-color: rgb(216, 216, 216);
-  padding: 10px;
-  color: black;
+  padding: 0.5rem 10rem;
   border-radius: 7px;
+  border: none;
 }
 
 .button:hover {
-  color: black;
   background-color: rgb(179, 179, 179);
+  border: none;
 }
 
 .buttonFriends {
