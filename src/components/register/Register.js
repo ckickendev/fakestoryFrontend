@@ -75,8 +75,8 @@ function Register() {
 
         <button className="submit" type="submit">Register</button>
         <div className="form__signup">
-          Not a member?
-          <a href="#">Signup</a>
+          Have account? 
+          <a href="./login">Login</a>
         </div>
       </form>
     </div>

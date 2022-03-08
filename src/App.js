@@ -27,20 +27,21 @@ function App() {
   return (
     <Provider store={store}>
       <div className="app">
-        {/* {!user ? (  
+        {!user ? (  
           <Login />
         ) : (
           <>
-            <Header />
+            {/* <Header /> */}
             <div className="app__body">
               <Routes>
-                <Route path="/" element={<Main />} />
+                <Route path="/login" element={<Login/>} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/home" element={<Main />} />
               </Routes>
             </div>
           </>
-        )} */}
-        <Register />
+        )}
 
       </div>
     </Provider>
