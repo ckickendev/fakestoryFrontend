@@ -10,6 +10,9 @@ import { createStore, combineReducers } from "redux";
 import Group from "./nav/Group"
 import { Provider } from "react-redux";
 import authReducer from "./store/reducers/auth";
+import Register from "./components/register/Register"
+import Page from "./nav/Page"
+
 
 const rootReducer = combineReducers({
   auth : authReducer
@@ -20,11 +23,11 @@ const store = createStore(rootReducer);
 function App() {
   /* const [{ user }, dispatch] = useStateValue(); */
 
-  const user = null;
+  const user = 'huy';
   return (
     <Provider store={store}>
       <div className="app">
-        {!user ? (  
+        {/* {!user ? (  
           <Login />
         ) : (
           <>
@@ -36,8 +39,8 @@ function App() {
               </Routes>
             </div>
           </>
-        )}
-        <Group />
+        )} */}
+        <Register />
 
       </div>
     </Provider>
