@@ -34,7 +34,6 @@ function Login() {
       messages.password = "Please input your password";
     }
 
-<<<<<<< HEAD
     setValidate(messages);
     if (Object.keys(messages).length > 0) return false;
     return true;
@@ -60,12 +59,6 @@ function Login() {
       });
     }
   };
-=======
-  const handleSubmit = () => {
-      const isValid = validateAll()
-      if (!isValid) return
-  }
->>>>>>> master
 
   //   const hello = "hello";
   return (

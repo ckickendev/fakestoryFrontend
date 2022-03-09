@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./css/index.css";
 import App from "./App";
-<<<<<<< HEAD
 import reportWebVitals from "./components/main/reportWebVitals.js";
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -11,24 +10,6 @@ ReactDOM.render(
     <Router>
       <App />
     </Router>
-=======
-<<<<<<< HEAD
-import reportWebVitals from "./reportWebVitals";
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-=======
-import reportWebVitals from "./components/main/reportWebVitals.js";
-import { BrowserRouter as Router } from "react-router-dom";
-
-ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
->>>>>>> e515c125dd72fb8fa407c7ffab3ac2dd4e603541
->>>>>>> master
   </React.StrictMode>,
   document.getElementById("root")
 );
