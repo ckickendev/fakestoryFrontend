@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useState } from "react";
 import "../../css/Login.css";
 import isEmpty from "validator/lib/isEmpty";
 import isEmail from "validator/lib/isEmail";
+import { useDispatch } from "react-redux";
 // import { useDispatch } from "react-redux";
 import { login } from "../../store/actions/auth";
 function Login() {
@@ -39,6 +40,11 @@ function Login() {
     return true;
   };
 
+  const dispatch = useDispatch();
+  const saveUser = useCallback((data) => {
+    dispatch({ type: "AUTHENTICATION", id: data.id });
+  }, []);
+
   const handleSubmit = async () => {
     const isValid = validateAll();
     if (!isValid) {
@@ -50,7 +56,11 @@ function Login() {
         if (data.content === undefined) {
           document.cookie = `id=${data.id};max-age=60*60*24`;
           document.cookie = `username=${data.username};max-age=60*60*24`;
-          window.location.href = "http://localhost:3000/";
+          if (data.id) {
+            console.log(data);
+            saveUser(data);
+          }
+          // window.location.href = "http://localhost:3000/";
         } else {
           const message = data.content;
           console.log(message);

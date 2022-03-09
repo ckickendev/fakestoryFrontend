@@ -1,24 +1,25 @@
-import { AUTHENTICATION } from "../actions/auth";
+import { FETCHFRIENDS, FETCHPOSTS } from "../actions/information";
+
 
 const initState = {
-    user: null,
-    userId: null,
-    test: null,
+    friends: [],
+    userPost: [],
+    postNewFeed: [],
 }
 
 const reducer = (state = initState, action) => {
     switch (action.type)    {
-        case AUTHENTICATION : {
+        case FETCHFRIENDS : {
             console.log("action", action);
             return{
                 ...state,
-                userId: action.id,
+                friends: action,
             }
         }
-        case "test" :{
+        case FETCHPOSTS :{
             return {
                 ...state,
-                test: action.test
+                test: action
             }
         }
         default :{

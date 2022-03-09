@@ -1,3 +1,4 @@
+import { useDispatch } from "react-redux";
 export const AUTHENTICATION = "AUTHENTICATION";
 
 // import User from "../../models/user";
@@ -28,7 +29,6 @@ export const login = async (username, password) => {
       //   return mess;
       // }
     });
-  
 };
 
 // const test = (test) => {

@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import "../css/App.css";
-
-function Profile() {
-  return <h1>Hello</h1>;
-=======
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from "react";
 import ProfileFeed from "../components/main/ProfileFeed";
@@ -133,7 +126,6 @@ function Profile() {
       </div>
     </div>
   );
->>>>>>> master
 }
 
 export default Profile;
