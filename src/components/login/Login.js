@@ -39,8 +39,6 @@ function Login() {
   const handleSubmit = () => {
       const isValid = validateAll()
       if (!isValid) return
-
-      //call API LOGIN
   }
 
   return (
