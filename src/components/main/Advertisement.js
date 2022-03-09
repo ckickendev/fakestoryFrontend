@@ -170,48 +170,48 @@ function Advertisement() {
           </svg>
         </a>
       </div>
-      <div class="fixed-sidebar-right sidebar--large" id="sidebar-right-1">
-        <div class="mCustomScrollbar" data-mcs-theme="dark">
-          <div class="ui-block-title ui-block-title-small">
-            <a href="/" class="title">
+      <div className="fixed-sidebar-right sidebar--large" id="sidebar-right-1">
+        <div className="mCustomScrollbar" data-mcs-theme="dark">
+          <div className="ui-block-title ui-block-title-small">
+            <a href="/" className="title">
               Close Friends
             </a>
             <a href="/">Settings</a>
           </div>
 
-          <ul class="chat-users">
-            <li class="inline-items js-chat-open">
-              <div class="author-thumb">
+          <ul className="chat-users">
+            <li className="inline-items js-chat-open">
+              <div className="author-thumb">
                 <img
                   loading="lazy"
                   alt="author"
                   src="img/avatar67-sm.webp"
-                  class="avatar"
+                  className="avatar"
                   width="34"
                   height="34"
                 />
-                <span class="icon-status online"></span>
+                <span className="icon-status online"></span>
               </div>
 
-              <div class="author-status">
-                <a href="/" class="h6 author-name">
+              <div className="author-status">
+                <a href="/" className="h6 author-name">
                   Carol Summers
                 </a>
-                <span class="status">ONLINE</span>
+                <span className="status">ONLINE</span>
               </div>
 
-              <div class="more">
-                <svg class="olymp-three-dots-icon">
+              <div className="more">
+                <svg className="olymp-three-dots-icon">
                   <use href="#olymp-three-dots-icon"></use>
                 </svg>
 
-                <ul class="more-icons">
+                <ul className="more-icons">
                   <li>
                     <svg
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="START CONVERSATION"
-                      class="olymp-comments-post-icon"
+                      className="olymp-comments-post-icon"
                     >
                       <use href="#olymp-comments-post-icon"></use>
                     </svg>
@@ -222,7 +222,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="ADD TO CONVERSATION"
-                      class="olymp-add-to-conversation-icon"
+                      className="olymp-add-to-conversation-icon"
                     >
                       <use href="#olymp-add-to-conversation-icon"></use>
                     </svg>
@@ -233,7 +233,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="BLOCK FROM CHAT"
-                      class="olymp-block-from-chat-icon"
+                      className="olymp-block-from-chat-icon"
                     >
                       <use href="#olymp-block-from-chat-icon"></use>
                     </svg>
@@ -241,38 +241,38 @@ function Advertisement() {
                 </ul>
               </div>
             </li>
-            <li class="inline-items js-chat-open">
-              <div class="author-thumb">
+            <li className="inline-items js-chat-open">
+              <div className="author-thumb">
                 <img
                   loading="lazy"
                   alt="author"
                   src="img/avatar62-sm.webp"
                   width="34"
                   height="34"
-                  class="avatar"
+                  className="avatar"
                 />
-                <span class="icon-status online"></span>
+                <span className="icon-status online"></span>
               </div>
 
-              <div class="author-status">
-                <a href="/" class="h6 author-name">
+              <div className="author-status">
+                <a href="/" className="h6 author-name">
                   Mathilda Brinker
                 </a>
-                <span class="status">AT WORK!</span>
+                <span className="status">AT WORK!</span>
               </div>
 
-              <div class="more">
-                <svg class="olymp-three-dots-icon">
+              <div className="more">
+                <svg className="olymp-three-dots-icon">
                   <use href="#olymp-three-dots-icon"></use>
                 </svg>
 
-                <ul class="more-icons">
+                <ul className="more-icons">
                   <li>
                     <svg
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="START CONVERSATION"
-                      class="olymp-comments-post-icon"
+                      className="olymp-comments-post-icon"
                     >
                       <use href="#olymp-comments-post-icon"></use>
                     </svg>
@@ -283,7 +283,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="ADD TO CONVERSATION"
-                      class="olymp-add-to-conversation-icon"
+                      className="olymp-add-to-conversation-icon"
                     >
                       <use href="#olymp-add-to-conversation-icon"></use>
                     </svg>
@@ -294,7 +294,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="BLOCK FROM CHAT"
-                      class="olymp-block-from-chat-icon"
+                      className="olymp-block-from-chat-icon"
                     >
                       <use href="#olymp-block-from-chat-icon"></use>
                     </svg>
@@ -303,38 +303,38 @@ function Advertisement() {
               </div>
             </li>
 
-            <li class="inline-items js-chat-open">
-              <div class="author-thumb">
+            <li className="inline-items js-chat-open">
+              <div className="author-thumb">
                 <img
                   loading="lazy"
                   alt="author"
                   src="img/avatar68-sm.webp"
-                  class="avatar"
+                  className="avatar"
                   width="34"
                   height="34"
                 />
-                <span class="icon-status online"></span>
+                <span className="icon-status online"></span>
               </div>
 
-              <div class="author-status">
-                <a href="/" class="h6 author-name">
+              <div className="author-status">
+                <a href="/" className="h6 author-name">
                   Carol Summers
                 </a>
-                <span class="status">ONLINE</span>
+                <span className="status">ONLINE</span>
               </div>
 
-              <div class="more">
-                <svg class="olymp-three-dots-icon">
+              <div className="more">
+                <svg className="olymp-three-dots-icon">
                   <use href="#olymp-three-dots-icon"></use>
                 </svg>
 
-                <ul class="more-icons">
+                <ul className="more-icons">
                   <li>
                     <svg
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="START CONVERSATION"
-                      class="olymp-comments-post-icon"
+                      className="olymp-comments-post-icon"
                     >
                       <use href="#olymp-comments-post-icon"></use>
                     </svg>
@@ -345,7 +345,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="ADD TO CONVERSATION"
-                      class="olymp-add-to-conversation-icon"
+                      className="olymp-add-to-conversation-icon"
                     >
                       <use href="#olymp-add-to-conversation-icon"></use>
                     </svg>
@@ -356,7 +356,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="BLOCK FROM CHAT"
-                      class="olymp-block-from-chat-icon"
+                      className="olymp-block-from-chat-icon"
                     >
                       <use href="#olymp-block-from-chat-icon"></use>
                     </svg>
@@ -365,38 +365,38 @@ function Advertisement() {
               </div>
             </li>
 
-            <li class="inline-items js-chat-open">
-              <div class="author-thumb">
+            <li className="inline-items js-chat-open">
+              <div className="author-thumb">
                 <img
                   loading="lazy"
                   alt="author"
                   src="img/avatar69-sm.webp"
-                  class="avatar"
+                  className="avatar"
                   width="34"
                   height="34"
                 />
-                <span class="icon-status away"></span>
+                <span className="icon-status away"></span>
               </div>
 
-              <div class="author-status">
-                <a href="/" class="h6 author-name">
+              <div className="author-status">
+                <a href="/" className="h6 author-name">
                   Michael Maximoff
                 </a>
-                <span class="status">AWAY</span>
+                <span className="status">AWAY</span>
               </div>
 
-              <div class="more">
-                <svg class="olymp-three-dots-icon">
+              <div className="more">
+                <svg className="olymp-three-dots-icon">
                   <use href="#olymp-three-dots-icon"></use>
                 </svg>
 
-                <ul class="more-icons">
+                <ul className="more-icons">
                   <li>
                     <svg
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="START CONVERSATION"
-                      class="olymp-comments-post-icon"
+                      className="olymp-comments-post-icon"
                     >
                       <use href="#olymp-comments-post-icon"></use>
                     </svg>
@@ -407,7 +407,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="ADD TO CONVERSATION"
-                      class="olymp-add-to-conversation-icon"
+                      className="olymp-add-to-conversation-icon"
                     >
                       <use href="#olymp-add-to-conversation-icon"></use>
                     </svg>
@@ -418,7 +418,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="BLOCK FROM CHAT"
-                      class="olymp-block-from-chat-icon"
+                      className="olymp-block-from-chat-icon"
                     >
                       <use href="#olymp-block-from-chat-icon"></use>
                     </svg>
@@ -427,38 +427,38 @@ function Advertisement() {
               </div>
             </li>
 
-            <li class="inline-items js-chat-open">
-              <div class="author-thumb">
+            <li className="inline-items js-chat-open">
+              <div className="author-thumb">
                 <img
                   loading="lazy"
                   alt="author"
                   src="img/avatar70-sm.webp"
-                  class="avatar"
+                  className="avatar"
                   width="34"
                   height="34"
                 />
-                <span class="icon-status disconected"></span>
+                <span className="icon-status disconected"></span>
               </div>
 
-              <div class="author-status">
-                <a href="/" class="h6 author-name">
+              <div className="author-status">
+                <a href="/" className="h6 author-name">
                   Rachel Howlett
                 </a>
-                <span class="status">OFFLINE</span>
+                <span className="status">OFFLINE</span>
               </div>
 
-              <div class="more">
-                <svg class="olymp-three-dots-icon">
+              <div className="more">
+                <svg className="olymp-three-dots-icon">
                   <use href="#olymp-three-dots-icon"></use>
                 </svg>
 
-                <ul class="more-icons">
+                <ul className="more-icons">
                   <li>
                     <svg
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="START CONVERSATION"
-                      class="olymp-comments-post-icon"
+                      className="olymp-comments-post-icon"
                     >
                       <use href="#olymp-comments-post-icon"></use>
                     </svg>
@@ -469,7 +469,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="ADD TO CONVERSATION"
-                      class="olymp-add-to-conversation-icon"
+                      className="olymp-add-to-conversation-icon"
                     >
                       <use href="#olymp-add-to-conversation-icon"></use>
                     </svg>
@@ -480,7 +480,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="BLOCK FROM CHAT"
-                      class="olymp-block-from-chat-icon"
+                      className="olymp-block-from-chat-icon"
                     >
                       <use href="#olymp-block-from-chat-icon"></use>
                     </svg>
@@ -490,46 +490,46 @@ function Advertisement() {
             </li>
           </ul>
 
-          <div class="ui-block-title ui-block-title-small">
-            <a href="/" class="title">
+          <div className="ui-block-title ui-block-title-small">
+            <a href="/" className="title">
               MY FAMILY
             </a>
             <a href="/">Settings</a>
           </div>
 
-          <ul class="chat-users">
-            <li class="inline-items js-chat-open">
-              <div class="author-thumb">
+          <ul className="chat-users">
+            <li className="inline-items js-chat-open">
+              <div className="author-thumb">
                 <img
                   alt="author"
                   loading="lazy"
                   src="img/avatar64-sm.webp"
                   width="34"
                   height="34"
-                  class="avatar"
+                  className="avatar"
                 />
-                <span class="icon-status online"></span>
+                <span className="icon-status online"></span>
               </div>
 
-              <div class="author-status">
-                <a href="/" class="h6 author-name">
+              <div className="author-status">
+                <a href="/" className="h6 author-name">
                   Sarah Hetfield
                 </a>
-                <span class="status">ONLINE</span>
+                <span className="status">ONLINE</span>
               </div>
 
-              <div class="more">
-                <svg class="olymp-three-dots-icon">
+              <div className="more">
+                <svg className="olymp-three-dots-icon">
                   <use href="#olymp-three-dots-icon"></use>
                 </svg>
 
-                <ul class="more-icons">
+                <ul className="more-icons">
                   <li>
                     <svg
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="START CONVERSATION"
-                      class="olymp-comments-post-icon"
+                      className="olymp-comments-post-icon"
                     >
                       <use href="#olymp-comments-post-icon"></use>
                     </svg>
@@ -540,7 +540,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="ADD TO CONVERSATION"
-                      class="olymp-add-to-conversation-icon"
+                      className="olymp-add-to-conversation-icon"
                     >
                       <use href="#olymp-add-to-conversation-icon"></use>
                     </svg>
@@ -551,7 +551,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="BLOCK FROM CHAT"
-                      class="olymp-block-from-chat-icon"
+                      className="olymp-block-from-chat-icon"
                     >
                       <use href="#olymp-block-from-chat-icon"></use>
                     </svg>
@@ -561,46 +561,46 @@ function Advertisement() {
             </li>
           </ul>
 
-          <div class="ui-block-title ui-block-title-small">
-            <a href="/" class="title">
+          <div className="ui-block-title ui-block-title-small">
+            <a href="/" className="title">
               UNCATEGORIZED
             </a>
             <a href="/">Settings</a>
           </div>
 
-          <ul class="chat-users">
-            <li class="inline-items js-chat-open">
-              <div class="author-thumb">
+          <ul className="chat-users">
+            <li className="inline-items js-chat-open">
+              <div className="author-thumb">
                 <img
                   loading="lazy"
                   alt="author"
                   src="img/avatar71-sm.webp"
-                  class="avatar"
+                  className="avatar"
                   width="34"
                   height="34"
                 />
-                <span class="icon-status online"></span>
+                <span className="icon-status online"></span>
               </div>
 
-              <div class="author-status">
-                <a href="/" class="h6 author-name">
+              <div className="author-status">
+                <a href="/" className="h6 author-name">
                   Bruce Peterson
                 </a>
-                <span class="status">ONLINE</span>
+                <span className="status">ONLINE</span>
               </div>
 
-              <div class="more">
-                <svg class="olymp-three-dots-icon">
+              <div className="more">
+                <svg className="olymp-three-dots-icon">
                   <use href="#olymp-three-dots-icon"></use>
                 </svg>
 
-                <ul class="more-icons">
+                <ul className="more-icons">
                   <li>
                     <svg
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="START CONVERSATION"
-                      class="olymp-comments-post-icon"
+                      className="olymp-comments-post-icon"
                     >
                       <use href="#olymp-comments-post-icon"></use>
                     </svg>
@@ -611,7 +611,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="ADD TO CONVERSATION"
-                      class="olymp-add-to-conversation-icon"
+                      className="olymp-add-to-conversation-icon"
                     >
                       <use href="#olymp-add-to-conversation-icon"></use>
                     </svg>
@@ -622,7 +622,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="BLOCK FROM CHAT"
-                      class="olymp-block-from-chat-icon"
+                      className="olymp-block-from-chat-icon"
                     >
                       <use href="#olymp-block-from-chat-icon"></use>
                     </svg>
@@ -630,38 +630,38 @@ function Advertisement() {
                 </ul>
               </div>
             </li>
-            <li class="inline-items js-chat-open">
-              <div class="author-thumb">
+            <li className="inline-items js-chat-open">
+              <div className="author-thumb">
                 <img
                   loading="lazy"
                   alt="author"
                   src="img/avatar72-sm.webp"
-                  class="avatar"
+                  className="avatar"
                   width="34"
                   height="34"
                 />
-                <span class="icon-status away"></span>
+                <span className="icon-status away"></span>
               </div>
 
-              <div class="author-status">
-                <a href="/" class="h6 author-name">
+              <div className="author-status">
+                <a href="/" className="h6 author-name">
                   Chris Greyson
                 </a>
-                <span class="status">AWAY</span>
+                <span className="status">AWAY</span>
               </div>
 
-              <div class="more">
-                <svg class="olymp-three-dots-icon">
+              <div className="more">
+                <svg className="olymp-three-dots-icon">
                   <use href="#olymp-three-dots-icon"></use>
                 </svg>
 
-                <ul class="more-icons">
+                <ul className="more-icons">
                   <li>
                     <svg
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="START CONVERSATION"
-                      class="olymp-comments-post-icon"
+                      className="olymp-comments-post-icon"
                     >
                       <use href="#olymp-comments-post-icon"></use>
                     </svg>
@@ -672,7 +672,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="ADD TO CONVERSATION"
-                      class="olymp-add-to-conversation-icon"
+                      className="olymp-add-to-conversation-icon"
                     >
                       <use href="#olymp-add-to-conversation-icon"></use>
                     </svg>
@@ -683,7 +683,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="BLOCK FROM CHAT"
-                      class="olymp-block-from-chat-icon"
+                      className="olymp-block-from-chat-icon"
                     >
                       <use href="#olymp-block-from-chat-icon"></use>
                     </svg>
@@ -691,38 +691,38 @@ function Advertisement() {
                 </ul>
               </div>
             </li>
-            <li class="inline-items js-chat-open">
-              <div class="author-thumb">
+            <li className="inline-items js-chat-open">
+              <div className="author-thumb">
                 <img
                   loading="lazy"
                   alt="author"
                   src="img/avatar63-sm.webp"
-                  class="avatar"
+                  className="avatar"
                   width="34"
                   height="34"
                 />
-                <span class="icon-status status-invisible"></span>
+                <span className="icon-status status-invisible"></span>
               </div>
 
-              <div class="author-status">
-                <a href="/" class="h6 author-name">
+              <div className="author-status">
+                <a href="/" className="h6 author-name">
                   Nicholas Grisom
                 </a>
-                <span class="status">INVISIBLE</span>
+                <span className="status">INVISIBLE</span>
               </div>
 
-              <div class="more">
-                <svg class="olymp-three-dots-icon">
+              <div className="more">
+                <svg className="olymp-three-dots-icon">
                   <use href="#olymp-three-dots-icon"></use>
                 </svg>
 
-                <ul class="more-icons">
+                <ul className="more-icons">
                   <li>
                     <svg
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="START CONVERSATION"
-                      class="olymp-comments-post-icon"
+                      className="olymp-comments-post-icon"
                     >
                       <use href="#olymp-comments-post-icon"></use>
                     </svg>
@@ -733,7 +733,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="ADD TO CONVERSATION"
-                      class="olymp-add-to-conversation-icon"
+                      className="olymp-add-to-conversation-icon"
                     >
                       <use href="#olymp-add-to-conversation-icon"></use>
                     </svg>
@@ -744,7 +744,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="BLOCK FROM CHAT"
-                      class="olymp-block-from-chat-icon"
+                      className="olymp-block-from-chat-icon"
                     >
                       <use href="#olymp-block-from-chat-icon"></use>
                     </svg>
@@ -752,38 +752,38 @@ function Advertisement() {
                 </ul>
               </div>
             </li>
-            <li class="inline-items js-chat-open">
-              <div class="author-thumb">
+            <li className="inline-items js-chat-open">
+              <div className="author-thumb">
                 <img
                   loading="lazy"
                   alt="author"
                   src="img/avatar72-sm.webp"
-                  class="avatar"
+                  className="avatar"
                   width="34"
                   height="34"
                 />
-                <span class="icon-status away"></span>
+                <span className="icon-status away"></span>
               </div>
 
-              <div class="author-status">
-                <a href="/" class="h6 author-name">
+              <div className="author-status">
+                <a href="/" className="h6 author-name">
                   Chris Greyson
                 </a>
-                <span class="status">AWAY</span>
+                <span className="status">AWAY</span>
               </div>
 
-              <div class="more">
-                <svg class="olymp-three-dots-icon">
+              <div className="more">
+                <svg className="olymp-three-dots-icon">
                   <use href="#olymp-three-dots-icon"></use>
                 </svg>
 
-                <ul class="more-icons">
+                <ul className="more-icons">
                   <li>
                     <svg
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="START CONVERSATION"
-                      class="olymp-comments-post-icon"
+                      className="olymp-comments-post-icon"
                     >
                       <use href="#olymp-comments-post-icon"></use>
                     </svg>
@@ -794,7 +794,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="ADD TO CONVERSATION"
-                      class="olymp-add-to-conversation-icon"
+                      className="olymp-add-to-conversation-icon"
                     >
                       <use href="#olymp-add-to-conversation-icon"></use>
                     </svg>
@@ -805,7 +805,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="BLOCK FROM CHAT"
-                      class="olymp-block-from-chat-icon"
+                      className="olymp-block-from-chat-icon"
                     >
                       <use href="#olymp-block-from-chat-icon"></use>
                     </svg>
@@ -813,38 +813,38 @@ function Advertisement() {
                 </ul>
               </div>
             </li>
-            <li class="inline-items js-chat-open">
-              <div class="author-thumb">
+            <li className="inline-items js-chat-open">
+              <div className="author-thumb">
                 <img
                   loading="lazy"
                   alt="author"
                   src="img/avatar71-sm.webp"
-                  class="avatar"
+                  className="avatar"
                   width="34"
                   height="34"
                 />
-                <span class="icon-status online"></span>
+                <span className="icon-status online"></span>
               </div>
 
-              <div class="author-status">
-                <a href="/" class="h6 author-name">
+              <div className="author-status">
+                <a href="/" className="h6 author-name">
                   Bruce Peterson
                 </a>
-                <span class="status">ONLINE</span>
+                <span className="status">ONLINE</span>
               </div>
 
-              <div class="more">
-                <svg class="olymp-three-dots-icon">
+              <div className="more">
+                <svg className="olymp-three-dots-icon">
                   <use href="#olymp-three-dots-icon"></use>
                 </svg>
 
-                <ul class="more-icons">
+                <ul className="more-icons">
                   <li>
                     <svg
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="START CONVERSATION"
-                      class="olymp-comments-post-icon"
+                      className="olymp-comments-post-icon"
                     >
                       <use href="#olymp-comments-post-icon"></use>
                     </svg>
@@ -855,7 +855,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="ADD TO CONVERSATION"
-                      class="olymp-add-to-conversation-icon"
+                      className="olymp-add-to-conversation-icon"
                     >
                       <use href="#olymp-add-to-conversation-icon"></use>
                     </svg>
@@ -866,7 +866,7 @@ function Advertisement() {
                       data-bs-toggle="tooltip"
                       data-bs-placement="top"
                       data-bs-original-title="BLOCK FROM CHAT"
-                      class="olymp-block-from-chat-icon"
+                      className="olymp-block-from-chat-icon"
                     >
                       <use href="#olymp-block-from-chat-icon"></use>
                     </svg>
@@ -877,32 +877,32 @@ function Advertisement() {
           </ul>
         </div>
 
-        <div class="search-friend inline-items">
-          <form class="form-group">
+        <div className="search-friend inline-items">
+          <form className="form-group">
             <input
-              class="form-control"
+              className="form-control"
               placeholder="Search Friends..."
               value=""
               type="text"
             />
           </form>
 
-          <a href="29-YourAccount-AccountSettings.html" class="settings">
-            <svg class="olymp-settings-icon">
+          <a href="29-YourAccount-AccountSettings.html" className="settings">
+            <svg className="olymp-settings-icon">
               <use href="#olymp-settings-icon"></use>
             </svg>
           </a>
 
-          <a href="/" class="js-sidebar-open">
-            <svg class="olymp-close-icon">
+          <a href="/" className="js-sidebar-open">
+            <svg className="olymp-close-icon">
               <use href="#olymp-close-icon"></use>
             </svg>
           </a>
         </div>
 
-        <a href="/" class="olympus-chat inline-items js-chat-open">
-          <h6 class="olympus-chat-title">OLYMPUS CHAT</h6>
-          <svg class="olymp-chat---messages-icon">
+        <a href="/" className="olympus-chat inline-items js-chat-open">
+          <h6 className="olympus-chat-title">OLYMPUS CHAT</h6>
+          <svg className="olymp-chat---messages-icon">
             <use href="#olymp-chat---messages-icon"></use>
           </svg>
         </a>

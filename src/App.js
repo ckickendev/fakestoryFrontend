@@ -19,14 +19,15 @@ function App() {
         <Login />
       ) : (
       <>
-        <Header />
+        {/* <Header />
         <div className="app__body">
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/register" element={<Register />} />
           </Routes>
-        </div>
+        </div> */}
+        <Group />
       </>
       )}
       
