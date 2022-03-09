@@ -1,10 +1,12 @@
-import { FETCHFRIENDS, FETCHPOSTS } from "../actions/information";
+import { FETCHFRIENDS, FETCHPOSTS, Fe } from "../actions/information";
 
 
 const initState = {
     friends: [],
     userPost: [],
     postNewFeed: [],
+    listPages: [],
+    listGroup: [],
 }
 
 const reducer = (state = initState, action) => {
