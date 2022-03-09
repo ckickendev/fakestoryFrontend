@@ -1,26 +1,12 @@
 .feed {
-<<<<<<< HEAD
   flex: 0.6;
   padding: 30px 230px 30px 30px;
-=======
-<<<<<<< HEAD
-    flex: 0.6;    
-    padding: 30px 230px 30px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-=======
-  flex: 0.6;
-  padding: 30px 65px;
->>>>>>> master
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-<<<<<<< HEAD
-=======
->>>>>>> e515c125dd72fb8fa407c7ffab3ac2dd4e603541
->>>>>>> master

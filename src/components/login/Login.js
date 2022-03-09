@@ -9,7 +9,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [validate, setValidate] = useState("");
-  const [mess, setMess] = useState("hello");
+  const [mess, setMess] = useState("");
 
   const handleEmailChange = (e) => {
     const value = e.target.value;
@@ -60,7 +60,6 @@ function Login() {
     }
   };
 
-  //   const hello = "hello";
   return (
     <div>
       <div className="login">
@@ -94,6 +93,7 @@ function Login() {
                 placeholder="Mật khẩu"
                 onChange={handlePasswordChange}
                 name="password"
+                type="password"
               />
             </div>
             <p className="login_err">{validate.password}</p>

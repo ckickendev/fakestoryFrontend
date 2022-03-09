@@ -1,12 +1,4 @@
 .sidebar {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    padding: 25px 10px;
-    flex: 0.3;
-}
-=======
->>>>>>> master
   padding: 25px 30px;
   display: flex;
   flex-direction: column;
@@ -27,7 +19,3 @@
   padding: 2px 11px;
   margin: 5px 0;
 }
-<<<<<<< HEAD
-=======
->>>>>>> e515c125dd72fb8fa407c7ffab3ac2dd4e603541
->>>>>>> master
