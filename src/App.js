@@ -11,6 +11,7 @@ import Page from "./nav/Page"
 
 function App() {
   /* const [{ user }, dispatch] = useStateValue(); */
+  const user = null;
 
   const user = 'huy';
   return (
