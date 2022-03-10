@@ -10,6 +10,7 @@ import inforReducer from "./store/reducers/information";
 import checkLogin from "./components/login/LogicLogin";
 import Profile from "./nav/Profile";
 import Register from "./components/register/Register";
+import UploadDemo from "./firebase/UploadDemo"
 
 
 const rootReducer = combineReducers({
@@ -20,8 +21,8 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer);
 
 function App() {
-  const isLogin = checkLogin();
-  // const isLogin = false;
+  // const isLogin = checkLogin();
+  const isLogin = true;
   return (
     <Provider store={store}>
       <div className="app">
@@ -31,6 +32,7 @@ function App() {
           <>
             <div className="app__body">
               <Routes>
+                <Route path="/firebase" element= {<UploadDemo />} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/register" element={<Register />} />
