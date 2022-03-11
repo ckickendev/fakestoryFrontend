@@ -7,6 +7,7 @@ import Photos from "../components/main/Photos";
 import Friends from "../components/main/Friends";
 import { ImageViewer } from "react-image-viewer-dv";
 import "../css/Profile.css";
+import Header from "../components/main/Header";
 
 function Profile() {
   const [onPost, setOnPost] = useState(true);
@@ -14,6 +15,7 @@ function Profile() {
   const [onFriend, setOnFriend] = useState(false);
   const [onPhoto, setOnPhoto] = useState(false);
   const [onVideo, setOnVideo] = useState(false);
+  const [status, setStatus] = useState(1);
 
   const onPosts = () => {
     setOnPost(true);
@@ -58,6 +60,7 @@ function Profile() {
   return (
     <div className="profile">
       <div className="profileRight">
+        <Header />
         <div className="profileRightTop">
           <div className="profileCover">
             <ImageViewer>

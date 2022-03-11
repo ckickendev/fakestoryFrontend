@@ -14,7 +14,9 @@ const UploadDemo = () => {
     if (!file) {
       return;
     }
-    const storageRef = ref(storage, `/file/${file.name}`);
+    const filename = Math.random().toString(20).substring(2);
+    console.log(filename);
+    const storageRef = ref(storage, `/file/${filename}`);
     const uploadTask = uploadBytesResumable(storageRef, file);
     uploadTask.on(
       "state_changed",
@@ -37,7 +39,7 @@ const UploadDemo = () => {
         <input type="file" className="input" />
         <button type="submit">Upload</button>
       </form>
-      <h3>Uploaded {progress}</h3>
+      <h3>Uploaded {progress}%</h3>
     </div>
   );
 };

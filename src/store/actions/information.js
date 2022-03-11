@@ -39,3 +39,12 @@ export const fetchAllGroupByUser = async (id) => {
     return data;
   });
 }
+
+export const fetchAllUserInfo = async (id) => {
+  return fetch(`http://localhost:8080/FakeStory/api/admin/user?id=${id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    return data;
+  });
+}

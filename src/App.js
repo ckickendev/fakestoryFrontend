@@ -20,13 +20,8 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer);
 
 function App() {
-<<<<<<< HEAD
   const isLogin = checkLogin();
   // const isLogin = false;
-=======
-  // const isLogin = checkLogin();
-  const isLogin = true;
->>>>>>> bf76afa2e9f3599926ef145b90c889490ac95fbc
   return (
     <Provider store={store}>
       <div className="app">
@@ -45,6 +40,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/home" element={<Main />} />
                 <Route path="/" element={<Main />} />
               </Routes>
             </div>
