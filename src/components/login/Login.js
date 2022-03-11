@@ -122,7 +122,7 @@ function Login() {
               <hr />
             </div>
             <div className="login__regis">
-              <button>Tạo tài khoản</button>
+              <button type="button"><a href="http://localhost:3000/register">Tạo tài khoản</a></button>
             </div>
           </form>
         </div>

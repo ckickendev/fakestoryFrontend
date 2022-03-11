@@ -60,6 +60,9 @@ function Register() {
           <span></span>
           <small></small>
         </div>
+        <div className="form__control">
+          <input type="date" id="birthday" name="birthday" />
+        </div>
 
         <button className="submit">Login</button>
         <div className="form__signup">

@@ -1,3 +1,4 @@
+import { textAlign } from "@mui/system";
 import React from "react";
 import "../../css/Register.css";
 import UseForm from "./UseForm";
@@ -50,6 +51,7 @@ function Register() {
           <span></span>
           {errors.password && <small>{errors.password}</small>}
         </div>
+
         <div className="form__control">
           <input
             type="password"
@@ -61,21 +63,34 @@ function Register() {
           />
           <span></span>
           {errors.rePassword && <small>{errors.rePassword}</small>}
-          <input
-            type="hidden"
-            name="avatar"
-            value="https://static2.yan.vn/YanNews/2167221/202102/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg"
-          />
-          <input type="hidden" name="role_id" value="0" />
-          <input type="hidden" name="description" value="none" />
-          <input type="hidden" name="numberFriends" value="0" />
-          <input type="hidden" name="country" value="none" />
-          <input type="hidden" name="phone" value="none" />
         </div>
+        <div className="form__control border">
+          <p>Birthday</p>
+          <input type="date" id="birthday" name="birthday" />
+          <small></small>
+        </div>
+        <div className="form__control d-flex align-items-center m-4 border-none">
+          <h5>Male</h5>
+          <input type="radio" id="html" name="sex" value="1" />
+          <h5>Female</h5>
+          <input type="radio" id="html" name="sex" value="2" />
+        </div>
+        <input
+          type="hidden"
+          name="avatar"
+          value="https://static2.yan.vn/YanNews/2167221/202102/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg"
+        />
+        <input type="hidden" name="role_id" value="0" />
+        <input type="hidden" name="description" value="none" />
+        <input type="hidden" name="numberFriends" value="0" />
+        <input type="hidden" name="country" value="none" />
+        <input type="hidden" name="phone" value="none" />
 
-        <button className="submit" type="submit">Register</button>
+        <button className="submit" type="submit">
+          Register
+        </button>
         <div className="form__signup">
-          Have account? 
+          Have account?
           <a href="./login">Login</a>
         </div>
       </form>
