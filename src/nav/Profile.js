@@ -6,58 +6,20 @@ import About from "../components/main/About";
 import Photos from "../components/main/Photos";
 import Friends from "../components/main/Friends";
 import { ImageViewer } from "react-image-viewer-dv";
+import Header from "../components/main/Header";
 import "../css/Profile.css";
 
 function Profile() {
-  const [onPost, setOnPost] = useState(true);
-  const [onAbout, setOnAbout] = useState(false);
-  const [onFriend, setOnFriend] = useState(false);
-  const [onPhoto, setOnPhoto] = useState(false);
-  const [onVideo, setOnVideo] = useState(false);
+  const [status, onStatus] = useState(null);
 
-  const onPosts = () => {
-    setOnPost(true);
-    setOnAbout(false);
-    setOnFriend(false);
-    setOnPhoto(false);
-    setOnVideo(false);
-  };
-
-  const onAbouts = () => {
-    setOnPost(false);
-    setOnAbout(true);
-    setOnFriend(false);
-    setOnPhoto(false);
-    setOnVideo(false);
-  };
-
-  const onFriends = () => {
-    setOnPost(false);
-    setOnAbout(false);
-    setOnFriend(true);
-    setOnPhoto(false);
-    setOnVideo(false);
-  };
-
-  const onPhotos = () => {
-    setOnPost(false);
-    setOnAbout(false);
-    setOnFriend(false);
-    setOnPhoto(true);
-    setOnVideo(false);
-  };
-
-  const onVideos = () => {
-    setOnPost(false);
-    setOnAbout(false);
-    setOnFriend(false);
-    setOnPhoto(false);
-    setOnVideo(true);
+  const handleClick = (step) => {
+    onStatus(step);
   };
 
   return (
     <div className="profile">
       <div className="profileRight">
+        <Header />
         <div className="profileRightTop">
           <div className="profileCover">
             <ImageViewer>
@@ -80,46 +42,42 @@ function Profile() {
             <span className="profileInfoDesc">HV</span>
           </div>
           <div className="profileNav">
-            <a href="/profile" onClick={onPosts}>
+            <a href="/profile" onClick={() => handleClick(0)}>
               Posts
             </a>
-            <a href="#" onClick={onAbouts}>
+            <a href="#" onClick={() => handleClick(1)}>
               About
             </a>
-            <a href="#" onClick={onFriends}>
+            <a href="#" onClick={() => handleClick(2)}>
               Friends
             </a>
-            <a href="#" onClick={onPhotos}>
+            <a href="#" onClick={() => handleClick(3)}>
               Photos
-            </a>
-            <a href="#" onClick={onVideos}>
-              Videos
             </a>
           </div>
         </div>
-
-        {onPost && (
+        {status === 3 && (
           <div className="profileRightBottom">
-            <ProfileFeed />
-            <RightBarProfile />
+            <Photos />
           </div>
         )}
 
-        {onAbout && (
+        {!status && (
+          <div className="profileRightBottom">
+            <ProfileFeed />
+            <RightBarProfile changeStatus={handleClick} />
+          </div>
+        )}
+
+        {status === 1 && (
           <div className="profileRightBottom">
             <About />
           </div>
         )}
 
-        {onFriend && (
+        {status === 2 && (
           <div className="profileRightBottom">
             <Friends />
-          </div>
-        )}
-
-        {onPhoto && (
-          <div className="profileRightBottom">
-            <Photos />
           </div>
         )}
       </div>
