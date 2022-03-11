@@ -92,10 +92,21 @@
 }
 
 .buttonFriends {
-  text-decoration: none;
   color: rgb(41, 41, 223);
   margin-bottom: 10px;
   padding: 10px;
+  border: none;
+  background-color: white;
+}
+
+.buttonFriends:focus {
+  border: none;
+  outline: none;
+}
+
+.buttonFriends:active {
+  border: none;
+  outline: none;
 }
 
 .buttonFriends:hover {

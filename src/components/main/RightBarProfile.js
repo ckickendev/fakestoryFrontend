@@ -8,11 +8,15 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CelebrationIcon from "@mui/icons-material/Celebration";
 import PhoneIcon from "@mui/icons-material/Phone";
 
-const RightBarProfile = () => {
+const RightBarProfile = (props) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const changeStatusHandler = (status) => {
+    props.changeStatus(status);
+  };
 
   return (
     <>
@@ -56,9 +60,14 @@ const RightBarProfile = () => {
           <div className="subWrapper">
             <div className="rightbarNav">
               <h4 className="rightbarTitle">Photos</h4>
-              <a href="" className="buttonFriends">
+              <button
+                className="buttonFriends"
+                onClick={() => {
+                  changeStatusHandler(3);
+                }}
+              >
                 See All My Photos
-              </a>
+              </button>
             </div>
             <div className="rightbarFollowings">
               <div className="rightbarFollowing">
@@ -88,9 +97,14 @@ const RightBarProfile = () => {
           <div className="subWrapper">
             <div className="rightbarNav">
               <h4 className="rightbarTitle">User Friends</h4>
-              <a href="" className="buttonFriends">
+              <button
+                className="buttonFriends"
+                onClick={() => {
+                  changeStatusHandler(2);
+                }}
+              >
                 See All Friends
-              </a>
+              </button>
             </div>
             <div className="rightbarFollowings">
               <div className="rightbarFollowing">
