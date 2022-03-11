@@ -20,13 +20,8 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer);
 
 function App() {
-<<<<<<< HEAD
-  const isLogin = checkLogin();
-  // const isLogin = false;
-=======
   // const isLogin = checkLogin();
   const isLogin = true;
->>>>>>> bf76afa2e9f3599926ef145b90c889490ac95fbc
   return (
     <Provider store={store}>
       <div className="app">

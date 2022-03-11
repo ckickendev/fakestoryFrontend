@@ -71,7 +71,7 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className="loginPage">
       <div className="login">
         <div className="login__intro">
           <img
@@ -122,7 +122,9 @@ function Login() {
               <hr />
             </div>
             <div className="login__regis">
-              <button type="button"><a href="http://localhost:3000/register">Tạo tài khoản</a></button>
+              <button type="button">
+                <a href="http://localhost:3000/register">Tạo tài khoản</a>
+              </button>
             </div>
           </form>
         </div>
