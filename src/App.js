@@ -21,7 +21,7 @@ const store = createStore(rootReducer);
 
 function App() {
   // const isLogin = checkLogin();
-  const isLogin = true;
+  const isLogin = false;
   return (
     <Provider store={store}>
       <div className="app">
