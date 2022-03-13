@@ -64,16 +64,17 @@ function Register() {
           <span></span>
           {errors.rePassword && <small>{errors.rePassword}</small>}
         </div>
-        <div className="form__control border">
+        <div className="form__birthday">
           <p>Birthday</p>
           <input type="date" id="birthday" name="birthday" />
-          <small></small>
         </div>
-        <div className="form__control d-flex align-items-center m-4 border-none">
-          <h5>Male</h5>
-          <input type="radio" id="html" name="sex" value="1" />
-          <h5>Female</h5>
-          <input type="radio" id="html" name="sex" value="2" />
+        <div className="form__gentle d-flex align-items-center m-4 ">
+          <label for="male">Male
+            <input type="radio" id="male" name="sex" value="1" />
+          </label>
+          <label for="female">Female
+            <input type="radio" id="female" name="sex" value="2" />
+          </label>
         </div>
         <input
           type="hidden"

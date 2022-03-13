@@ -24,7 +24,7 @@ function Login() {
 
   const validateAll = () => {
     const messages = {};
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var mailformat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     if (isEmpty(email)) {
       messages.email = "Please input your email";
     } else if (!email.match(mailformat)) {
@@ -125,7 +125,13 @@ function Login() {
               <hr />
             </div>
             <div className="login__regis">
+<<<<<<< HEAD
               <button type="button"><a href="http://localhost:3000/register" className="text-success">Tạo tài khoản</a></button>
+=======
+              <button type="button">
+                <a style={{color: '#fff'}} href="http://localhost:3000/register">Tạo tài khoản</a>
+              </button>
+>>>>>>> df0c54275bcfc42d5033d195a11103e926f00398
             </div>
           </form>
         </div>

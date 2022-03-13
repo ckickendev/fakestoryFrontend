@@ -14,10 +14,16 @@ import Page from "./nav/Page";
 import Group from "./nav/Group";
 import Register from "./components/register/Register";
 import UploadDemo from "./firebase/UploadDemo";
+<<<<<<< HEAD
 // import { store } from './configure-store';
 import { fetchAllInfo } from "./store/actions/information";
 import NotFound from "./components/main/NotFound404";
 import NotFound404 from "./components/main/NotFound404";
+=======
+import Group from "./components/group/Group";
+import Page from "./nav/Page";
+import SuccessRegister from './components/register/SuccessRegister'
+>>>>>>> df0c54275bcfc42d5033d195a11103e926f00398
 
 const rootReducer = combineReducers({
   auth,
@@ -36,6 +42,7 @@ function App() {
   check();
   const isLogin = checkLogin();
 
+  // const isLogin = checkLogin();
   return (
     <Provider store={store}>
       <div className="app">
@@ -53,10 +60,11 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/home" element={<Main />} />
+                <Route path="/main" element={<Main />} />
                 <Route path="/" element={<Main />} />
                 <Route path="/page" element={<Page />} />
                 <Route path="/group" element={<Group />} />
-
+                <Route path="/success" element={<SuccessRegister />} />
 
                 <Route path="/firebase" element={<UploadDemo />} />
                 <Route path="/*" element={<NotFound404 />} />
