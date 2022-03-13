@@ -3,17 +3,22 @@
     width: 100%;
 }
 
+.content {
+    padding: 0;
+}
+
 .group__content {
     text-align: center;
 }
 
 .group__info {
-    margin: 0 200px;
+    padding: 16px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .group__img {
+    display: inline;
     width: 940px;
     height: 350px;
     text-align: center;

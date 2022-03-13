@@ -11,7 +11,7 @@ function Group() {
         {/* anh bia group */}
         <div className="container content">
             <div className="group__content">
-                <img className="group__img" src="https://scontent.fdad1-2.fna.fbcdn.net/v/t39.30808-6/241193346_1969179889909106_5829942367530293162_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=8631f5&_nc_ohc=v-01iANskXYAX-gBpK6&_nc_ht=scontent.fdad1-2.fna&oh=00_AT-BjdxYSgHyELq2zIICwMITf19Bu3f7c4nCVvs2SJeriw&oe=622B70E9" alt="friends"/>
+                <img className="group__img" src="https://scontent.fdad1-2.fna.fbcdn.net/v/t39.30808-6/241193346_1969179889909106_5829942367530293162_n.jpg?stp=dst-jpg_p600x600&_nc_cat=105&ccb=1-5&_nc_sid=8631f5&_nc_ohc=WPp0Z0b5XaQAX87luhd&_nc_ht=scontent.fdad1-2.fna&oh=00_AT8Kooig8eVbxOD9LB2LUcAkJFNmHyLZ8pZ5wOkHb17_Wg&oe=62315FA9" alt="friends"/>
             </div>
             <div className="group__info">
                 <div className="group__info-left">
@@ -27,28 +27,28 @@ function Group() {
                         <div className="group__info-member">
                             <img
                                 style={{height: "36px", width: "36px", border: "1px solid #fff", borderRadius: "50%"}} 
-                                src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-1/271938041_2169811093174583_576429252828901778_n.jpg?stp=c0.180.320.320a_dst-jpg_p320x320&_nc_cat=109&ccb=1-5&_nc_sid=7206a8&_nc_ohc=2ElI4K1GdKMAX9geqaT&_nc_ht=scontent.fdad1-3.fna&oh=00_AT-RMBf3zzicXwvU5V_Q2mXrSLreFzt3mWompKzRx6XcoQ&oe=622BEAFC" 
+                                src="https://scontent.fdad1-1.fna.fbcdn.net/v/t39.30808-6/250535406_2730474957097952_3222727891550472945_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=W7ZcL8UGa6wAX93LGDs&_nc_ht=scontent.fdad1-1.fna&oh=00_AT88-kZnPPFWUhr9Cjky7rUFWerwUjphGIasYan2oV3teg&oe=62304C24" 
                                 alt="" 
                             />
                         </div>
                         <div className="group__info-member">
                             <img
                                 style={{height: "36px", width: "36px", border: "1px solid #fff", borderRadius: "50%"}} 
-                                src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-1/271938041_2169811093174583_576429252828901778_n.jpg?stp=c0.180.320.320a_dst-jpg_p320x320&_nc_cat=109&ccb=1-5&_nc_sid=7206a8&_nc_ohc=2ElI4K1GdKMAX9geqaT&_nc_ht=scontent.fdad1-3.fna&oh=00_AT-RMBf3zzicXwvU5V_Q2mXrSLreFzt3mWompKzRx6XcoQ&oe=622BEAFC" 
+                                src="https://scontent.fdad1-1.fna.fbcdn.net/v/t39.30808-6/250535406_2730474957097952_3222727891550472945_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=W7ZcL8UGa6wAX93LGDs&_nc_ht=scontent.fdad1-1.fna&oh=00_AT88-kZnPPFWUhr9Cjky7rUFWerwUjphGIasYan2oV3teg&oe=62304C24" 
                                 alt="" 
                             />
                         </div>
                         <div className="group__info-member">
                             <img
                                 style={{height: "36px", width: "36px", border: "1px solid #fff", borderRadius: "50%"}} 
-                                src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-1/271938041_2169811093174583_576429252828901778_n.jpg?stp=c0.180.320.320a_dst-jpg_p320x320&_nc_cat=109&ccb=1-5&_nc_sid=7206a8&_nc_ohc=2ElI4K1GdKMAX9geqaT&_nc_ht=scontent.fdad1-3.fna&oh=00_AT-RMBf3zzicXwvU5V_Q2mXrSLreFzt3mWompKzRx6XcoQ&oe=622BEAFC" 
+                                src="https://scontent.fdad1-1.fna.fbcdn.net/v/t39.30808-6/250535406_2730474957097952_3222727891550472945_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=W7ZcL8UGa6wAX93LGDs&_nc_ht=scontent.fdad1-1.fna&oh=00_AT88-kZnPPFWUhr9Cjky7rUFWerwUjphGIasYan2oV3teg&oe=62304C24" 
                                 alt="" 
                             />
                         </div>
                         <div className="group__info-member">
                             <img
                                 style={{height: "36px", width: "36px", border: "1px solid #fff", borderRadius: "50%"}} 
-                                src="https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-1/271938041_2169811093174583_576429252828901778_n.jpg?stp=c0.180.320.320a_dst-jpg_p320x320&_nc_cat=109&ccb=1-5&_nc_sid=7206a8&_nc_ohc=2ElI4K1GdKMAX9geqaT&_nc_ht=scontent.fdad1-3.fna&oh=00_AT-RMBf3zzicXwvU5V_Q2mXrSLreFzt3mWompKzRx6XcoQ&oe=622BEAFC" 
+                                src="https://scontent.fdad1-1.fna.fbcdn.net/v/t39.30808-6/250535406_2730474957097952_3222727891550472945_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=W7ZcL8UGa6wAX93LGDs&_nc_ht=scontent.fdad1-1.fna&oh=00_AT88-kZnPPFWUhr9Cjky7rUFWerwUjphGIasYan2oV3teg&oe=62304C24" 
                                 alt="" 
                             />
                         </div>

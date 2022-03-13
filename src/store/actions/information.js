@@ -1,6 +1,8 @@
 export const FETCHFRIENDS = "FETCHFRIENDS";
 export const FETCHPOSTS = "FETCHPOSTS";
 export const FETCHBASICINFO = "FETCHBASICINFO";
+export const FETCHALLGROUPBYUSER = "FETCHALLGROUPBYUSER";
+export const FETCHALLPAGEBYUSER = "FETCHALLPAGEBYUSER";
 
 export const fetchFriends = async (id) => {
   return fetch(`http://localhost:8080/FakeStory/api/admin/friend?id=${id}`)
@@ -27,4 +29,13 @@ export const fetchAllInfo = async (id) => {
       console.log(data);
       return data;
     });
+}
+
+export const fetchAllGroupByUser = async (id) => {
+  return fetch(`http://localhost:8080/FakeStory/FindGroupByUserId?id=${id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    return data;
+  });
 }

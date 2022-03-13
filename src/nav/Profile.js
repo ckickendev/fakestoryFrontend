@@ -6,7 +6,6 @@ import About from "../components/main/About";
 import Photos from "../components/main/Photos";
 import Friends from "../components/main/Friends";
 import { ImageViewer } from "react-image-viewer-dv";
-import "../css/App.css";
 import "../css/Profile.css";
 
 function Profile() {
