@@ -42,7 +42,9 @@ function Login() {
 
   const dispatch = useDispatch();
   const saveUser = useCallback((data) => {
+    console.log("dang sava data");
     dispatch({ type: "AUTHENTICATION", id: data.id });
+    dispatch({ type: "SAVEUSER", user: data});
   }, []);
 
   const handleSubmit = async () => {
@@ -57,6 +59,7 @@ function Login() {
           document.cookie = `id=${data.id};max-age=60*60*24`;
           document.cookie = `username=${data.username};max-age=60*60*24`;
           if (data.id) {
+            console.log("Da dang nhap");
             console.log(data);
             saveUser(data);
           }
@@ -122,13 +125,7 @@ function Login() {
               <hr />
             </div>
             <div className="login__regis">
-<<<<<<< HEAD
               <button type="button"><a href="http://localhost:3000/register" className="text-success">Tạo tài khoản</a></button>
-=======
-              <button type="button">
-                <a href="http://localhost:3000/register">Tạo tài khoản</a>
-              </button>
->>>>>>> 5c137a0618413fff2c5d3eecd3e36be8c8847335
             </div>
           </form>
         </div>

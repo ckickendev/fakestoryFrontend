@@ -17,7 +17,6 @@ export const fetchPost = async (id) => {
     return fetch(`http://localhost:8080/FakeStory/api/admin/post?id=${id}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       return data;
     });
 }
@@ -26,7 +25,6 @@ export const fetchAllInfo = async (id) => {
     return fetch(`http://localhost:8080/FakeStory/api/admin/user?id=${id}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       return data;
     });
 }
@@ -35,7 +33,6 @@ export const fetchAllGroupByUser = async (id) => {
   return fetch(`http://localhost:8080/FakeStory/FindGroupByUserId?id=${id}`)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
     return data;
   });
 }
@@ -44,7 +41,6 @@ export const fetchAllUserInfo = async (id) => {
   return fetch(`http://localhost:8080/FakeStory/api/admin/user?id=${id}`)
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
     return data;
   });
 }
