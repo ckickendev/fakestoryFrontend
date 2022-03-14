@@ -131,16 +131,3 @@
   75% { opacity: 1; transform: scale(0.4) translate(-600px, 100px) }
   100% { opacity: 1; transform: scale(0.4) translate(100px, 300px) }
 }
-
-/*@media only screen and (max-width: 850px) {
-  .maincontainer {
-    transform: scale(0.6);
-    width: 600px;
-    height: 400px;
-    background-size: 600px 400px;
-  }
-  
-  .errortext {
-    font-size: 1em;
-  }
-}*/

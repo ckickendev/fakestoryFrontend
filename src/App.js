@@ -11,19 +11,12 @@ import information from "./store/reducers/information";
 import checkLogin from "./components/login/LogicLogin";
 import Profile from "./nav/Profile";
 import Page from "./nav/Page";
-import Group from "./nav/Group";
 import Register from "./components/register/Register";
 import UploadDemo from "./firebase/UploadDemo";
-<<<<<<< HEAD
-// import { store } from './configure-store';
 import { fetchAllInfo } from "./store/actions/information";
-import NotFound from "./components/main/NotFound404";
 import NotFound404 from "./components/main/NotFound404";
-=======
 import Group from "./components/group/Group";
-import Page from "./nav/Page";
 import SuccessRegister from './components/register/SuccessRegister'
->>>>>>> df0c54275bcfc42d5033d195a11103e926f00398
 
 const rootReducer = combineReducers({
   auth,
