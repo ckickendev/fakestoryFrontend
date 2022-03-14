@@ -14,6 +14,7 @@ function MessageSender() {
         <Avatar />
         <form>
           <input
+            type="text"
             className="messageSender__input"
             value={input}
             onChange={(e) => setInput(e.target.value)}
