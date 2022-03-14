@@ -35,7 +35,6 @@ function App() {
   check();
   const isLogin = checkLogin();
 
-  // const isLogin = checkLogin();
   return (
     <Provider store={store}>
       <div className="app">
