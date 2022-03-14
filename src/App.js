@@ -14,6 +14,7 @@ import UploadDemo from "./firebase/UploadDemo";
 import Group from "./components/group/Group";
 import Page from "./nav/Page";
 import SuccessRegister from './components/register/SuccessRegister'
+import Messenger from "./components/main/Header"
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -47,6 +48,7 @@ function App() {
                 <Route path="/page" element={<Page />} />
                 <Route path="/success" element={<SuccessRegister />} />
                 <Route path="/main" element={<Main />} />
+                <Route path="/messenger" element={<Messenger />} />
               </Routes>
             </div>
           </>
