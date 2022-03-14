@@ -17,6 +17,7 @@ import { fetchAllInfo } from "./store/actions/information";
 import NotFound404 from "./components/main/NotFound404";
 import Group from "./components/group/Group";
 import SuccessRegister from './components/register/SuccessRegister'
+import Messenger from "./components/main/Header"
 
 const rootReducer = combineReducers({
   auth,
@@ -38,7 +39,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="app">
-        {!isLogin ? (
+        {false ? (
           <div className="app__body">
             <Routes>
               <Route path="/register" element={<Register />} />
