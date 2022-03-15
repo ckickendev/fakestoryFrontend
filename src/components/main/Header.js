@@ -10,6 +10,7 @@ import ForumSharpIcon from "@mui/icons-material/ForumSharp";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import { Avatar, IconButton } from "@mui/material";
+import MessengerTab from "../messenger/MessengerTab"
 import "../../css/Header.css";
 
 function Header() {
@@ -41,7 +42,7 @@ function Header() {
           <StorefrontIcon />
         </div>
         <div className="header__option">
-          <GroupsIcon />
+          <GroupsIcon/>
         </div>
         <div className="header__option">
           <SportsEsportsIcon />
@@ -49,25 +50,28 @@ function Header() {
       </div>
 
       <div className="header__right">
-        <div className="header__info">
+        {/* <div className="header__info">
           <Avatar src="https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.6435-9/168600690_132095425540608_6073473717300407730_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=vg7DV1MP-BYAX9JsA28&_nc_ht=scontent.fsgn2-3.fna&oh=00_AT-je9MJKVwSjpgQl2fVG_2P2wRDpvEf6QAw5nXU4mQYKw&oe=623B24D4" />
           <a href="/profile">
             <h4>Huy</h4>
           </a>
-        </div>
+        </div> */}
 
-        <IconButton className="header__right-icon">
+        <MessengerTab />
+
+        {/* <IconButton className="header__right-icon">
           <AppRegistrationRoundedIcon />
         </IconButton>
         <IconButton className="header__right-icon">
-          <ForumSharpIcon />
+          <ForumSharpIcon className="is_icon" uk-tooltip="title: Message">
+          </ForumSharpIcon>
         </IconButton>
         <IconButton className="header__right-icon">
           <NotificationsIcon />
         </IconButton>
         <IconButton className="header__right-icon">
           <ArrowDropDownRoundedIcon />
-        </IconButton>
+        </IconButton> */}
       </div>
     </div>
   );

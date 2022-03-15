@@ -17,7 +17,7 @@ import { fetchAllInfo } from "./store/actions/information";
 import NotFound404 from "./components/main/NotFound404";
 import Group from "./components/group/Group";
 import SuccessRegister from './components/register/SuccessRegister'
-import Messenger from "./components/main/Header"
+import Messenger from "./components/messenger/Messenger"
 
 const rootReducer = combineReducers({
   auth,
@@ -40,7 +40,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="app">
-        {false ? (
+        {true ? (
           <div className="app__body">
             <Routes>
               <Route path="/register" element={<Register />} />
@@ -59,6 +59,7 @@ function App() {
                 <Route path="/page" element={<Page />} />
                 <Route path="/group" element={<Group />} />
                 <Route path="/success" element={<SuccessRegister />} />
+                <Route path="/messenger" element={<Messenger />} />
 
                 <Route path="/firebase" element={<UploadDemo />} />
                 <Route path="/*" element={<NotFound404 />} />
