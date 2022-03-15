@@ -28,7 +28,20 @@ export const fetchAllInfo = async (id) => {
       return data;
     });
 }
-
+export const fetch9Friends = async (id) => {
+  return fetch(`http://localhost:8080/FakeStory/FindUserByUserId?id=${id}&number=9`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+}
+export const fetchNumberFriends = async (id, number) => {
+  return fetch(`http://localhost:8080/FakeStory/FindUserByUserId?id=${id}&number=${number}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+}
 export const fetchAllGroupByUser = async (id) => {
   return fetch(`http://localhost:8080/FakeStory/FindGroupByUserId?id=${id}`)
   .then((response) => response.json())

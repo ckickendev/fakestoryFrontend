@@ -81,6 +81,11 @@ function Register() {
           name="avatar"
           value="https://static2.yan.vn/YanNews/2167221/202102/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg"
         />
+        <input
+          type="hidden"
+          name="background"
+          value="https://firebasestorage.googleapis.com/v0/b/fakestory-9fb8d.appspot.com/o/file%2FdefaultBackground.png?alt=media&token=1593e00a-c090-4ac3-9cf7-2863b71d1652"
+        />
         <input type="hidden" name="role_id" value="0" />
         <input type="hidden" name="description" value="none" />
         <input type="hidden" name="numberFriends" value="0" />

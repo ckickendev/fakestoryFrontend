@@ -9,17 +9,27 @@ import { ImageViewer } from "react-image-viewer-dv";
 import "../css/Profile.css";
 import Header from "../components/main/Header";
 import checkLogin from "../components/login/LogicLogin";
-import { fetchAllInfo } from "../store/actions/information";
+import { fetch9Friends, fetchAllInfo } from "../store/actions/information";
+import { useParams } from "react-router-dom";
 
-function Profile() {
+function Profile(props) {
   const [status, onStatus] = useState(null);
   const [user, setUser] = useState(null);
-  const id = checkLogin();
-
+  const [listFriends, setListFriend] = useState([]);
+  // const id = props.match.params.id ? props.match.params.id : checkLogin();
+  const { userId } = useParams();
+  const id = userId ? userId : checkLogin();
+  
   useEffect( async () => {
+    console.log(id);
     await fetchAllInfo(id).then((data) => {
+      console.log(data);
       setUser(data);
     });
+    await fetch9Friends(id).then((data) => {
+      console.log(data);
+      setListFriend(data);
+    })
   },[]);  
   const handleClick = (step) => {
     onStatus(step);
@@ -73,7 +83,7 @@ function Profile() {
         {!status && (
           <div className="profileRightBottom">
             <ProfileFeed />
-            <RightBarProfile changeStatus={handleClick} />
+            <RightBarProfile listFriends={listFriends ? listFriends : []} user={user ? user : null} changeStatus={handleClick} />
           </div>
         )}
 

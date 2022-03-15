@@ -39,7 +39,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="app">
-        {false ? (
+        {!isLogin ? (
           <div className="app__body">
             <Routes>
               <Route path="/register" element={<Register />} />
@@ -51,7 +51,8 @@ function App() {
             <div className="app__body">
               <Routes>
                 <Route path="/login" element={<Login />} />
-                <Route path="/profile" element={<Profile />} />
+                <Route path="/profile/" element={<Profile  />} />
+                <Route path="/profile/:userId" element={<Profile  />} />
                 <Route path="/home" element={<Main />} />
                 <Route path="/main" element={<Main />} />
                 <Route path="/" element={<Main />} />
