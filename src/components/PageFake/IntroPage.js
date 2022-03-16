@@ -5,17 +5,19 @@ import InsertInvitationIcon from '@mui/icons-material/InsertInvitation';
 import LanguageIcon from '@mui/icons-material/Language';
 import EmailIcon from '@mui/icons-material/Email';
 import ErrorIcon from '@mui/icons-material/Error';
+import Container from '@mui/material/Container'
+import ForumIcon from '@mui/icons-material/Forum';
 import "../../css/IntroPage.css"
 
 function IntroPage() {
   return (
-    <div className="mcontainer">
+    <Container maxWidth="sm" sx={{ bgcolor: '#fff', borderRadius: 2, padding: "40px 30px 20px" }}>
       <div className="intro__top">
-        <h2 className="">Chung</h2>
+        <h2 className="">CHUNG</h2>
         <hr />
         <div className="intro__top-like"> 
           <div className="intro__top-like--count">
-            <ThumbUpIcon />
+            <ThumbUpIcon sx={{margin: "6px"}} />
             <p>211.640 người thích trang này, bao gồm 43 bạn bè của bạn</p>
           </div>
           <div className="intro__top-like-ava">
@@ -33,12 +35,12 @@ function IntroPage() {
         </div>
 
         <div className="intro__top-flow">
-          <LibraryAddCheckIcon />
+          <LibraryAddCheckIcon sx={{margin: "6px"}}/>
           <p>211.506 người theo dõi Trang này</p>
         </div>
 
         <div className="intro__top-event">
-          <InsertInvitationIcon />
+          <InsertInvitationIcon sx={{margin: "6px"}}/>
           <a href="https://www.facebook.com/search/?bqf=str%2FS%25E1%25BB%25B1%2Bki%25E1%25BB%2587n%2Bth%25E1%25BB%2583%2Bthao%2Fkeywords_pages&ref=page_about_category&f=AbrnnlwZAdyJ8jxHKsh5Nw6gpqQH-GJYTvaHQI3162AS6E3pYvsAGiOuWONs7G5cSfRwpuG0PpoydnBor0vRit0UC5lSi_5PcVXfqytinE1VSyJ28J9wrBCVvlpm-Y0DHHkJ5oS8F8sQhzZ3sa_7ZXvBusObo-75IPN_DffNtQ5FkA" >
             Sự kiện thể thao
           </a>
@@ -49,13 +51,13 @@ function IntroPage() {
         <h2 className="">THÔNG TIN LIÊN HỆ BỔ SUNG</h2>
         <hr />
         <div className="intro__middle-global"> 
-          <LanguageIcon />
+          <LanguageIcon sx={{margin: "6px"}}/>
           <a href="https://www.colormerun.vn/?fbclid=IwAR0mR-YoT5q5gvU0qU_ZwRMnH-XgGYLVjEIUpP5378_2iinVP3cpNPZJh6o" >
             http://www.colormerun.vn/
           </a>
         </div>
         <div className="intro__middle-gmail">
-          <EmailIcon />
+          <EmailIcon sx={{margin: "6px"}}/>
           <a href="info@pulse.vn" >
             info@pulse.vn
           </a>
@@ -63,18 +65,9 @@ function IntroPage() {
 
         <div className="intro__middle-mess">
           <div className="intro__middle-mess--logo">
-            <a href="./messenger" className="" uk-tooltip="title: Message">
-              <svg
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
+            <ForumIcon sx={{margin: "6px"}}/>
+            <a href="./messenger" className="">
+              Gửi tin nhắn
             </a>  
           </div>
         </div>
@@ -85,20 +78,20 @@ function IntroPage() {
         <hr />
         <div className="intro__bottom-intro">
           <div className="">
-            <ErrorIcon />
+            <ErrorIcon sx={{margin: "6px"}}/>
             <h3>Giới thiệu</h3>
           </div>
           <p>Color Me Run - Ngày hội chạy bộ sắc màu với đích đến ấn tượng là sân khấu ca nhạc hoành tráng, sẽ mang đến cho bạn những trải nghiệm khó quên.</p>
         </div>
         <div className="intro__bottom-intro">
           <div className="">
-            <ErrorIcon />
+            <ErrorIcon sx={{margin: "6px"}}/>
             <h3>Thông tin bổ sung</h3>
           </div>
           <p>Color Me Run- Đường Chạy Sắc Màu là sự kiện thể thao độc đáo kết hợp với chương trình âm nhạc ấn tượng lần đầu tiên được tổ chức tại Việt Nam.</p>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }
 

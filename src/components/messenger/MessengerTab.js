@@ -269,5 +269,3 @@ export default function MessengerTab() {
     </div>
   );
 }
-
-export default MessengerTab

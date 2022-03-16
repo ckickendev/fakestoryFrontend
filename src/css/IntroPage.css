@@ -1,15 +1,20 @@
-.intro__middle-mess--logo {
-    width: 100%;
-    display: flex;
+
+.intro__top h2,
+.intro__middle h2,
+.intro__bottom h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 
-.intro__middle-mess--logo a {
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
+.intro__top-like--count,
+.intro__top-flow,
+.intro__bottom-intro div {
     display: flex;
-    justify-content: center;
     align-items: center;
-    position: relative;
-    background-color: #eef1f5;
+}
+
+.intro__top-like-ava,
+.intro__bottom-intro p {
+    margin-left: 40px;
 }
