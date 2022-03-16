@@ -51,6 +51,14 @@ export const fetch9Friends = async (id) => {
     return data;
   });
 }
+export const fetch9Photos = async (id) => {
+  return fetch(`http://localhost:8080/FakeStory/api/photos/userId?id=${id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+}
+
 export const fetchNumberFriends = async (id, number) => {
   return fetch(`http://localhost:8080/FakeStory/FindUserByUserId?id=${id}&number=${number}`)
   .then((response) => response.json())

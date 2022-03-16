@@ -49,6 +49,11 @@
   position: relative;
 }
 
+.imgView img{
+  width: 500px;
+  height: 160px;
+}
+
 .buttonDel {
   position: absolute;
   border: none;

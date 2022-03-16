@@ -6,6 +6,8 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Avatar } from "@mui/material";
 import "../../css/Post.css";
 import { fetchAllInfo } from "../../store/actions/information";
+import { ImageViewer } from "react-image-viewer-dv";
+
 
 function Post(props) {
   const [user, setUser] = useState(null);
@@ -14,32 +16,33 @@ function Post(props) {
     var DateDiff = {
       inMinutes: function (d1, d2) {
         var t2 = d2.getTime();
-        var t1 = d1.getTime();
+        var t1 = d1.getTime()+(3600 * 1000 * 7);
         return Math.floor((t2 - t1) / (60 * 1000));
       },
       inHours: function (d1, d2) {
         var t2 = d2.getTime();
-        var t1 = d1.getTime();
+        var t1 = d1.getTime()+(3600 * 1000 * 7);
+
         return Math.floor((t2 - t1) / (3600 * 1000));
       },
       inDays: function (d1, d2) {
         var t2 = d2.getTime();
-        var t1 = d1.getTime();
+        var t1 = d1.getTime()+(3600 * 1000 * 7);
         return Math.floor((t2 - t1) / (24 * 3600 * 1000));
       },
       inWeeks: function (d1, d2) {
         var t2 = d2.getTime();
-        var t1 = d1.getTime();
+        var t1 = d1.getTime()+(3600 * 1000 * 7);
         return Math.floor((t2 - t1) / (24 * 3600 * 1000 * 7));
       },
       inMonths: function (d1, d2) {
         var t2 = d2.getTime();
-        var t1 = d1.getTime();
+        var t1 = d1.getTime()+(3600 * 1000 * 7);
         return Math.floor((t2 - t1) / (24 * 3600 * 1000 * 7 * 30));
       },
       inYears: function (d1, d2) {
         var t2 = d2.getTime();
-        var t1 = d1.getTime();
+        var t1 = d1.getTime()+(3600 * 1000 * 7);
         return Math.floor((t2 - t1) / (24 * 3600 * 1000 * 7 * 30 * 12));
       },
     };
@@ -98,9 +101,12 @@ function Post(props) {
         <p>{props.post ? props.post.content : ""}</p>
       </div>
 
-      <div className="post__image">
-        <img src={props.post ? props.post.image : ""} alt="" />
-      </div>
+      {props.post ? props.post.image ? (<div className="post__image">
+        <ImageViewer>
+          <img src={props.post ? props.post.image : ""} alt="" />
+        </ImageViewer>
+      </div>) :<div></div> : <div></div>}
+      
 
       <div className="post__quantity">
         {/* quantities of react, comment, share  */}

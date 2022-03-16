@@ -18,6 +18,7 @@ function Profile(props) {
   const [listFriends, setListFriend] = useState([]);
   // const id = props.match.params.id ? props.match.params.id : checkLogin();
   const { userId } = useParams();
+  const userCurrentId = checkLogin();
   const id = userId ? userId : checkLogin();
   
   useEffect( async () => {
@@ -79,17 +80,17 @@ function Profile(props) {
             <Photos />
           </div>
         )}
-
+        
         {!status && (
           <div className="profileRightBottom">
-            <ProfileFeed />
+            <ProfileFeed isPost={id === userCurrentId ? true : false} />
             <RightBarProfile listFriends={listFriends ? listFriends : []} user={user ? user : null} changeStatus={handleClick} />
           </div>
         )}
 
         {status === 1 && (
           <div className="profileRightBottom">
-            <About />
+            <About  />
           </div>
         )}
 

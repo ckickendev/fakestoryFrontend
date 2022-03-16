@@ -52,3 +52,13 @@
     border-radius: 25px;
     cursor: pointer;
 }
+
+.formUploadPost {
+    display: flex;
+    flex-direction: column;
+}
+
+.formUpload{
+    display: flex;
+    flex-direction: row;
+}

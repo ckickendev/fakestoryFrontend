@@ -15,6 +15,8 @@ import Register from "./components/register/Register";
 import UploadDemo from "./firebase/UploadDemo";
 import { fetchAllInfo } from "./store/actions/information";
 import NotFound404 from "./components/main/NotFound404";
+import NotFound from "./components/main/NotFound";
+
 import Group from "./components/group/Group";
 import SuccessRegister from './components/register/SuccessRegister'
 import Messenger from "./components/messenger/Messenger"
@@ -60,6 +62,10 @@ function App() {
                 <Route path="/group" element={<Group />} />
                 <Route path="/success" element={<SuccessRegister />} />
                 <Route path="/messenger" element={<Messenger />} />
+                <Route path="/404" element={<NotFound404 />} />
+                <Route path="/403" element={<NotFound />} />
+
+
 
                 <Route path="/firebase" element={<UploadDemo />} />
                 <Route path="/*" element={<NotFound404 />} />
