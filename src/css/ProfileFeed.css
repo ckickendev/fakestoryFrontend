@@ -1,6 +1,15 @@
 .subFeed {
-  flex: 0.6;
-  padding: 20px 150px;
+  flex: 0.7;
+  padding: 20px 200px;
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+  .messageSender {
+    width: 565px;
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+  }
 }
