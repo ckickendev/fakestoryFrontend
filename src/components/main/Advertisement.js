@@ -45,13 +45,6 @@ export default function Advertisement() {
                             </div>
                             <div className="contact-username">Stella Johnson</div>
                         </a>
-                        
-                        <a href="chats-friend.html">
-                            <div className="contact-avatar">
-                                <img src="assets/images/avatars/avatar-5.jpg" alt=""/>
-                            </div>
-                            <div className="contact-username">Adrian Mohani </div>
-                        </a>
                         <a href="chats-friend.html">
                             <div className="contact-avatar">
                                 <img src="https://scontent.fhan14-1.fna.fbcdn.net/v/t1.6435-1/137557375_2916092331943656_2214375182347264348_n.jpg?stp=c0.41.320.320a_dst-jpg_p320x320&_nc_cat=105&ccb=1-5&_nc_sid=7206a8&_nc_ohc=LMxB1l5s32YAX_3pBq3&_nc_ht=scontent.fhan14-1.fna&oh=00_AT8niC_mdQ8rx5cgx-j2pe8arBppw7jxfaPwi1iYtSeSTw&oe=62513A79" alt=""/>
@@ -65,41 +58,6 @@ export default function Advertisement() {
                             </div>
                             <div className="contact-username"> Erica Jones</div>
                         </a>
-                        <a href="chats-friend.html">
-                            <div className="contact-avatar">
-                                <img src="assets/images/avatars/avatar-1.jpg" alt=""/>
-                                <span className="user_status status_online"></span>
-                            </div>
-                            <div className="contact-username"> Dennis Han</div>
-                        </a>
-                    
-                        <a href="chats-friend.html">
-                            <div className="contact-avatar">
-                                <img src="assets/images/avatars/avatar-5.jpg" alt=""/>
-                            </div>
-                            <div className="contact-username">Adrian Mohani </div>
-                        </a>
-                        <a href="chats-friend.html">
-                            <div className="contact-avatar">
-                                <img src="assets/images/avatars/avatar-6.jpg" alt=""/>
-                            </div>
-                            <div className="contact-username"> Jonathan Madano</div>
-                        </a>
-                        <a href="chats-friend.html">
-                            <div className="contact-avatar">
-                                <img src="assets/images/avatars/avatar-2.jpg" alt=""/>
-                                <span className="user_status"></span>
-                            </div>
-                            <div className="contact-username"> Erica Jones</div>
-                        </a>
-                        <a href="chats-friend.html">
-                            <div className="contact-avatar">
-                                <img src="assets/images/avatars/avatar-1.jpg" alt=""/>
-                                <span className="user_status status_online"></span>
-                            </div>
-                            <div className="contact-username"> Dennis Han</div>
-                        </a>
-        
                     </div>
                     <div className="p-1">
                         <a href="chats-friend.html">
@@ -111,46 +69,6 @@ export default function Advertisement() {
                         <a href="chats-friend.html">
                             <div className="contact-avatar">
                                 <img src="assets/images/avatars/avatar-8.jpg" alt=""/>
-                                <span className="user_status status_online"></span>
-                            </div>
-                            <div className="contact-username"> Dennis Han</div>
-                        </a>
-                        <a href="chats-friend.html">
-                            <div className="contact-avatar">
-                                <img src="assets/images/avatars/avatar-2.jpg" alt=""/>
-                                <span className="user_status"></span>
-                            </div>
-                            <div className="contact-username"> Erica Jones</div>
-                        </a>
-                        <a href="chats-friend.html">
-                            <div className="contact-avatar">
-                                <img src="assets/images/avatars/avatar-3.jpg" alt=""/>
-                            </div>
-                            <div className="contact-username">Stella Johnson</div>
-                        </a>
-                        
-                        <a href="chats-friend.html">
-                            <div className="contact-avatar">
-                                <img src="assets/images/avatars/avatar-5.jpg" alt=""/>
-                            </div>
-                            <div className="contact-username">Adrian Mohani </div>
-                        </a>
-                        <a href="chats-friend.html">
-                            <div className="contact-avatar">
-                                <img src="assets/images/avatars/avatar-6.jpg" alt=""/>
-                            </div>
-                            <div className="contact-username"> Jonathan Madano</div>
-                        </a>
-                        <a href="chats-friend.html">
-                            <div className="contact-avatar">
-                                <img src="assets/images/avatars/avatar-2.jpg" alt=""/>
-                                <span className="user_status"></span>
-                            </div>
-                            <div className="contact-username"> Erica Jones</div>
-                        </a>
-                        <a href="chats-friend.html">
-                            <div className="contact-avatar">
-                                <img src="assets/images/avatars/avatar-1.jpg" alt=""/>
                                 <span className="user_status status_online"></span>
                             </div>
                             <div className="contact-username"> Dennis Han</div>

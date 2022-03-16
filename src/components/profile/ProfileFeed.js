@@ -1,6 +1,6 @@
 import React from "react";
-import MessageSender from "./MessageSender";
-import Post from "./Post";
+import MessageSender from "../main/MessageSender";
+import Post from "../main/Post";
 import "../../css/ProfileFeed.css";
 
 function ProfileFeed() {

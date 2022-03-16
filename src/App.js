@@ -10,7 +10,7 @@ import auth from "./store/reducers/auth";
 import information from "./store/reducers/information";
 import checkLogin from "./components/login/LogicLogin";
 import Profile from "./nav/Profile";
-import Page from "./nav/Page";
+import Page from "./components/PageFake/Page";
 import Register from "./components/register/Register";
 import UploadDemo from "./firebase/UploadDemo";
 import { fetchAllInfo } from "./store/actions/information";
@@ -40,7 +40,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="app">
-        {true ? (
+        {false ? (
           <div className="app__body">
             <Routes>
               <Route path="/register" element={<Register />} />

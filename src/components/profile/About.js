@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import EditForm from "./EditForm";
+import EditForm from "../main/EditForm";
 import HomeIcon from "@mui/icons-material/Home";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CelebrationIcon from "@mui/icons-material/Celebration";
