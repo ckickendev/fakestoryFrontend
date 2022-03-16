@@ -61,18 +61,6 @@ function Header() {
       </div>
 
       <div className="header__right">
-        <div className="header__info">
-          <Avatar
-            src={
-              user
-                ? user.avatar
-                : "https://firebasestorage.googleapis.com/v0/b/fakestory-9fb8d.appspot.com/o/file%2FdefaultAvatar.png?alt=media&token=8042470b-2bd9-4f51-825f-d62bb94f6e7b"
-            }
-          />
-          <a href="/profile">
-            <h4>{user ? user.fullname : ""}</h4>
-          </a>
-        </div>
 
         <MessengerTab />
 
