@@ -100,7 +100,7 @@ function Post(props) {
   }, [props.post, time]);
 
   function showAllComment() {
-    return listComment.map(comment => <ShowComment comment={comment} />)
+    return listComment.map((comment) => <ShowComment comment={comment} />);
   }
 
   return (
