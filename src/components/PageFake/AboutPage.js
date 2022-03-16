@@ -65,7 +65,7 @@ function AboutPage() {
                         <div class="text-sm text-gray-500 mt-0.5"> 345K  Following</div>
                     </div>
                     <a href="timeline-page.html" class="flex items-center justify-center h-8 px-3 rounded-md text-sm border font-semibold bg-blue-500 text-white">
-                        Flow
+                        Like
                     </a>
                     </div>
                 </div>

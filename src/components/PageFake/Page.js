@@ -3,16 +3,20 @@ import AboutPage from './AboutPage'
 import IntroPage from './IntroPage'
 import VideoPage from './VideoPage'
 import ImagePage from './ImagePage'
+import Header from '../main/Header'
 import "../../css/Page.css";
 
 function Page() {
     const [status, onStatus] = useState(null);
+    const [active, setActive] = useState("active");
 
     const handleClick = (step) => {
     onStatus(step);
     };
 
     return (
+    <>
+        <Header />
         <div className="mcontainer">
             <div className="page">
                 <div className="pages_banner">
@@ -38,10 +42,10 @@ function Page() {
                             <img src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/275966084_336033741813441_4829483894134311026_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=dbeb18&_nc_ohc=sffJUlvH0J0AX-Q8bof&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT8RyyA_aCwHSrUw4lE3CWAeGrKP5xuaMJLfyiQ1NZzeTA&oe=62372C50" alt="" className="w-10 h-10 rounded-full border-2 border-white"/>
                             <img src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.6435-9/137557375_2916092331943656_2214375182347264348_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=vFiwvOBlVaIAX9l3JwA&_nc_ht=scontent.fsgn2-1.fna&oh=00_AT9EttU5e09pGFFZhUV68fmX0Kr80cNes25DQN6pvlffKA&oe=62577A49" alt="" className="w-10 h-10 rounded-full border-2 border-white"/>
                             <img src="https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.6435-9/146994747_2854728808188423_7615033960248435066_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=6u4ZHovT0t0AX8sAYQ5&_nc_ht=scontent.fsgn2-3.fna&oh=00_AT8mWCOb4hMjg445O8ZCGq2kZmY-vCqSkPBZnCZJjnwe-g&oe=6256F388" alt="" className="w-10 h-10 rounded-full border-2 border-white"/>
-                            <div className="w-10 h-10 rounded-full flex justify-center items-center bg-red-100 text-red-500 font-semibold"> 12+
+                            <div className="w-10 h-10 rounded-full flex justify-center items-center bg-red-100 text-red-500 font-semibold"> 
+                                12+
                             </div>
                         </div>
-                    
                         <a href="#" className="flex items-center justify-center h-9 px-5 rounded-md bg-blue-600 text-white  space-x-1.5">
                             <ion-icon name="thumbs-up"></ion-icon>
                             <span> Flow </span>
@@ -99,6 +103,7 @@ function Page() {
                 </div>
             )}
         </div>
+    </>
   )
 }
 
