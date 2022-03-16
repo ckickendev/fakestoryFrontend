@@ -61,22 +61,7 @@ function Header() {
       </div>
 
       <div className="header__right">
-
         <MessengerTab />
-
-        {/* <IconButton className="header__right-icon">
-          <AppRegistrationRoundedIcon />
-        </IconButton>
-        <IconButton className="header__right-icon">
-          <ForumSharpIcon className="is_icon" uk-tooltip="title: Message">
-          </ForumSharpIcon>
-        </IconButton>
-        <IconButton className="header__right-icon">
-          <NotificationsIcon />
-        </IconButton>
-        <IconButton className="header__right-icon">
-          <ArrowDropDownRoundedIcon />
-        </IconButton> */}
       </div>
     </div>
   );

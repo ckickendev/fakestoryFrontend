@@ -81,3 +81,12 @@ export const fetchAllUserInfo = async (id) => {
     return data;
   });
 }
+
+export const fetchAllCommentByPostId = async (id) => {
+  return fetch(`http://localhost:8080/FakeStory/api/comment/postId?id=${id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+}
+
