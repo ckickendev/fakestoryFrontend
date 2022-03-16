@@ -32,7 +32,6 @@ function About() {
     await fetchAllInfo(id).then((data) => {
       console.log(data);
       setUser(data);
-      
     });
   }, []);
   return (

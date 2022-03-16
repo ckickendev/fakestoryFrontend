@@ -1,7 +1,7 @@
 import React from "react";
 import "../../css/MessengerTab.css";
 
-function MessengerTab() {
+export default function MessengerTab() {
   return (
     <div className="header_widgets">
       <a href="#" className="is_icon" uk-tooltip="title: Cart">

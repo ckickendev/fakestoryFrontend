@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
-import UploadPostSpace from "./UploadPostSpace";
-import Post from "./Post";
+import UploadPostSpace from "../main/UploadPostSpace";
+import Post from "../main/Post";
 import "../../css/ProfileFeed.css";
-import { fetchAllInfo, fetchPostFeed } from "../../store/actions/information";
+import { fetchAllInfo, fetchPostByUserId, fetchPostFeed } from "../../store/actions/information";
 import checkLogin from "../login/LogicLogin";
+import { useParams } from "react-router-dom";
 
 function ProfileFeed() {
-  const id = checkLogin();
+  const { userId } = useParams();
+  console.log("userId", userId);
+  const id = userId ? userId : checkLogin();
   const [user, setUser] = useState();
   const [posts, setPosts] = useState([]);
   useEffect(async () => {
@@ -14,7 +17,7 @@ function ProfileFeed() {
       console.log(data);
       setUser(data);
     });
-    await fetchPostFeed(id).then((data) => {
+    await fetchPostByUserId(id).then((data) => {
       console.log(data);
       setPosts(data);
     });

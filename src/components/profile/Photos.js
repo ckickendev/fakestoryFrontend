@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import ImageIcon from "@mui/icons-material/Image";
 import { ImageViewer } from "react-image-viewer-dv";
 import Grid from "@mui/material/Grid";
 import DeleteIcon from "@mui/icons-material/Delete";
 import "../../css/Photos.css";
+import { useParams } from "react-router-dom";
+import checkLogin from "../login/LogicLogin";
 
 function Photos() {
+  const { userId } = useParams();
+  const id = userId ? userId : checkLogin();
+  const [listPhotos , setListPhotos] = useState([]);
+  
   return (
     <div className="photoWrapper">
       <div className="subPhotoWrapper">

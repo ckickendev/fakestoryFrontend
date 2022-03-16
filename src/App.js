@@ -39,11 +39,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="app">
-<<<<<<< HEAD
         {!isLogin ? (
-=======
-        {false ? (
->>>>>>> ddec92883216645773f627abf1a4145d984ced45
           <div className="app__body">
             <Routes>
               <Route path="/register" element={<Register />} />
