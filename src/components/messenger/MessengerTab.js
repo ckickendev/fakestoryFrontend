@@ -2,20 +2,9 @@ import React from "react";
 import "../../css/MessengerTab.css";
 
 function MessengerTab() {
-  function delete_cookie() {
-    document.cookie = "username= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-    document.cookie = "id= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
-    window.location.href = "http://localhost:3000/";
-
-  }
-  
-  const logout = () => {
-    delete_cookie();
-  };
-
   return (
     <div className="header_widgets">
-      <a href="/" className="is_icon" uk-tooltip="title: Cart">
+      <a href="#" className="is_icon" uk-tooltip="title: Cart">
         <svg
           fill="currentColor"
           viewBox="0 0 20 20"
@@ -28,7 +17,7 @@ function MessengerTab() {
         <div className="drop_headline">
           <h4> My Cart </h4>
           <a
-            href="/"
+            href="#"
             className="btn_action hover:bg-gray-100 mr-2 px-2 py-1 rounded-md underline"
           >
             {" "}
@@ -64,7 +53,7 @@ function MessengerTab() {
         </div>
       </div>
 
-      <a href="/" className="is_icon" uk-tooltip="title: Notifications">
+      <a href="#" className="is_icon" uk-tooltip="title: Notifications">
         <svg
           fill="currentColor"
           viewBox="0 0 20 20"
@@ -79,17 +68,17 @@ function MessengerTab() {
           <div className="drop_headline">
             <h4>Notifications </h4>
             <div className="btn_action">
-              <a href="/" data-tippy-placement="left" title="Notifications">
+              <a href="#" data-tippy-placement="left" title="Notifications">
                 <ion-icon name="settings-outline"></ion-icon>
               </a>
-              <a href="/" data-tippy-placement="left" title="Mark as read all">
+              <a href="#" data-tippy-placement="left" title="Mark as read all">
                 <ion-icon name="checkbox-outline"></ion-icon>
               </a>
             </div>
           </div>
           <ul>
             <li>
-              <a href="/">
+              <a href="#">
                 <div className="drop_avatar">
                   <img src="assets/images/avatars/avatar-1.jpg" alt="" />
                 </div>
@@ -110,7 +99,7 @@ function MessengerTab() {
       </div>
 
       {/* Message  */}
-      <a href="/" className="is_icon" uk-tooltip="title: Message">
+      <a href="#" className="is_icon" uk-tooltip="title: Message">
         <svg
           fill="currentColor"
           viewBox="0 0 20 20"
@@ -129,13 +118,13 @@ function MessengerTab() {
           <div className="drop_headline">
             <h4>Messages </h4>
             <div className="btn_action">
-              <a href="/" data-tippy-placement="left" title="Notifications">
+              <a href="#" data-tippy-placement="left" title="Notifications">
                 <ion-icon
                   name="settings-outline"
                   uk-tooltip="title: Message settings ; pos: left"
                 ></ion-icon>
               </a>
-              <a href="/" data-tippy-placement="left" title="Mark as read all">
+              <a href="#" data-tippy-placement="left" title="Mark as read all">
                 <ion-icon name="checkbox-outline"></ion-icon>
               </a>
             </div>
@@ -147,7 +136,7 @@ function MessengerTab() {
           />
           <ul>
             <li className="un-read">
-              <a href="/">
+              <a href="#">
                 <div className="drop_avatar">
                   {" "}
                   <img src="assets/images/avatars/avatar-7.jpg" alt="" />
@@ -160,13 +149,13 @@ function MessengerTab() {
             </li>
           </ul>
         </div>
-        <a href="/" className="see-all">
+        <a href="./messenger" className="see-all">
           {" "}
           See all in Messages
         </a>
       </div>
 
-      <a href="/">
+      <a href="#">
         <img
           src="https://scontent.fsgn2-2.fna.fbcdn.net/v/t39.30808-1/275707321_333705188712963_9209046027110419434_n.jpg?stp=c0.28.240.240a_dst-jpg_p240x240&_nc_cat=103&ccb=1-5&_nc_sid=7206a8&_nc_ohc=9C1A9qk0RcsAX8XTGRQ&_nc_ht=scontent.fsgn2-2.fna&oh=00_AT9aIne-e8eg_-uDssK2efl8WTou8F38KR_5sQgKPqqoHw&oe=6233FE40"
           className="is_avatar"
@@ -247,7 +236,7 @@ function MessengerTab() {
           </svg>
           My Billing
         </a>
-        <a href="/" id="night-mode" className="btn-night-mode">
+        <a href="#" id="night-mode" className="btn-night-mode">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -260,7 +249,7 @@ function MessengerTab() {
             <span className="uk-switch-button"></span>
           </span>
         </a>
-        <a href="" onClick={logout}>
+        <a href="form-login.html">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -280,5 +269,3 @@ function MessengerTab() {
     </div>
   );
 }
-
-export default MessengerTab;

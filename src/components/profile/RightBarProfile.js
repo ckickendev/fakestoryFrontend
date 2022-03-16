@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
-import EditForm from "./EditForm";
+import EditForm from "../main/EditForm";
 import "../../css/RightbarProfile.css";
 import HomeIcon from "@mui/icons-material/Home";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
