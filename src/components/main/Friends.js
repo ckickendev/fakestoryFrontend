@@ -1,10 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PeopleIcon from "@mui/icons-material/People";
 import Grid from "@mui/material/Grid";
 import DeleteIcon from "@mui/icons-material/Delete";
 import "../../css/Friends.css";
+import checkLogin from "../login/LogicLogin";
+import { fetch9Friends } from "../../store/actions/information";
+import { useParams } from "react-router-dom";
+
+const FriendsSingle = (props) => {
+  const link = `http://localhost:3000/profile?id=${props.user ? props.user.id : 0}`
+  return (
+    <Grid item xs={6} xl={6}>
+      <div className="friendList">
+        <img
+          src={props.user ? props.user.avatar : ""}
+          alt="imgFriend"
+        />
+        <a href={link}>
+          <p>{props.user ? props.user.fullname : ""}</p>
+        </a>
+        <button>
+          <DeleteIcon />
+        </button>
+      </div>
+    </Grid>
+  );
+};
 
 function Friends() {
+  const [listFriends, setListFriends] = useState([]);
+  const { userId } = useParams();
+  const id = userId ? userId : checkLogin();
+  useEffect(async () => {
+    await fetch9Friends(id).then((data) => {
+      console.log(data);
+      setListFriends(data);
+    });
+    
+  }, []);
   return (
     <div className="friendWrapper">
       <div className="subFriendWrapper">
@@ -19,34 +52,10 @@ function Friends() {
       <div className="friendBarDetail">
         <div className="friendCollection">
           <Grid container xs={12} spacing={2}>
-            <Grid item xs={6} xl={6}>
-              <div className="friendList">
-                <img
-                  src="https://scontent.fdad1-1.fna.fbcdn.net/v/t39.30808-1/275195234_1900829773450419_8832090657846807701_n.jpg?stp=dst-jpg_p240x240&_nc_cat=103&ccb=1-5&_nc_sid=7206a8&_nc_ohc=BtNPXsO2HIAAX-JsLpc&_nc_ht=scontent.fdad1-1.fna&oh=00_AT_3fEP0P-TLUZJEMigSuYrUskg5hqd11hZwRO1QacbVJA&oe=622C1292"
-                  alt="imgFriend"
-                />
-                <a href="">
-                  <p>Hoàng Thịnh</p>
-                </a>
-                <button>
-                  <DeleteIcon />
-                </button>
-              </div>
-            </Grid>
-            <Grid item xs={6} xl={6}>
-              <div className="friendList">
-                <img
-                  src="https://scontent.fdad1-1.fna.fbcdn.net/v/t39.30808-1/275195234_1900829773450419_8832090657846807701_n.jpg?stp=dst-jpg_p240x240&_nc_cat=103&ccb=1-5&_nc_sid=7206a8&_nc_ohc=BtNPXsO2HIAAX-JsLpc&_nc_ht=scontent.fdad1-1.fna&oh=00_AT_3fEP0P-TLUZJEMigSuYrUskg5hqd11hZwRO1QacbVJA&oe=622C1292"
-                  alt="imgFriend"
-                />
-                <a href="">
-                  <p>Hoàng Thịnh</p>
-                </a>
-                <button>
-                  <DeleteIcon />
-                </button>
-              </div>
-            </Grid>
+            {listFriends[0] ? <FriendsSingle user={listFriends[0]} /> : <></>  }
+            {listFriends[1] ? <FriendsSingle user={listFriends[1]} /> : <></>  }
+            {listFriends[2] ? <FriendsSingle user={listFriends[2]} /> : <></>  }
+            
           </Grid>
         </div>
       </div>

@@ -21,6 +21,22 @@ export const fetchPost = async (id) => {
     });
 }
 
+export const fetchPostFeed = async (user_id) => {
+  return fetch(`http://localhost:8080/FakeStory/api/filter/postuser?id=${user_id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+}
+
+export const fetchPostByUserId = async (user_id) => {
+  return fetch(`http://localhost:8080/FakeStory/api/post/user?id=${user_id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+}
+
 export const fetchAllInfo = async (id) => {
     return fetch(`http://localhost:8080/FakeStory/api/admin/user?id=${id}`)
     .then((response) => response.json())

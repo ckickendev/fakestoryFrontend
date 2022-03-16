@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import EditForm from "./EditForm";
 import HomeIcon from "@mui/icons-material/Home";
@@ -13,13 +13,28 @@ import SchoolIcon from "@mui/icons-material/School";
 import InfoIcon from "@mui/icons-material/Info";
 import "../../css/About.css";
 import "../../css/RightbarProfile.css";
+import checkLogin from "../login/LogicLogin";
+import { fetchAllInfo } from "../../store/actions/information";
+import { useParams } from "react-router-dom";
 
 function About() {
   const [show, setShow] = useState(false);
+  const { userId } = useParams  ();
+  const id = userId ? userId : checkLogin();
+  const [user, setUser] = useState();
+  const convert = (date) => {
+    return new Date(date).toLocaleDateString();
+  } 
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  useEffect(async () => {
+    await fetchAllInfo(id).then((data) => {
+      console.log(data);
+      setUser(data);
+      
+    });
+  }, []);
   return (
     <>
       <div className="aboutWrapper">
@@ -34,56 +49,56 @@ function About() {
             <div className="aboutBarItem">
               <DescriptionIcon className="rightBarInfoKey" />
               <span className="rightbarInfoValue">
-                <b>Call Me Bo Sua</b>
+                <b>{user ? user.description : ""}</b>
               </span>
             </div>
             <div className="aboutBarItem">
               <WcIcon className="rightBarInfoKey" />
               <span className="rightbarInfoValue">
-                <b>Male</b>
+                <b>{user ? (user.sex==1 ? "Male" : "Female") : "" }</b>
               </span>
             </div>
             <div className="aboutBarItem">
               <CakeIcon className="rightBarInfoKey" />
               <span className="rightbarInfoValue">
-                <b>12 February 2001</b>
+                <b>{user ? convert(user.dateCreate)  : ""}</b>
               </span>
             </div>
-            <div className="aboutBarItem">
+            {/* <div className="aboutBarItem">
               <CelebrationIcon className="rightBarInfoKey" />
               <span className="rightbarInfoValue">
                 <b>In a relationship</b>
               </span>
-            </div>
-            <div className="aboutBarItem">
+            </div> */}
+            {/* <div className="aboutBarItem">
               <SchoolIcon className="rightBarInfoKey" />
               <span className="rightbarInfoValue">
                 Studied Information of Technology (IT) at{" "}
                 <b>FPT University Da Nang</b>
               </span>
-            </div>
+            </div> */}
             <div className="aboutBarItem">
               <HomeIcon className="rightBarInfoKey" />
               <span className="rightbarInfoValue">
-                Lives in <b>Đà Nẵng</b>, <b>Việt Nam</b>
+                Lives in <b>{user ? user.live : "" }</b>
               </span>
             </div>
             <div className="aboutBarItem">
               <LocationOnIcon className="rightBarInfoKey" />
               <span className="rightbarInfoValue">
-                From <b>Đà Nẵng</b>, <b>Việt Nam</b>
+                From <b>{user? user.country : ""}</b>, <b>Việt Nam</b>
               </span>
             </div>
             <div className="aboutBarItem">
               <PhoneIcon className="rightBarInfoKey" />
               <span className="rightbarInfoValue">
-                <b>1234567890</b>
+                <b>{user? user.phone : ""}</b>
               </span>
             </div>
             <div className="aboutBarItem">
               <MailIcon className="rightBarInfoKey" />
               <span className="rightbarInfoValue">
-                <b>bosua@gmail.com</b>
+                <b>{user? user.country : ""}</b>
               </span>
             </div>
           </div>

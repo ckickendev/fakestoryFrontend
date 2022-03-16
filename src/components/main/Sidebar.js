@@ -31,10 +31,12 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebarHeader ">
-        <SidebarRow
-          src={user ? user.avatar : ""}
-          title={user ? user.fullname : "user"}
-        />
+        <a href="http://localhost:3000/profile">
+          <SidebarRow
+            src={user ? user.avatar : ""}
+            title={user ? user.fullname : "user"}
+          />
+        </a>
         <SidebarRow Icon={CoronavirusIcon} title="Covid-19 Infomation Center" />
         <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
         <SidebarRow Icon={GroupsRoundedIcon} title="Groups" />

@@ -1,19 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import UploadPostSpace from "./UploadPostSpace";
 import Post from "./Post";
 import "../../css/ProfileFeed.css";
+import { fetchAllInfo, fetchPostFeed } from "../../store/actions/information";
+import checkLogin from "../login/LogicLogin";
 
 function ProfileFeed() {
+  const id = checkLogin();
+  const [user, setUser] = useState();
+  const [posts, setPosts] = useState([]);
+  useEffect(async () => {
+    await fetchAllInfo(id).then((data) => {
+      console.log(data);
+      setUser(data);
+    });
+    await fetchPostFeed(id).then((data) => {
+      console.log(data);
+      setPosts(data);
+    });
+  }, []);
   return (
     <div className="subFeed">
       <UploadPostSpace />
-      <Post
-        profAva="https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.6435-1/c47.0.240.240a/p240x240/168600690_132095425540608_6073473717300407730_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=7206a8&_nc_ohc=At8nSiypLZQAX9hE-5T&_nc_ht=scontent.fsgn2-3.fna&oh=00_AT93qTODXwc0-Yrv8BcT8fbz-OKJfH_g_BGL94fsXuOwzg&oe=622E92C1"
-        message="Hello world"
-        timestamp="14 phut"
-        username="Huy Nguyen"
-        image="https://scontent.fhan3-4.fna.fbcdn.net/v/t1.6435-9/151266852_114763457273805_3886756789292532879_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=e3f864&_nc_ohc=B7c1a4f8ZgcAX-Ep6iN&_nc_ht=scontent.fhan3-4.fna&oh=00_AT-fo3ma4zEyUUqRTbQ8hP83Hl6ky8V989Tb8gADpCaQvg&oe=623013DE"
-      />
+      {posts[0] ? <Post post={posts[0]} /> : <></> }
+      {posts[1] ? <Post post={posts[1]} /> : <></> }
+      {posts[2] ? <Post post={posts[2]} /> : <></> }
+      {posts[3] ? <Post post={posts[3]} /> : <></> }
     </div>
   );
 }

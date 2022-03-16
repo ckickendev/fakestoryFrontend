@@ -3,30 +3,36 @@ import StoryReel from "./StoryReel";
 import UploadPostSpace from "./UploadPostSpace";
 import Post from "./Post";
 import "../../css/Feed.css";
-import { fetchAllInfo, fetchPost } from "../../store/actions/information";
+import {
+  fetchAllInfo,
+  fetchPost,
+  fetchPostFeed,
+} from "../../store/actions/information";
 import checkLogin from "../login/LogicLogin";
 
 function Feed() {
   const id = checkLogin();
-  const [post, setPost] = useState();
+  const [posts, setPosts] = useState([]);
   const [user, setUser] = useState();
-  useEffect( async() => {
+  useEffect(async () => {
     await fetchAllInfo(id).then((data) => {
       console.log(data);
       setUser(data);
     });
-    await fetchPost(2).then((data) => {
+    await fetchPostFeed(id).then((data) => {
       console.log(data);
-      setPost(data);
+      setPosts(data);
     });
-  }, [])
+  }, []);
   return (
     <div className="feed">
       <StoryReel />
       <UploadPostSpace user={user} />
-      <Post
-        post ={post}
-      />
+      {posts[0] ? <Post post={posts[0]} /> : <> </>}
+      {posts[1] ? <Post post={posts[1]} /> : <> </>}
+      {posts[2] ? <Post post={posts[2]} /> : <> </>}
+      {posts[3] ? <Post post={posts[3]} /> : <> </>}
+      {posts[4] ? <Post post={posts[4]} /> : <> </>}
     </div>
   );
 }
