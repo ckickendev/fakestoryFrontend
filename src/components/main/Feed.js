@@ -20,7 +20,6 @@ function Feed() {
       setUser(data);
     });
     await fetchPostFeed(id).then((data) => {
-      console.log(data);
       setPosts(data);
     });
   }, []);
