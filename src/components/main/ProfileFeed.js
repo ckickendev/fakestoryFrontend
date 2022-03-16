@@ -1,12 +1,12 @@
 import React from "react";
-import MessageSender from "./MessageSender";
+import UploadPostSpace from "./UploadPostSpace";
 import Post from "./Post";
 import "../../css/ProfileFeed.css";
 
 function ProfileFeed() {
   return (
     <div className="subFeed">
-      <MessageSender />
+      <UploadPostSpace />
       <Post
         profAva="https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.6435-1/c47.0.240.240a/p240x240/168600690_132095425540608_6073473717300407730_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=7206a8&_nc_ohc=At8nSiypLZQAX9hE-5T&_nc_ht=scontent.fsgn2-3.fna&oh=00_AT93qTODXwc0-Yrv8BcT8fbz-OKJfH_g_BGL94fsXuOwzg&oe=622E92C1"
         message="Hello world"

@@ -24,10 +24,6 @@ function Header() {
       console.log(data);
       setUser(data);
     });
-    // await fetch9Friends(id).then((data) => {
-    //   console.log(data);
-    //   setListFriend(data);
-    // })
   }, []);
   return (
     <div className="header">

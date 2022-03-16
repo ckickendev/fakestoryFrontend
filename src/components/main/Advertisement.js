@@ -47,15 +47,16 @@ export default function Advertisement() {
           <div className="p-1">
             <ChatProfile user={listFriends[0]} />
             <ChatProfile user={listFriends[1]} />
-            <ChatProfile user={listFriends[2]} />
-            <ChatProfile user={listFriends[3]} />
-            <ChatProfile user={listFriends[4]} />
-            <ChatProfile user={listFriends[5]} />
-            <ChatProfile user={listFriends[6]} />
-            <ChatProfile user={listFriends[7]} />
-            <ChatProfile user={listFriends[8]} />
-            <ChatProfile user={listFriends[9]} />
-            <ChatProfile user={listFriends[10]} />
+            {listFriends[2] ? <ChatProfile user={listFriends[2]} /> : <></>}
+            {listFriends[3] ? <ChatProfile user={listFriends[3]} /> : <></>}
+            {listFriends[4] ? <ChatProfile user={listFriends[4]} /> : <></>}
+            {listFriends[5] ? <ChatProfile user={listFriends[5]} /> : <></>}
+            {listFriends[6] ? <ChatProfile user={listFriends[6]} /> : <></>}
+            {listFriends[7] ? <ChatProfile user={listFriends[7]} /> : <></>}
+            {listFriends[8] ? <ChatProfile user={listFriends[8]} /> : <></>}
+            {listFriends[9] ? <ChatProfile user={listFriends[9]} /> : <></>}
+            {listFriends[10] ? <ChatProfile user={listFriends[10]} /> : <></>}
+
 
             {/* <a href="chats-friend.html">
               <div className="contact-avatar">
