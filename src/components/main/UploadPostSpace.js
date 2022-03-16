@@ -3,9 +3,9 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import ImageIcon from "@mui/icons-material/Image";
 import SentimentVerySatisfiedIcon from "@mui/icons-material/SentimentVerySatisfied";
 import { Avatar } from "@mui/material";
-import "../../css/MessageSender.css";
 import UploadDemo from "../../firebase/UploadDemo";
 import checkLogin from "../login/LogicLogin";
+import "../../css/MessageSender.css";
 
 function UploadPostSpace(props) {
   const [input, setInput] = useState("");

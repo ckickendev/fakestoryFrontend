@@ -15,7 +15,6 @@ function Page() {
     return (
         <div className="mcontainer">
             <div className="page">
-
                 <div className="pages_banner">
                     <img src="http://demo.foxthemes.net/socialitev2.2/assets/images/group/group-cover-1.jpg" alt=""/>
                 </div>
@@ -59,7 +58,7 @@ function Page() {
                             </a>
                         </li>
                         <li>
-                        <a href="#" onClick={() => handleClick(1)}>
+                            <a href="#" onClick={() => handleClick(1)}>
                                 Giới thiệu
                             </a>
                         </li>
@@ -69,37 +68,37 @@ function Page() {
                             </a>    
                         </li>
                         <li>
-                            <a href="#" onClick={() => handleClick(0)}>
+                            <a href="#" onClick={() => handleClick(3)}>
                                 Video
                             </a>
                         </li>
                     </ul>
                 </nav>
             </div>
-        {status === 3 && (
-            <div className="profileRightBottom">
-                <ImagePage />
-            </div>
-        )}
+            {!status && (
+                <div className="">
+                    <AboutPage />
+                </div>
+            )}
 
-        {!status && (
-            <div className="profileRightBottom">
-                <VideoPage />
-            </div>
-        )}
+            {status === 3 && (
+                <div className="">
+                    <VideoPage />
+                </div>
+            )}
 
-        {status === 1 && (
-            <div className="profileRightBottom">
-                <AboutPage />
-            </div>
-        )}
+            {status === 1 && (
+                <div div className="">
+                    <IntroPage />
+                </div>
+            )}
 
-        {status === 2 && (
-            <div div className="profileRightBottom">
-                <IntroPage />
-            </div>
-        )}
-    </div>
+            {status === 2 && (
+                <div className="">
+                    <ImagePage />
+                </div>
+            )}
+        </div>
   )
 }
 

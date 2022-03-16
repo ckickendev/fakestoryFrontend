@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import UploadPostSpace from "./UploadPostSpace";
-import Post from "./Post";
+import UploadPostSpace from "../main/UploadPostSpace";
+import Post from "../main/Post";
 import "../../css/ProfileFeed.css";
 import { fetchAllInfo, fetchPostFeed } from "../../store/actions/information";
 import checkLogin from "../login/LogicLogin";

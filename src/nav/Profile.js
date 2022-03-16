@@ -1,19 +1,10 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-<<<<<<< HEAD
-import React, { useEffect, useState } from "react";
-import ProfileFeed from "../components/main/ProfileFeed";
-import RightBarProfile from "../components/main/RightBarProfile";
-import About from "../components/main/About";
-import Photos from "../components/main/Photos";
-import Friends from "../components/main/Friends";
-=======
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProfileFeed from "../components/profile/ProfileFeed";
 import RightBarProfile from "../components/profile/RightBarProfile";
 import About from "../components/profile/About";
 import Photos from "../components/profile/Photos";
 import Friends from "../components/profile/Friends";
->>>>>>> ddec92883216645773f627abf1a4145d984ced45
 import { ImageViewer } from "react-image-viewer-dv";
 import "../css/Profile.css";
 import Header from "../components/main/Header";
