@@ -49,7 +49,12 @@ function Post(props) {
     (showAllComment = () => {
       console.log("Rerender listComment", listComment);
       return listComment.map((comment) => {
-        return <ShowComment userid={comment? comment.userid : 0} comment={comment} />;
+        return (
+          <ShowComment
+            userid={comment ? comment.userid : 0}
+            comment={comment}
+          />
+        );
       });
     }),
     [listComment, isLoad]
@@ -113,7 +118,6 @@ function Post(props) {
         user={user}
         post={props.post ? props.post : null}
       />
-      
     </div>
   );
 }

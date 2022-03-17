@@ -10,7 +10,7 @@ export const YourSpaceComment = (props) => {
   const addComment = async () => {
     const data = { userid, content, post_id, rep_id: -1 };
     await addMoreComment(data).then((data) => {
-      props.listComment.push(data)
+      props.listComment.push(data);
       const newList = props.listComment;
       props.setLoad(true);
       props.setListComment(newList);
@@ -35,8 +35,14 @@ export const YourSpaceComment = (props) => {
             setContent(e.target.value);
           }}
           value={content}
+          className="commentInput"
         />
-        <input type="button" value="Add comment" onClick={() => addComment()} />
+        <input
+          type="button"
+          className="commentBtn"
+          value="Add comment"
+          onClick={() => addComment()}
+        />
       </div>
     </div>
   );
