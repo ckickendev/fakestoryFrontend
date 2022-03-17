@@ -139,3 +139,13 @@
 .show__comment-details--bottom > div {
   margin-left: 16px;
 }
+
+@media only screen and (max-width: 768px) {
+  .post__comment-input {
+    display: flex;
+  }
+
+  .commentBtn {
+    width: 30vw;
+  }
+}
