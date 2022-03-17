@@ -12,74 +12,19 @@ import checkLogin from "../login/LogicLogin";
 import { YourSpaceComment } from "../post/YourSpaceComment";
 import { ShowComment } from "../post/ShowComment";
 import { LikeCommentShareSpace } from "../post/LikeCommentShareSpace";
+import fetchTime from "../post/fetchTime";
 
 function Post(props) {
   const [user, setUser] = useState(null);
   const [time, setTime] = useState("");
   const [link, setLink] = useState("");
   const [listComment, setListComment] = useState([]);
+  const [isLoad, setLoad] = useState(false);
   useEffect(() => {
-    var DateDiff = {
-      inMinutes: function (d1, d2) {
-        var t2 = d2.getTime();
-        var t1 = d1.getTime() + 3600 * 1000 * 7;
-        return Math.floor((t2 - t1) / (60 * 1000));
-      },
-      inHours: function (d1, d2) {
-        var t2 = d2.getTime();
-        var t1 = d1.getTime() + 3600 * 1000 * 7;
-
-        return Math.floor((t2 - t1) / (3600 * 1000));
-      },
-      inDays: function (d1, d2) {
-        var t2 = d2.getTime();
-        var t1 = d1.getTime() + 3600 * 1000 * 7;
-        return Math.floor((t2 - t1) / (24 * 3600 * 1000));
-      },
-      inWeeks: function (d1, d2) {
-        var t2 = d2.getTime();
-        var t1 = d1.getTime() + 3600 * 1000 * 7;
-        return Math.floor((t2 - t1) / (24 * 3600 * 1000 * 7));
-      },
-      inMonths: function (d1, d2) {
-        var t2 = d2.getTime();
-        var t1 = d1.getTime() + 3600 * 1000 * 7;
-        return Math.floor((t2 - t1) / (24 * 3600 * 1000 * 7 * 30));
-      },
-      inYears: function (d1, d2) {
-        var t2 = d2.getTime();
-        var t1 = d1.getTime() + 3600 * 1000 * 7;
-        return Math.floor((t2 - t1) / (24 * 3600 * 1000 * 7 * 30 * 12));
-      },
-    };
-    var dString = props.post ? props.post.time : "";
-    var d1 = new Date(dString);
-    var d2 = new Date();
-    const minutes = DateDiff.inMinutes(d1, d2);
-    const hours = DateDiff.inHours(d1, d2);
-    const days = DateDiff.inDays(d1, d2);
-    const weeks = DateDiff.inWeeks(d1, d2);
-    const months = DateDiff.inMonths(d1, d2);
-    const years = DateDiff.inYears(d1, d2);
-
-    if (years > 0) {
-      setTime(years + " years ago");
-    } else if (months > 0) {
-      setTime(months + " months ago");
-    } else if (weeks > 0) {
-      setTime(weeks + " weeks ago");
-    } else if (days > 0) {
-      setTime(days + " days ago");
-    } else if (hours > 0) {
-      setTime(hours + " hours ago");
-    } else if (minutes > 0) {
-      setTime(minutes + " minutes ago");
-    } else {
-      setTime("just now");
-    }
     const id = checkLogin();
     const idUser = props.post ? props.post.user : 0;
     async function fetch() {
+      setTime(fetchTime(props.post ? props.post.time : 0));
       await fetchAllInfo(idUser).then((data) => {
         setUser(data);
         setLink(
@@ -98,10 +43,17 @@ function Post(props) {
     }
     fetch();
   }, [props.post, time]);
+  let showAllComment;
 
-  function showAllComment() {
-    return listComment.map((comment) => <ShowComment comment={comment} />);
-  }
+  useEffect(
+    (showAllComment = () => {
+      console.log("Rerender listComment", listComment);
+      return listComment.map((comment) => {
+        return <ShowComment comment={comment} />;
+      });
+    }),
+    [listComment, isLoad]
+  );
 
   return (
     <div className="post">
@@ -151,7 +103,15 @@ function Post(props) {
         <div className="post__quantity-comment">10 comments</div>
       </div>
       <LikeCommentShareSpace />
-      <YourSpaceComment user={user} />
+      <YourSpaceComment
+        setLoad={setLoad}
+        listComment={listComment ? listComment : []}
+        setListComment={(list) => {
+          setListComment(list);
+        }}
+        user={user}
+        post={props.post ? props.post : null}
+      />
       {showAllComment()}
     </div>
   );

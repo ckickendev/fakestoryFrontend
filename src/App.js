@@ -41,11 +41,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="app">
-<<<<<<< HEAD
-        {false ? (
-=======
         {!true ? (
->>>>>>> 381804db2e877cdb9f2187ec6e2d6b676ea89461
           <div className="app__body">
             <Routes>
               <Route path="/register" element={<Register />} />

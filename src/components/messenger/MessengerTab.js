@@ -176,8 +176,5 @@ function MessengerTab() {
     </div>
   );
 }
-<<<<<<< HEAD
-=======
 
 export default MessengerTab;
->>>>>>> 381804db2e877cdb9f2187ec6e2d6b676ea89461

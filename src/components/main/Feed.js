@@ -11,6 +11,9 @@ import {
 import checkLogin from "../login/LogicLogin";
 
 function Feed() {
+  const showAllPosts = () => {
+    return posts ? posts.map(post => <Post post={post} /> ): <></>;
+  }
   const id = checkLogin();
   const [posts, setPosts] = useState([]);
   const [user, setUser] = useState();
@@ -27,11 +30,12 @@ function Feed() {
     <div className="feed">
       <StoryReel />
       <UploadPostSpace user={user} />
-      {posts[0] ? <Post post={posts[0]} /> : <> </>}
+      {showAllPosts()}
+      {/* {posts[0] ?  : <> </>}
       {posts[1] ? <Post post={posts[1]} /> : <> </>}
       {posts[2] ? <Post post={posts[2]} /> : <> </>}
       {posts[3] ? <Post post={posts[3]} /> : <> </>}
-      {posts[4] ? <Post post={posts[4]} /> : <> </>}
+      {posts[4] ? <Post post={posts[4]} /> : <> </>} */}
     </div>
   );
 }

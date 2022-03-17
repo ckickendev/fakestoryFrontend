@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Avatar } from "@mui/material";
 import { fetchAllInfo } from "../../store/actions/information";
+import fetchTime from "./fetchTime";
 
 export const ShowComment = (props) => {
-  const id = props.comment? props.comment.userid : 0;
+  const id = props.comment ? props.comment.userid : 0;
   const [user, setUser] = useState();
   useEffect(async () => {
-    console.log(id);
     await fetchAllInfo(id).then((data) => {
-      console.log(data);
       setUser(data);
     });
   }, []);
@@ -24,7 +23,7 @@ export const ShowComment = (props) => {
       <div className="show__comment-details">
         <div className="show__comment-details--top">
           <div className="show__comment-name">
-            <h4>{user ? user.fullname: ""}</h4>
+            <h4>{user ? user.fullname : ""}</h4>
           </div>
           <div className="show__comment-content">
             <p>{props.comment ? props.comment.content : ""}</p>
@@ -39,7 +38,9 @@ export const ShowComment = (props) => {
             <button>Phản hồi</button>
           </div>
           <div className="show__comment-time">
-            <p style={{ margin: "0" }}>thoi gian</p>
+            <p style={{ margin: "0" }}>
+              {props.comment ? fetchTime(props.comment.datetime) : ""}
+            </p>
           </div>
         </div>
       </div>
