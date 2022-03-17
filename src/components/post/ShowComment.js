@@ -4,7 +4,7 @@ import { fetchAllInfo } from "../../store/actions/information";
 import fetchTime from "./fetchTime";
 
 export const ShowComment = (props) => {
-  const id = props.comment ? props.comment.userid : 0;
+  const id = props.userid ? props.userid : 0;
   const [user, setUser] = useState();
   useEffect(async () => {
     await fetchAllInfo(id).then((data) => {

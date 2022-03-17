@@ -10,10 +10,11 @@ export const YourSpaceComment = (props) => {
   const addComment = async () => {
     const data = { userid, content, post_id, rep_id: -1 };
     await addMoreComment(data).then((data) => {
-      props.listComment.unshift(data)
+      props.listComment.push(data)
       const newList = props.listComment;
       props.setLoad(true);
       props.setListComment(newList);
+      setContent("");
       props.setLoad(false);
     });
   };

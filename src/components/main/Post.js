@@ -49,7 +49,7 @@ function Post(props) {
     (showAllComment = () => {
       console.log("Rerender listComment", listComment);
       return listComment.map((comment) => {
-        return <ShowComment comment={comment} />;
+        return <ShowComment userid={comment? comment.userid : 0} comment={comment} />;
       });
     }),
     [listComment, isLoad]
@@ -103,6 +103,7 @@ function Post(props) {
         <div className="post__quantity-comment">10 comments</div>
       </div>
       <LikeCommentShareSpace />
+      {showAllComment()}
       <YourSpaceComment
         setLoad={setLoad}
         listComment={listComment ? listComment : []}
@@ -112,7 +113,7 @@ function Post(props) {
         user={user}
         post={props.post ? props.post : null}
       />
-      {showAllComment()}
+      
     </div>
   );
 }

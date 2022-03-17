@@ -54,7 +54,7 @@ function fetchTime(time) {
   } else if (minutes > 0) {
     return (minutes + " minutes ago");
   } else {
-    return ("just now");
+    return ("Just now");
   }
 }
 export default fetchTime;
