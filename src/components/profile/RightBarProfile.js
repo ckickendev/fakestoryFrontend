@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
 import EditForm from "../main/EditForm";
 import "../../css/RightbarProfile.css";
@@ -8,12 +8,46 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CelebrationIcon from "@mui/icons-material/Celebration";
 import PhoneIcon from "@mui/icons-material/Phone";
 import { SmallProfile } from "../profile/SmallProfile";
+import { fetch9Photos, fetchAllInfo } from "../../store/actions/information";
+import checkLogin from "../login/LogicLogin";
 
 const RightBarProfile = (props) => {
   const [show, setShow] = useState(false);
-
+  const [photos, setPhotos] = useState([]);
+  const id = checkLogin();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const printProfile = () => {
+    return props.listFriends ? (
+      props.listFriends.map((list) => <SmallProfile user={list} />)
+    ) : (
+      <div></div>
+    );
+  };
+
+  useEffect(async () => {
+    await fetch9Photos(id).then((data) => {
+      setPhotos(data);
+    });
+  }, []);
+
+  const printPhotos = () => {
+    return photos ? (
+      photos.map((photo) => (
+        photo ? (<div className="rightbarFollowing">
+        <img
+          src={photo}
+          alt="img"
+          className="rightbarFollowingImg"
+        />
+      </div>) : <div></div>
+        
+      ))
+    ) : (
+      <div></div>
+    );
+  };
 
   const changeStatusHandler = (status) => {
     props.changeStatus(status);
@@ -71,56 +105,7 @@ const RightBarProfile = (props) => {
               </button>
             </div>
             <div className="rightbarFollowings">
-              <div className="rightbarFollowing">
-                <img
-                  src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
-                  alt="img"
-                  className="rightbarFollowingImg"
-                />
-              </div>
-              <div className="rightbarFollowing">
-                <img
-                  src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
-                  alt="img"
-                  className="rightbarFollowingImg"
-                />
-              </div>
-              <div className="rightbarFollowing">
-                <img
-                  src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
-                  alt="img"
-                  className="rightbarFollowingImg"
-                />
-              </div>
-
-              <div className="rightbarFollowing">
-                <img
-                  src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
-                  alt="img"
-                  className="rightbarFollowingImg"
-                />
-              </div>
-              <div className="rightbarFollowing">
-                <img
-                  src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
-                  alt="img"
-                  className="rightbarFollowingImg"
-                />
-              </div>
-              <div className="rightbarFollowing">
-                <img
-                  src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
-                  alt="img"
-                  className="rightbarFollowingImg"
-                />
-              </div>
-              <div className="rightbarFollowing">
-                <img
-                  src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/79646492_1271798489686887_4272600003970596864_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=9DiMv46jkMQAX-qUbhg&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT_iUd1lS3uv8M9yOUHUrL46kxnTxKwbCG4YwHrw8oJZaA&oe=62451031"
-                  alt="img"
-                  className="rightbarFollowingImg"
-                />
-              </div>
+              {printPhotos()}
             </div>
           </div>
 
@@ -136,17 +121,7 @@ const RightBarProfile = (props) => {
                 See All Friends
               </button>
             </div>
-            <div className="rightbarFollowings">
-              <SmallProfile user={props.listFriends[0]} />
-              <SmallProfile user={props.listFriends[1]} />
-              <SmallProfile user={props.listFriends[2]} />
-              <SmallProfile user={props.listFriends[3]} />
-              <SmallProfile user={props.listFriends[4]} />
-              <SmallProfile user={props.listFriends[5]} />
-              <SmallProfile user={props.listFriends[6]} />
-              <SmallProfile user={props.listFriends[7]} />
-              <SmallProfile user={props.listFriends[8]} />
-            </div>
+            <div className="rightbarFollowings">{printProfile()}</div>
           </div>
         </div>
       </div>

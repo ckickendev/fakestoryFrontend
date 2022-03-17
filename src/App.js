@@ -41,7 +41,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="app">
-        {!true ? (
+        {!isLogin ? (
           <div className="app__body">
             <Routes>
               <Route path="/register" element={<Register />} />
