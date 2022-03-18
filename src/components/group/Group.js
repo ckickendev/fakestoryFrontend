@@ -71,12 +71,12 @@ function Group() {
                 <nav className="responsive-nav border-t -mb-0.5 lg:pl-6">
                     <ul>
                         <li className="">
-                            <a href="/Page" onClick={() => handleClick(1)}>
+                            <a href="#" onClick={() => handleClick(1)}>
                                 Giới thiệu
                             </a>
                         </li>
                         <li className="active">
-                            <a href="#" onClick={() => handleClick(0)}>
+                            <a href="/group" onClick={() => handleClick(0)}>
                                 Thảo Luận
                             </a>
                         </li>
@@ -94,29 +94,33 @@ function Group() {
                 </nav>
             </div>
         </div>
-        {!status && (
-            <div className="">
-                <DiscusGroup />
-            </div>
-        )}
+        <div style={{backgroundColor: '#e5ede5'}}>
+            <div className="mcontainer">
+            {!status && (
+                <div className="">
+                    <DiscusGroup />
+                </div>
+            )}
 
-        {status === 3 && (
-            <div className="">
-                <MemberGroup />
-            </div>
-        )}
+            {status === 3 && (
+                <div className="">
+                    <MemberGroup />
+                </div>
+            )}
 
-        {status === 1 && (
-            <div div className="">
-                <IntroGroup />
-            </div>
-        )}
+            {status === 1 && (
+                <div div className="">
+                    <IntroGroup />
+                </div>
+            )}
 
-        {status === 2 && (
-            <div className="">
-                <MeetingGroup />
+            {status === 2 && (
+                <div className="">
+                    <MeetingGroup />
+                </div>
+            )}
             </div>
-        )}
+        </div>
     </div>
   )
 }
