@@ -7,6 +7,7 @@ import {
   fetchAllCommentByPostId,
   fetchAllInfo,
   fetchIsReact,
+  fetchPost,
 } from "../../store/actions/information";
 import { ImageViewer } from "react-image-viewer-dv";
 import checkLogin from "../login/LogicLogin";
@@ -28,6 +29,7 @@ function Post(props) {
   const [isLoad, setLoad] = useState(false);
   const [isReactThisPost, setIsReactThisPost] = useState();
   const [isChange, setIsChange] = useState(false);
+  const [post ,setPost] = useState(props.post ? props.post : null);
 
   //check info, fetch comment and list comment
   useEffect(() => {
@@ -55,7 +57,7 @@ function Post(props) {
       });
     }
     fetch();
-  }, [props.post, time]);
+  }, [props.post, time, isChange]);
   let showAllComment;
 
   //effect show comment
@@ -93,7 +95,10 @@ function Post(props) {
     await fetchIsReact(id, props.post ? props.post.id : 0).then((data) => {
       setIsReactThisPost(data);
     });
-  } ,[handlerReact])
+    await fetchPost(post ? post.id : 0).then((data) => {
+      setPost(data);
+    });
+  } ,[isChange])
 
 
 
@@ -122,14 +127,14 @@ function Post(props) {
       </div>
 
       <div className="post__bottom">
-        <p>{props.post ? props.post.content : ""}</p>
+        <p>{post ? post.content : ""}</p>
       </div>
 
-      {props.post ? (
-        props.post.image ? (
+      {post ? (
+        post.image ? (
           <div className="post__image">
             <ImageViewer>
-              <img src={props.post ? props.post.image : ""} alt="" />
+              <img src={post ? post.image : ""} alt="" />
             </ImageViewer>
           </div>
         ) : (
@@ -140,7 +145,7 @@ function Post(props) {
       )}
       <div className="post__quantity">
         <div className="post__quantity-like">
-          {props.post ? props.post.react : ""}
+          {post ? post.react : ""}
         </div>
         <div className="post__quantity-comment">10 comments</div>
       </div>
@@ -182,7 +187,7 @@ function Post(props) {
           setListComment(list);
         }}
         user={user}
-        post={props.post ? props.post : null}
+        post={post ? post : null}
       />
     </div>
   );

@@ -31,11 +31,6 @@ function Feed() {
       <StoryReel />
       <UploadPostSpace user={user} />
       {showAllPosts()}
-      {/* {posts[0] ?  : <> </>}
-      {posts[1] ? <Post post={posts[1]} /> : <> </>}
-      {posts[2] ? <Post post={posts[2]} /> : <> </>}
-      {posts[3] ? <Post post={posts[3]} /> : <> </>}
-      {posts[4] ? <Post post={posts[4]} /> : <> </>} */}
     </div>
   );
 }
