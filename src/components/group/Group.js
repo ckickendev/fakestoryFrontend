@@ -82,75 +82,61 @@ function Group() {
               </div>
             </div>
           </div>
-
-          <div className="group__info-right">
-            <div className="group__right-content">
-              <div className="group__right-status"></div>
-              <div className="group__right-invite">
-                <button className="group__invite-btn">
-                  <span>+</span>
-                  Mời
-                </button>
-              </div>
-              <div className="group__right-more">
-                <KeyboardArrowDownIcon
-                  className="group__more-down"
-                  type="button"
-                />
-              </div>
-            </div>
+          <div>
+            <nav className="responsive-nav border-t -mb-0.5 lg:pl-6">
+              <ul>
+                <li className="">
+                  <a href="#" onClick={() => handleClick(1)}>
+                    Giới thiệu
+                  </a>
+                </li>
+                <li className="active">
+                  <a href="/group" onClick={() => handleClick(0)}>
+                    Thảo Luận
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={() => handleClick(2)}>
+                    Tạo cuộc họp
+                  </a>
+                </li>
+                <li>
+                  <a href="#" onClick={() => handleClick(3)}>
+                    Thành viên
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
+      </div>
+      <div style={{ backgroundColor: "#e5ede5" }}>
         <div className="mcontainer">
-          <nav className="responsive-nav border-t -mb-0.5 lg:pl-6">
-            <ul>
-              <li className="">
-                <a href="/Page" onClick={() => handleClick(1)}>
-                  Giới thiệu
-                </a>
-              </li>
-              <li className="active">
-                <a href="#" onClick={() => handleClick(0)}>
-                  Thảo Luận
-                </a>
-              </li>
-              <li>
-                <a href="#" onClick={() => handleClick(2)}>
-                  Tạo cuộc họp
-                </a>
-              </li>
-              <li>
-                <a href="#" onClick={() => handleClick(3)}>
-                  Thành viên
-                </a>
-              </li>
-            </ul>
-          </nav>
+          {!status && (
+            <div className="">
+              <DiscusGroup />
+            </div>
+          )}
+
+          {status === 3 && (
+            <div className="">
+              <MemberGroup />
+            </div>
+          )}
+
+          {status === 1 && (
+            <div div className="">
+              <IntroGroup />
+            </div>
+          )}
+
+          {status === 2 && (
+            <div className="">
+              <MeetingGroup />
+            </div>
+          )}
         </div>
       </div>
-      {!status && (
-        <div className="">
-          <DiscusGroup />
-        </div>
-      )}
-
-      {status === 3 && (
-        <div className="">
-          <MemberGroup />
-        </div>
-      )}
-
-      {status === 1 && (
-        <div div className="">
-          <IntroGroup />
-        </div>
-      )}
-
-      {status === 2 && (
-        <div className="">
-          <MeetingGroup />
-        </div>
-      )}
     </div>
   );
 }

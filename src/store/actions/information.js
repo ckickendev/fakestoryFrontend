@@ -90,3 +90,11 @@ export const fetchAllCommentByPostId = async (id) => {
   });
 }
 
+export const fetchIsReact = async (user, post) =>{
+  return fetch(`http://localhost:8080/FakeStory/api/react/userId?user=${user}&post=${post}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+} 
+

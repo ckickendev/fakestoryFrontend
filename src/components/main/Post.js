@@ -6,13 +6,19 @@ import "../../css/Post.css";
 import {
   fetchAllCommentByPostId,
   fetchAllInfo,
+  fetchIsReact,
 } from "../../store/actions/information";
 import { ImageViewer } from "react-image-viewer-dv";
 import checkLogin from "../login/LogicLogin";
 import { YourSpaceComment } from "../post/YourSpaceComment";
 import { ShowComment } from "../post/ShowComment";
-import { LikeCommentShareSpace } from "../post/LikeCommentShareSpace";
+import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import NearMeIcon from "@mui/icons-material/NearMe";
 import fetchTime from "../post/fetchTime";
+import { addReact } from "../../store/actions/grow";
+// import { LikeCommentShareSpace } from "../post/LikeCommentShareSpace";
+// import { addMoreComment, addReact } from "../../store/actions/grow";
 
 function Post(props) {
   const [user, setUser] = useState(null);
@@ -20,6 +26,10 @@ function Post(props) {
   const [link, setLink] = useState("");
   const [listComment, setListComment] = useState([]);
   const [isLoad, setLoad] = useState(false);
+  const [isReactThisPost, setIsReactThisPost] = useState();
+  const [isChange, setIsChange] = useState(false);
+
+  //check info, fetch comment and list comment
   useEffect(() => {
     const id = checkLogin();
     const idUser = props.post ? props.post.user : 0;
@@ -40,15 +50,20 @@ function Post(props) {
           setListComment(data);
         }
       );
+      await fetchIsReact(id, props.post ? props.post.id : 0).then((data) => {
+        setIsReactThisPost(data);
+      });
     }
     fetch();
   }, [props.post, time]);
   let showAllComment;
 
+  //effect show comment
   useEffect(
     (showAllComment = () => {
       console.log("Rerender listComment", listComment);
       return listComment.map((comment) => {
+        console.log(comment);
         return (
           <ShowComment
             userid={comment ? comment.userid : 0}
@@ -59,6 +74,28 @@ function Post(props) {
     }),
     [listComment, isLoad]
   );
+  //effect after handlerReact 
+  const handlerReact = async () => {
+    const data = {
+      type: 1,
+      user: checkLogin(),
+      post: props ? props.post.id : 0,
+    };
+    console.log(data);
+    await addReact(data).then((something) => {
+      console.log(something);
+      setIsChange(!isChange);
+    });
+  };
+
+  useEffect( async() => {
+    const id = checkLogin();
+    await fetchIsReact(id, props.post ? props.post.id : 0).then((data) => {
+      setIsReactThisPost(data);
+    });
+  } ,[handlerReact])
+
+
 
   return (
     <div className="post">
@@ -107,7 +144,36 @@ function Post(props) {
         </div>
         <div className="post__quantity-comment">10 comments</div>
       </div>
-      <LikeCommentShareSpace />
+
+      {/* Like and comment space */}
+      <div>
+        <hr />
+        <div className="post__options">
+          {isReactThisPost ? (
+            <div className="post__option btn btn-danger" onClick={handlerReact}>
+              <ThumbUpOutlinedIcon />
+              <p>Like</p>
+            </div>
+          ) : (
+            <div className="post__option btn btn-primary" onClick={handlerReact}>
+              <ThumbUpOutlinedIcon />
+              <p>Like</p>
+            </div>
+          )}
+
+          <div className="post__option">
+            <ChatBubbleOutlineIcon />
+            <p>Comment</p>
+          </div>
+          <div className="post__option">
+            <NearMeIcon />
+            <p>Share</p>
+          </div>
+        </div>
+
+        <hr />
+      </div>
+
       {showAllComment()}
       <YourSpaceComment
         setLoad={setLoad}

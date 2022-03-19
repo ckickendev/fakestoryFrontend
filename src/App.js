@@ -13,6 +13,7 @@ import Profile from "./nav/Profile";
 import Page from "./components/PageFake/Page";
 import Register from "./components/register/Register";
 import UploadDemo from "./firebase/UploadDemo";
+import Post from "./components/main/Post";
 import { fetchAllInfo } from "./store/actions/information";
 import NotFound404 from "./components/main/NotFound404";
 import NotFound from "./components/main/NotFound";
@@ -62,6 +63,7 @@ function App() {
                 <Route path="/group" element={<Group />} />
                 <Route path="/success" element={<SuccessRegister />} />
                 <Route path="/messenger" element={<Messenger />} />
+                <Route path="/post" element={<Post />} />
                 <Route path="/404" element={<NotFound404 />} />
                 <Route path="/403" element={<NotFound />} />
 

@@ -42,3 +42,17 @@ export const addMoreComment = async (data) => {
     });
 }
 
+export const addReact = async (data) => {
+  return fetch("http://localhost:8080/FakeStory/api/admin/react", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({type: data.type, user: data.user, post: data.post}),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      return data
+    });
+}
+
