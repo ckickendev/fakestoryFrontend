@@ -66,6 +66,26 @@ export const fetchNumberFriends = async (id, number) => {
     return data;
   });
 }
+
+export const fetchGroupById = async (id) => {
+  return fetch(`http://localhost:8080/FakeStory/api/admin/group?id=${id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+}
+
+export const fetchAllMembersByGroupId = async (id) => {
+  return fetch(`http://localhost:8080/FakeStory/api/member/group?id=${id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+}
+
+
+
+
 export const fetchAllGroupByUser = async (id) => {
   return fetch(`http://localhost:8080/FakeStory/FindGroupByUserId?id=${id}`)
   .then((response) => response.json())

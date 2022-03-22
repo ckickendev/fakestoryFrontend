@@ -28,6 +28,26 @@ function Sidebar() {
       setListPages(data);
     });
   }, []);
+
+  const listShorcut = () => {
+    console.log("list: ", listPages);
+    return listPages ? (
+      listPages.map((list) => (
+        <a href={list ? `http://localhost:3000/group/${list.id}` : ""}>
+          <SidebarRow
+            src={
+              list
+                ? list.background
+                : "https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/269853607_4865244843588935_6939299051371911022_n.jpg?stp=c42.0.50.50a_cp0_dst-jpg_p50x50&_nc_cat=102&ccb=1-5&_nc_sid=ac9ee4&_nc_ohc=pgxGzzoDLsQAX9Ba60G&tn=7wk8T-GdILCqXwVR&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT-BoYkIblcos_CIow4zK1h_F3FLHXHUMhDMZLFMx9gBNw&oe=621CBC99"
+            }
+            title={list ? list.name : ""}
+          />
+        </a>
+      ))
+    ) : (
+      <div></div>
+    );
+  };
   return (
     <div className="sidebar">
       <div className="sidebarHeader ">
@@ -48,48 +68,7 @@ function Sidebar() {
         <div className="titleSidebarFooter">
           <span>Your shortcuts</span>
         </div>
-        <div className="mainSidebarFooter">
-          <SidebarRow
-            src={
-              listPages[0]
-                ? listPages[0].background
-                : "https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/269853607_4865244843588935_6939299051371911022_n.jpg?stp=c42.0.50.50a_cp0_dst-jpg_p50x50&_nc_cat=102&ccb=1-5&_nc_sid=ac9ee4&_nc_ohc=pgxGzzoDLsQAX9Ba60G&tn=7wk8T-GdILCqXwVR&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT-BoYkIblcos_CIow4zK1h_F3FLHXHUMhDMZLFMx9gBNw&oe=621CBC99"
-            }
-            title={listPages[0] ? listPages[0].name : ""}
-          />
-          <SidebarRow
-            src={
-              listPages[1]
-                ? listPages[1].background
-                : "https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/269853607_4865244843588935_6939299051371911022_n.jpg?stp=c42.0.50.50a_cp0_dst-jpg_p50x50&_nc_cat=102&ccb=1-5&_nc_sid=ac9ee4&_nc_ohc=pgxGzzoDLsQAX9Ba60G&tn=7wk8T-GdILCqXwVR&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT-BoYkIblcos_CIow4zK1h_F3FLHXHUMhDMZLFMx9gBNw&oe=621CBC99"
-            }
-            title={listPages[1] ? listPages[1].name : ""}
-          />
-          {listPages[2] ? (
-            <SidebarRow
-              src={
-                listPages[2]
-                  ? listPages[2].background
-                  : "https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/269853607_4865244843588935_6939299051371911022_n.jpg?stp=c42.0.50.50a_cp0_dst-jpg_p50x50&_nc_cat=102&ccb=1-5&_nc_sid=ac9ee4&_nc_ohc=pgxGzzoDLsQAX9Ba60G&tn=7wk8T-GdILCqXwVR&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT-BoYkIblcos_CIow4zK1h_F3FLHXHUMhDMZLFMx9gBNw&oe=621CBC99"
-              }
-              title={listPages[2] ? listPages[2].name : ""}
-            />
-          ) : (
-            <></>
-          )}
-          {listPages[3] ? (
-            <SidebarRow
-              src={
-                listPages[3]
-                  ? listPages[3].background
-                  : "https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/269853607_4865244843588935_6939299051371911022_n.jpg?stp=c42.0.50.50a_cp0_dst-jpg_p50x50&_nc_cat=102&ccb=1-5&_nc_sid=ac9ee4&_nc_ohc=pgxGzzoDLsQAX9Ba60G&tn=7wk8T-GdILCqXwVR&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT-BoYkIblcos_CIow4zK1h_F3FLHXHUMhDMZLFMx9gBNw&oe=621CBC99"
-              }
-              title={listPages[3] ? listPages[3].name : ""}
-            />
-          ) : (
-            <></>
-          )}
-        </div>
+        <div className="mainSidebarFooter">{listShorcut()}</div>
       </div>
     </div>
   );

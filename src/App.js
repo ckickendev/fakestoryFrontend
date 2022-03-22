@@ -60,12 +60,13 @@ function App() {
                 <Route path="/main" element={<Main />} />
                 <Route path="/" element={<Main />} />
                 <Route path="/page" element={<Page />} />
-                <Route path="/group" element={<Group />} />
+                <Route path="/group/:groupId" element={<Group />} />
                 <Route path="/success" element={<SuccessRegister />} />
                 <Route path="/messenger" element={<Messenger />} />
                 <Route path="/post" element={<Post />} />
                 <Route path="/404" element={<NotFound404 />} />
                 <Route path="/403" element={<NotFound />} />
+
 
                 <Route path="/firebase" element={<UploadDemo />} />
                 <Route path="/*" element={<NotFound404 />} />
