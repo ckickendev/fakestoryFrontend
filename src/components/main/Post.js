@@ -29,7 +29,7 @@ function Post(props) {
   const [isLoad, setLoad] = useState(false);
   const [isReactThisPost, setIsReactThisPost] = useState();
   const [isChange, setIsChange] = useState(false);
-  const [post ,setPost] = useState(props.post ? props.post : null);
+  const [post, setPost] = useState(props.post ? props.post : null);
 
   //check info, fetch comment and list comment
   useEffect(() => {
@@ -76,7 +76,7 @@ function Post(props) {
     }),
     [listComment, isLoad]
   );
-  //effect after handlerReact 
+  //effect after handlerReact
   const handlerReact = async () => {
     const data = {
       type: 1,
@@ -90,7 +90,7 @@ function Post(props) {
     });
   };
 
-  useEffect( async() => {
+  useEffect(async () => {
     const id = checkLogin();
     await fetchIsReact(id, props.post ? props.post.id : 0).then((data) => {
       setIsReactThisPost(data);
@@ -98,9 +98,7 @@ function Post(props) {
     await fetchPost(post ? post.id : 0).then((data) => {
       setPost(data);
     });
-  } ,[isChange])
-
-
+  }, [isChange]);
 
   return (
     <div className="post">
@@ -144,9 +142,7 @@ function Post(props) {
         <div></div>
       )}
       <div className="post__quantity">
-        <div className="post__quantity-like">
-          {post ? post.react : ""}
-        </div>
+        <div className="post__quantity-like">{post ? post.react : ""}</div>
         <div className="post__quantity-comment">10 comments</div>
       </div>
 
@@ -155,12 +151,12 @@ function Post(props) {
         <hr />
         <div className="post__options">
           {isReactThisPost ? (
-            <div className="post__option btn btn-danger" onClick={handlerReact}>
+            <div className="post__option btn-danger" onClick={handlerReact}>
               <ThumbUpOutlinedIcon />
               <p>Like</p>
             </div>
           ) : (
-            <div className="post__option btn btn-primary" onClick={handlerReact}>
+            <div className="post__option btn-primary" onClick={handlerReact}>
               <ThumbUpOutlinedIcon />
               <p>Like</p>
             </div>

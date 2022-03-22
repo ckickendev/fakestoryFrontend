@@ -67,7 +67,6 @@
 
 .post__image img {
   height: 100%;
-
   width: 100%;
 }
 
@@ -81,6 +80,8 @@
   display: flex;
   align-items: center;
   padding: 5px 50px;
+  margin: 0.5em 0;
+  border-radius: 5px;
 }
 
 .post__option:hover {
@@ -102,7 +103,9 @@
 }
 
 .post__comment-input {
+  display: flex;
   width: 100%;
+  align-items: center;
 }
 
 .post__comment-input input {
@@ -110,6 +113,10 @@
   margin-left: 8px;
   padding: 8px 12px;
   border-radius: 999px;
+}
+
+.commentBtn {
+  width: 30%;
 }
 
 .show__comment {

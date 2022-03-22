@@ -12,8 +12,8 @@ import checkLogin from "../login/LogicLogin";
 
 function Feed() {
   const showAllPosts = () => {
-    return posts ? posts.map(post => <Post post={post} /> ): <></>;
-  }
+    return posts ? posts.map((post) => <Post post={post} />) : <></>;
+  };
   const id = checkLogin();
   const [posts, setPosts] = useState([]);
   const [user, setUser] = useState();
