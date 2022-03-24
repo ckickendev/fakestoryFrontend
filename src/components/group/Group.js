@@ -102,7 +102,7 @@ function Group() {
         <div className="mcontainer">
           {!status && (
             <div className="">
-              <DiscusGroup />
+              <DiscusGroup groupId={groupId} />
             </div>
           )}
 

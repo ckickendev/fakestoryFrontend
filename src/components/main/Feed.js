@@ -12,6 +12,7 @@ import checkLogin from "../login/LogicLogin";
 
 function Feed() {
   const showAllPosts = () => {
+    console.log(posts);
     return posts ? posts.map((post) => <Post post={post} />) : <></>;
   };
   const id = checkLogin();

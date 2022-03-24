@@ -2,7 +2,7 @@ import React from "react";
 import UploadPostSpace from "../main/UploadPostSpace";
 import "../../css/AboutPage.css";
 
-function AboutPage() {
+function AboutPage(props) {
   return (
     <div class="md:flex md:space-x-6 pageAboutWrapper">
       <div class="w-full flex-shirink-0">
@@ -18,7 +18,7 @@ function AboutPage() {
               <div class="flex-1">
                 <div>
                   {" "}
-                  We Plan ,We Desing, We Estimate for Approval to Build..{" "}
+                  {props.info ? props.info.description : ""}
                 </div>
               </div>
             </div>
@@ -28,7 +28,7 @@ function AboutPage() {
                 class="bg-gray-100 p-1.5 rounded-full text-xl"
               ></ion-icon>
               <div class="flex-1">
-                <div class="font-semibold"> 347 people follow this </div>
+                <div class="font-semibold"> {props.info ? props.info.liked : ""} people follow this </div>
               </div>
             </div>
             <div class="flex items-center space-x-3">
@@ -107,7 +107,7 @@ function AboutPage() {
                   {" "}
                   Monroe Parker{" "}
                 </a>
-                <div class="text-sm text-gray-500 mt-0.5"> 345K Following</div>
+                <div class="text-sm text-gray-500 mt-0.5"> {props.info ? props.info.liked : ""} Following</div>
               </div>
               <a
                 href="timeline-page.html"

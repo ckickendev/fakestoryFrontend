@@ -6,6 +6,8 @@ import "../../css/Post.css";
 import {
   fetchAllCommentByPostId,
   fetchAllInfo,
+  fetchGroupById,
+  fetchGroupByPostId,
   fetchIsReact,
   fetchPost,
 } from "../../store/actions/information";
@@ -17,7 +19,7 @@ import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import fetchTime from "../post/fetchTime";
-import { addReact } from "../../store/actions/grow";
+import { addReact, editComment } from "../../store/actions/grow";
 // import { LikeCommentShareSpace } from "../post/LikeCommentShareSpace";
 // import { addMoreComment, addReact } from "../../store/actions/grow";
 
@@ -30,7 +32,33 @@ function Post(props) {
   const [isReactThisPost, setIsReactThisPost] = useState();
   const [isChange, setIsChange] = useState(false);
   const [post, setPost] = useState(props.post ? props.post : null);
+  const [numberComment, setNumberComment] = useState(0);
+  const [editDelete, setEditDelete] = useState(false);
+  const [onEdit, setOnEdit] = useState(false);
+  const [group, setGroup] = useState();
+  const [groupLink, setGroupLink] = useState();
+  const [editTitle, seteditTitle] = useState(
+    props.post ? props.post.content : ""
+  );
+  const user_id = checkLogin();
 
+  const onEditChange = (e) => {
+    seteditTitle(e.target.value);
+  };
+  const saveStatus = async () => {
+    const data = {
+      id: props.post ? props.post.id : 0,
+      content: editTitle,
+      image: props.post ? props.post.image : "",
+      user: props.post ? props.post.user : 0,
+      react: props.post ? props.post.react : 0,
+    };
+    console.log(data);
+    await editComment(data).then((data2) => {
+      console.log(data2);
+    });
+    setOnEdit(!onEdit);
+  };
   //check info, fetch comment and list comment
   useEffect(() => {
     const id = checkLogin();
@@ -49,11 +77,17 @@ function Post(props) {
       });
       await fetchAllCommentByPostId(props.post ? props.post.id : 0).then(
         (data) => {
+          console.log("number of comment: ", data.length);
+          setNumberComment(data.length);
           setListComment(data);
         }
       );
       await fetchIsReact(id, props.post ? props.post.id : 0).then((data) => {
         setIsReactThisPost(data);
+      });
+      await fetchGroupByPostId(props.post ? props.post.id : 0).then((data) => {
+        setGroup(data);
+        setGroupLink(`http://localhost:3000/group/${group.id}`);
       });
     }
     fetch();
@@ -63,9 +97,7 @@ function Post(props) {
   //effect show comment
   useEffect(
     (showAllComment = () => {
-      console.log("Rerender listComment", listComment);
       return listComment.map((comment) => {
-        console.log(comment);
         return (
           <ShowComment
             userid={comment ? comment.userid : 0}
@@ -76,6 +108,10 @@ function Post(props) {
     }),
     [listComment, isLoad]
   );
+
+  useEffect(() => {
+    setNumberComment(listComment.length);
+  }, [isLoad]);
   //effect after handlerReact
   const handlerReact = async () => {
     const data = {
@@ -85,7 +121,6 @@ function Post(props) {
     };
     console.log(data);
     await addReact(data).then((something) => {
-      console.log(something);
       setIsChange(!isChange);
     });
   };
@@ -96,6 +131,7 @@ function Post(props) {
       setIsReactThisPost(data);
     });
     await fetchPost(post ? post.id : 0).then((data) => {
+      console.log("post", data);
       setPost(data);
     });
   }, [isChange]);
@@ -113,20 +149,53 @@ function Post(props) {
         </a>
 
         <div className="post__top-info">
-          <a href={link}>
-            <h3>{user ? user.fullname : ""}</h3>
-          </a>
+          <div style={{display: "flex", alignItems: "center"}}>
+            <a href={link}>
+              <h3>{user ? user.fullname : ""}</h3>
+            </a>
+            {group ? <div>
+              <a href={groupLink? groupLink : ""}> - {group ? group.name : ""}</a>
+            </div> : <div></div> }
+          </div>
           <p>{time}</p>
         </div>
 
-        <div className="post__top-more">
-          <MoreHorizIcon />
-        </div>
+        {user_id == post.user ? (
+          <div
+            className="post__top-more"
+            onClick={() => setEditDelete(!editDelete)}
+          >
+            <MoreHorizIcon />
+          </div>
+        ) : (
+          <div></div>
+        )}
+
+        {editDelete ? (
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <button onClick={() => setOnEdit(!onEdit)}>Edit</button>
+            <button>Delete</button>
+          </div>
+        ) : (
+          <div></div>
+        )}
       </div>
 
-      <div className="post__bottom">
-        <p>{post ? post.content : ""}</p>
-      </div>
+      {onEdit ? (
+        <div style={{ display: "flex" }}>
+          <input
+            style={{ border: "1px solid red" }}
+            value={editTitle}
+            onChange={(e) => onEditChange(e)}
+            type="text"
+          />
+          <button onClick={() => saveStatus()}>Save</button>
+        </div>
+      ) : (
+        <div className="post__bottom">
+          <p>{editTitle ? editTitle : ""}</p>
+        </div>
+      )}
 
       {post ? (
         post.image ? (
@@ -142,8 +211,13 @@ function Post(props) {
         <div></div>
       )}
       <div className="post__quantity">
-        <div className="post__quantity-like">{post ? post.react : ""}</div>
-        <div className="post__quantity-comment">10 comments</div>
+        <div className="post__quantity-like">
+          <ThumbUpOutlinedIcon /> {post ? post.react : ""} Người đã thích nội
+          dung này{" "}
+        </div>
+        <div className="post__quantity-comment">
+          {numberComment ? numberComment : 0} comments
+        </div>
       </div>
 
       {/* Like and comment space */}

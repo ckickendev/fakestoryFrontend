@@ -11,11 +11,14 @@ import checkLogin from "../login/LogicLogin";
 import {
   fetchAllGroupByUser,
   fetchAllInfo,
+  FETCHALLPAGEBYUSER,
+  fetchAllPagesByUser,
 } from "../../store/actions/information";
 
 function Sidebar() {
   const id = checkLogin();
   const [user, setUser] = useState(null);
+  const [listGroups, setlistGroups] = useState([]);
   const [listPages, setListPages] = useState([]);
   useEffect(async () => {
     console.log(id);
@@ -25,15 +28,37 @@ function Sidebar() {
     });
     await fetchAllGroupByUser(id).then((data) => {
       console.log("list group: ", data);
+      setlistGroups(data);
+    });
+    await fetchAllPagesByUser(id).then((data) => {
+      console.log("list page: ", data);
       setListPages(data);
     });
   }, []);
 
-  const listShorcut = () => {
+  const listShorcutGroup = () => {
+    return listGroups ? (
+      listGroups.map((list) => (
+        <a href={list ? `http://localhost:3000/group/${list.id}` : ""}>
+          <SidebarRow
+            src={
+              list
+                ? list.background
+                : "https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/269853607_4865244843588935_6939299051371911022_n.jpg?stp=c42.0.50.50a_cp0_dst-jpg_p50x50&_nc_cat=102&ccb=1-5&_nc_sid=ac9ee4&_nc_ohc=pgxGzzoDLsQAX9Ba60G&tn=7wk8T-GdILCqXwVR&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT-BoYkIblcos_CIow4zK1h_F3FLHXHUMhDMZLFMx9gBNw&oe=621CBC99"
+            }
+            title={list ? list.name : ""}
+          />
+        </a>
+      ))
+    ) : (
+      <div></div>
+    );
+  };
+  const listShorcutPage = () => {
     console.log("list: ", listPages);
     return listPages ? (
       listPages.map((list) => (
-        <a href={list ? `http://localhost:3000/group/${list.id}` : ""}>
+        <a href={list ? `http://localhost:3000/page/${list.id}` : ""}>
           <SidebarRow
             src={
               list
@@ -68,7 +93,8 @@ function Sidebar() {
         <div className="titleSidebarFooter">
           <span>Your shortcuts</span>
         </div>
-        <div className="mainSidebarFooter">{listShorcut()}</div>
+        <div className="mainSidebarFooter">{listShorcutGroup()}</div>
+        <div className="mainSidebarFooter">{listShorcutPage()}</div>
       </div>
     </div>
   );

@@ -59,7 +59,7 @@ function App() {
                 <Route path="/home" element={<Main />} />
                 <Route path="/main" element={<Main />} />
                 <Route path="/" element={<Main />} />
-                <Route path="/page" element={<Page />} />
+                <Route path="/page/:pageId" element={<Page />} />
                 <Route path="/group/:groupId" element={<Group />} />
                 <Route path="/success" element={<SuccessRegister />} />
                 <Route path="/messenger" element={<Messenger />} />

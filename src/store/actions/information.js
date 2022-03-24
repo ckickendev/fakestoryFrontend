@@ -44,6 +44,15 @@ export const fetchAllInfo = async (id) => {
       return data;
     });
 }
+
+export const fetchAllPostInGroup = async (id) => {
+  return fetch(`http://localhost:8080/FakeStory/api/post/group?id=${id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+}
+
 export const fetch9Friends = async (id) => {
   return fetch(`http://localhost:8080/FakeStory/FindUserByUserId?id=${id}&number=9`)
   .then((response) => response.json())
@@ -82,12 +91,32 @@ export const fetchAllMembersByGroupId = async (id) => {
     return data;
   });
 }
-
-
-
+export const fetchAllPeoplesByPageId = async (id) => {
+  return fetch(`http://localhost:8080/FakeStory/api/people/page?id=${id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+}
 
 export const fetchAllGroupByUser = async (id) => {
   return fetch(`http://localhost:8080/FakeStory/FindGroupByUserId?id=${id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+}
+
+export const fetchAllPagesByUser = async (id) => {
+  return fetch(`http://localhost:8080/FakeStory/FindPageByUserId?id=${id}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+}
+
+export const fetchPageInfoById = async (id) => {
+  return fetch(`http://localhost:8080/FakeStory/api/admin/page?id=${id}`)
   .then((response) => response.json())
   .then((data) => {
     return data;
@@ -112,6 +141,14 @@ export const fetchAllCommentByPostId = async (id) => {
 
 export const fetchIsReact = async (user, post) =>{
   return fetch(`http://localhost:8080/FakeStory/api/react/userId?user=${user}&post=${post}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+} 
+
+export const fetchGroupByPostId = async (id) =>{
+  return fetch(`http://localhost:8080/FakeStory/api/nameGroup/post?id=${id}`)
   .then((response) => response.json())
   .then((data) => {
     return data;

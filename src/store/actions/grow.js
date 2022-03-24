@@ -56,3 +56,17 @@ export const addReact = async (data) => {
     });
 }
 
+export const editComment = async (data) => {
+  return fetch("http://localhost:8080/FakeStory/api/admin/post", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({id: data.id, content: data.content, image: data.image, user: data.user,react: data.react}),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      return data;
+    });
+}
+

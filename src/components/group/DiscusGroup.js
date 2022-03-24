@@ -1,17 +1,19 @@
 import React from 'react'
 import Grid from '@mui/material/Grid';
-import UploadPostSpace from "../main/UploadPostSpace"
+import UploadPostSpaceInGroup from "../main/UploadPostSpaceInGroup"
 import LockIcon from '@mui/icons-material/Lock';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import GroupsIcon from '@mui/icons-material/Groups';
 import "../../css/DiscusGroup.css"
+import { FeedInGroup } from '../main/FeedInGroup';
 
-function DiscusGroup() {
+function DiscusGroup(props) {
   return (
     <div>
       <Grid container spacing={2}>
         <Grid item xs={8}>
-          <UploadPostSpace />
+          <UploadPostSpaceInGroup groupId = {props.groupId} />
+          <FeedInGroup />
         </Grid>
         <Grid item xs={4}>  
             <div className="discus__overview">
