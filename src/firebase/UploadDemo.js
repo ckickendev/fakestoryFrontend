@@ -61,7 +61,7 @@ const UploadDemo = (props) => {
       {isAdmin ? (
         <div style={{ width: "100%" }}>
           <form style={{display: "flex", flexDirection: "column", padding: "0.4em"}}>
-            <input type="file" id="file"  class="custom-file-upload"/>
+            <input type="file" id="file" class="custom-file-upload"/>
             <div style={{display:"flex", justifyContent: "space-between", marginTop: "0.25em"}}> 
               <button type="button" style={{border: "1px solid grey", borderRadius:"5px" ,padding: "0.5em"}} onClick={inputHandler}>
                 Upload Image

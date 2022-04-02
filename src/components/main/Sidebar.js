@@ -4,14 +4,13 @@ import CoronavirusIcon from "@mui/icons-material/Coronavirus";
 import EmojiFlagsIcon from "@mui/icons-material/EmojiFlags";
 import GroupsRoundedIcon from "@mui/icons-material/GroupsRounded";
 import StorefrontIcon from "@mui/icons-material/Storefront";
-import LiveTvIcon from "@mui/icons-material/LiveTv";
+import PersonAdd from "@mui/icons-material/PersonAdd";
 import KeyboardArrowDownSharpIcon from "@mui/icons-material/KeyboardArrowDownSharp";
 import "../../css/Sidebar.css";
 import checkLogin from "../login/LogicLogin";
 import {
   fetchAllGroupByUser,
   fetchAllInfo,
-  FETCHALLPAGEBYUSER,
   fetchAllPagesByUser,
 } from "../../store/actions/information";
 
@@ -82,11 +81,9 @@ function Sidebar() {
             title={user ? user.fullname : "user"}
           />
         </a>
-        <SidebarRow Icon={CoronavirusIcon} title="Covid-19 Infomation Center" />
         <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
         <SidebarRow Icon={GroupsRoundedIcon} title="Groups" />
-        <SidebarRow Icon={StorefrontIcon} title="Marketplace" />
-        <SidebarRow Icon={LiveTvIcon} title="Watch" />
+        <SidebarRow Icon={PersonAdd} title="Friends" />
         <SidebarRow Icon={KeyboardArrowDownSharpIcon} title="More" />
       </div>
       <div className=" sidebarFooter">

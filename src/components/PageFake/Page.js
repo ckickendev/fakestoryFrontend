@@ -107,6 +107,8 @@ function Page() {
           <div className="">
             <AboutPage info={info ? info : null} />
           </div>
+
+
         )}
 
         {status === 3 && (

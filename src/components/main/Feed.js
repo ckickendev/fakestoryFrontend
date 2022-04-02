@@ -5,7 +5,6 @@ import Post from "./Post";
 import "../../css/Feed.css";
 import {
   fetchAllInfo,
-  fetchPost,
   fetchPostFeed,
 } from "../../store/actions/information";
 import checkLogin from "../login/LogicLogin";
@@ -29,7 +28,7 @@ function Feed() {
   }, []);
   return (
     <div className="feed">
-      <StoryReel />
+      {/* <StoryReel /> */}
       <UploadPostSpace user={user} />
       {showAllPosts()}
     </div>

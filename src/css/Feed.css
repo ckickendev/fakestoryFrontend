@@ -1,14 +1,12 @@
 .feed {
-  padding: 30px 360px;
-  margin: 0 140px;
+  padding: 10px 20px;
+  margin: 50px 0px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 @media only screen and (max-width: 768px) {

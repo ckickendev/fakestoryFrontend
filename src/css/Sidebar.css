@@ -2,8 +2,8 @@
   padding: 25px 30px;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 50px);
-  overflow-y: scroll;
+  /* height: calc(100vh - 50px); */
+  /* overflow-y: scroll; */
 }
 
 .sidebarFooter {

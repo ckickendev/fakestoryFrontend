@@ -1,3 +1,4 @@
+import { direction } from "cords";
 import React, { useEffect, useState } from "react";
 import {
   fetchAllInfo,
@@ -25,7 +26,7 @@ export const FeedInGroup = (props) => {
     });
   }, []);
   return (
-    <div style={{display: "flex", justifyContent: "center"}} >{showAllPosts()}</div>
+    <div style={{display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column"}} >{showAllPosts()}</div>
     // <div className="feed">
 
     // </div>

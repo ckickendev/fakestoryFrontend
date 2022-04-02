@@ -155,3 +155,11 @@ export const fetchGroupByPostId = async (id) =>{
   });
 } 
 
+export const fetchLikePageInPage = async (userId, pageId) =>{
+  return fetch(`http://localhost:8080/FakeStory/api/rolepage/page?userId=${userId}&pageId=${pageId}`)
+  .then((response) => response.json())
+  .then((data) => {
+    return data;
+  });
+} 
+

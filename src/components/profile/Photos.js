@@ -13,7 +13,7 @@ function PhotoIcon(props) {
     <Grid item xs={2} md={2}>
       <div className="imgView">
         <ImageViewer>
-          <img src={props ? props.image : ""} alt="image" />
+          <img src={props.image ? props.image : ""} alt="image" />
         </ImageViewer>
         <button className="buttonDel">
           <DeleteIcon className="iconDel" />
@@ -28,11 +28,24 @@ function Photos() {
   const [listPhotos, setListPhotos] = useState([]);
 
   useEffect(async () => {
-    await fetch9Photos(id).then((data) => {
+    await fetch9Photos(userId).then((data) => {
       console.log(data);
       setListPhotos(data);
     });
   }, [id]);
+
+  const printListPhoto = () => {
+    console.log("list photos", listPhotos);
+    return listPhotos ? (
+      listPhotos.map((photo) => {
+        if(photo){
+          return <PhotoIcon image={photo} />;
+        }
+      })
+    ) : (
+      <div></div>
+    );
+  };
 
   return (
     <div className="photoWrapper">
@@ -47,15 +60,7 @@ function Photos() {
         <div className="photoBarDetail">
           <div className="photoCollection">
             <Grid container xs={12} spacing={2}>
-              {listPhotos[0] ? <PhotoIcon image={listPhotos[0]} /> : ""}
-              {listPhotos[1] ? <PhotoIcon image={listPhotos[1]} /> : ""}
-              {listPhotos[2] ? <PhotoIcon image={listPhotos[2]} /> : ""}
-              {listPhotos[3] ? <PhotoIcon image={listPhotos[3]} /> : ""}
-              {listPhotos[4] ? <PhotoIcon image={listPhotos[4]} /> : ""}
-              {listPhotos[5] ? <PhotoIcon image={listPhotos[5]} /> : ""}
-              {listPhotos[6] ? <PhotoIcon image={listPhotos[6]} /> : ""}
-              {listPhotos[7] ? <PhotoIcon image={listPhotos[7]} /> : ""}
-              {listPhotos[8] ? <PhotoIcon image={listPhotos[8]} /> : ""}
+              {printListPhoto()}
             </Grid>
           </div>
         </div>

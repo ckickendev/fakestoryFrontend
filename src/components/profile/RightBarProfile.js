@@ -10,13 +10,14 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import { SmallProfile } from "../profile/SmallProfile";
 import { fetch9Photos, fetchAllInfo } from "../../store/actions/information";
 import checkLogin from "../login/LogicLogin";
+import { useParams } from "react-router-dom";
 
 const RightBarProfile = (props) => {
   const [show, setShow] = useState(false);
   const [photos, setPhotos] = useState([]);
-  const id = checkLogin();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const { userId } = useParams();
 
   const printProfile = () => {
     return props.listFriends ? (
@@ -27,7 +28,7 @@ const RightBarProfile = (props) => {
   };
 
   useEffect(async () => {
-    await fetch9Photos(id).then((data) => {
+    await fetch9Photos(userId).then((data) => {
       setPhotos(data);
     });
   }, []);

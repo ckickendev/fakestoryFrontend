@@ -67,13 +67,6 @@ function Post(props) {
       setTime(fetchTime(props.post ? props.post.time : 0));
       await fetchAllInfo(idUser).then((data) => {
         setUser(data);
-        setLink(
-          user
-            ? user.id == id
-              ? "http://localhost:3000/profile"
-              : `http://localhost:3000/profile?id=${user ? user.id : 0}`
-            : ""
-        );
       });
       await fetchAllCommentByPostId(props.post ? props.post.id : 0).then(
         (data) => {
@@ -87,12 +80,24 @@ function Post(props) {
       });
       await fetchGroupByPostId(props.post ? props.post.id : 0).then((data) => {
         setGroup(data);
-        setGroupLink(`http://localhost:3000/group/${group.id}`);
+        setGroupLink(`http://localhost:3000/group/${group? group.id : 0}`);
       });
     }
     fetch();
   }, [props.post, time, isChange]);
   let showAllComment;
+
+  useEffect(
+    () =>
+      setLink(
+        user
+          ? user.id == checkLogin()
+            ? "http://localhost:3000/profile"
+            : `http://localhost:3000/profile/${user ? user.id : 0}`
+          : ""
+      ),
+    [user]
+  );
 
   //effect show comment
   useEffect(
@@ -149,13 +154,20 @@ function Post(props) {
         </a>
 
         <div className="post__top-info">
-          <div style={{display: "flex", alignItems: "center"}}>
-            <a href={link}>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <a href={link ? link : ""}>
               <h3>{user ? user.fullname : ""}</h3>
             </a>
-            {group ? <div>
-              <a href={groupLink? groupLink : ""}> - {group ? group.name : ""}</a>
-            </div> : <div></div> }
+            {group ? (
+              <div>
+                <a href={groupLink ? groupLink : ""}>
+                  {" "}
+                  - {group ? group.name : ""}
+                </a>
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
           <p>{time}</p>
         </div>
