@@ -327,7 +327,7 @@ const NotFound404 = () => {
             <h2>Couldn't launch :(</h2>
             <h3>
               Page Not Found - lets take you{" "}
-              <a href="https://twitter.com/namratapdr">BACK</a>
+              <a href="http://localhost:3000/">BACK</a>
             </h3>
           </div>
         </div>

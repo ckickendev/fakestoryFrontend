@@ -38,8 +38,8 @@ function Sidebar() {
   const listShorcutGroup = () => {
     return listGroups ? (
       listGroups.map((list) => (
-        <a href={list ? `http://localhost:3000/group/${list.id}` : ""}>
-          <SidebarRow
+        <a key={list.id} href={list ? `http://localhost:3000/group/${list.id}` : ""}>
+          <SidebarRow 
             src={
               list
                 ? list.background
@@ -57,8 +57,8 @@ function Sidebar() {
     console.log("list: ", listPages);
     return listPages ? (
       listPages.map((list) => (
-        <a href={list ? `http://localhost:3000/page/${list.id}` : ""}>
-          <SidebarRow
+        <a key={list.id} href={list ? `http://localhost:3000/page/${list.id}` : ""}>
+          <SidebarRow key={list.id}
             src={
               list
                 ? list.background

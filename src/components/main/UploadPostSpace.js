@@ -18,7 +18,7 @@ function UploadPostSpace(props) {
         <Avatar src={props.user ? props.user.avatar : ""} />
         <form
           className="formUploadPost"
-          accept-charset="utf-8"
+          acceptCharset="utf-8"
           action="http://localhost:8080/FakeStory/AddPost"
           method="post"
         >

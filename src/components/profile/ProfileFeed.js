@@ -12,8 +12,16 @@ import { useParams } from "react-router-dom";
 
 function ProfileFeed(props) {
   const showPosts = () => {
-    return posts ? posts.map(post => <Post post={post} />) : <div></div>
-  }
+    return posts ? (
+      posts.map((post) => {
+        if (post.status == 1) {
+          return (<Post post={post} />);
+        }
+      })
+    ) : (
+      <div></div>
+    );
+  };
   const { userId } = useParams();
   console.log("userId", userId);
   const id = userId ? userId : checkLogin();

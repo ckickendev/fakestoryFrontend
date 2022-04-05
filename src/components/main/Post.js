@@ -6,7 +6,6 @@ import "../../css/Post.css";
 import {
   fetchAllCommentByPostId,
   fetchAllInfo,
-  fetchGroupById,
   fetchGroupByPostId,
   fetchIsReact,
   fetchPost,
@@ -19,9 +18,12 @@ import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import fetchTime from "../post/fetchTime";
-import { addReact, editComment } from "../../store/actions/grow";
-// import { LikeCommentShareSpace } from "../post/LikeCommentShareSpace";
-// import { addMoreComment, addReact } from "../../store/actions/grow";
+import {
+  addReact,
+  editComment,
+  deletePostById,
+} from "../../store/actions/grow";
+import { Bootbox } from "bootbox-react";
 
 function Post(props) {
   const [user, setUser] = useState(null);
@@ -40,6 +42,8 @@ function Post(props) {
   const [editTitle, seteditTitle] = useState(
     props.post ? props.post.content : ""
   );
+  const [isShowComment, setIsShowComment] = useState(false);
+  const [showConfirmBox, setShowConfirmBox] = useState(false);
   const user_id = checkLogin();
 
   const onEditChange = (e) => {
@@ -59,6 +63,16 @@ function Post(props) {
     });
     setOnEdit(!onEdit);
   };
+  const handleConfirm = async () => {
+    console.log("You clicked Yes!");
+    const idPost = props.post.id;
+    console.log(idPost);
+    await deletePostById(idPost).then((data) => {
+      console.log(data);
+    });
+    return setShowConfirmBox(false);
+  };
+
   //check info, fetch comment and list comment
   useEffect(() => {
     const id = checkLogin();
@@ -80,7 +94,7 @@ function Post(props) {
       });
       await fetchGroupByPostId(props.post ? props.post.id : 0).then((data) => {
         setGroup(data);
-        setGroupLink(`http://localhost:3000/group/${group? group.id : 0}`);
+        setGroupLink(`http://localhost:3000/group/${group ? group.id : 0}`);
       });
     }
     fetch();
@@ -91,7 +105,7 @@ function Post(props) {
     () =>
       setLink(
         user
-          ? user.id == checkLogin()
+          ? user.id === checkLogin()
             ? "http://localhost:3000/profile"
             : `http://localhost:3000/profile/${user ? user.id : 0}`
           : ""
@@ -186,7 +200,7 @@ function Post(props) {
         {editDelete ? (
           <div style={{ display: "flex", flexDirection: "column" }}>
             <button onClick={() => setOnEdit(!onEdit)}>Edit</button>
-            <button>Delete</button>
+            <button onClick={() => handleConfirm()}>Delete</button>
           </div>
         ) : (
           <div></div>
@@ -248,7 +262,10 @@ function Post(props) {
             </div>
           )}
 
-          <div className="post__option">
+          <div
+            className="post__option"
+            onClick={() => setIsShowComment(!isShowComment)}
+          >
             <ChatBubbleOutlineIcon />
             <p>Comment</p>
           </div>
@@ -257,20 +274,24 @@ function Post(props) {
             <p>Share</p>
           </div>
         </div>
-
-        <hr />
       </div>
-
-      {showAllComment()}
-      <YourSpaceComment
-        setLoad={setLoad}
-        listComment={listComment ? listComment : []}
-        setListComment={(list) => {
-          setListComment(list);
-        }}
-        user={user}
-        post={post ? post : null}
-      />
+      {isShowComment ? (
+        <div>
+          <hr />
+          {showAllComment()}
+          <YourSpaceComment
+            setLoad={setLoad}
+            listComment={listComment ? listComment : []}
+            setListComment={(list) => {
+              setListComment(list);
+            }}
+            user={user}
+            post={post ? post : null}
+          />
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }

@@ -12,7 +12,11 @@ import checkLogin from "../login/LogicLogin";
 function Feed() {
   const showAllPosts = () => {
     console.log(posts);
-    return posts ? posts.map((post) => <Post post={post} />) : <></>;
+    return posts ? posts.map((post) => {
+      if(post.status == 1){
+        return <Post key={post.id} post={post} />
+      }
+    } ) : <></>;
   };
   const id = checkLogin();
   const [posts, setPosts] = useState([]);

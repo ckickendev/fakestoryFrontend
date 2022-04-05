@@ -70,3 +70,16 @@ export const editComment = async (data) => {
     });
 }
 
+export const deletePostById = async (id) => {
+  return fetch(`http://localhost:8080/FakeStory/api/admin/post`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({id: id}),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      return data;
+    });
+}

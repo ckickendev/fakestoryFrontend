@@ -77,6 +77,10 @@
   margin: 0 12px;
 }
 
+.post__option:hover{
+  background-color: red;
+}
+
 .post__option {
   display: flex;
   align-items: center;
