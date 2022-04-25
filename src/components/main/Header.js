@@ -31,14 +31,14 @@ function Header() {
         <a href="/">
           <img
             className="imgHeader"
-            src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.sgv.png"
+            src="https://firebasestorage.googleapis.com/v0/b/fakestory-9fb8d.appspot.com/o/file%2F06f74djcd28be?alt=media&token=57d37f0b-deec-453b-b150-efdd4734a182"
             alt="Fakebook"
           />
         </a>
 
         <div className="header__input">
           <SearchIcon />
-          <input type="text" placeholder="Tìm kiếm trên fakebook" />
+          <input type="text" placeholder="Tìm kiếm trên fakestory" />
         </div>
       </div>
 

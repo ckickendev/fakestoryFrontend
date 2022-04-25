@@ -66,6 +66,7 @@ function App() {
                 <Route path="/post" element={<Post />} />
                 <Route path="/404" element={<NotFound404 />} />
                 <Route path="/403" element={<NotFound />} />
+                <Route path="/upload" element={< UploadDemo />} />
 
                 <Route path="/firebase" element={<UploadDemo />} />
                 <Route path="/*" element={<NotFound404 />} />

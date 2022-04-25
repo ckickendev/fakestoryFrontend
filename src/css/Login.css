@@ -14,14 +14,15 @@
 
 .login__intro {
   box-sizing: border-box;
-  margin-right: 0;
+  margin-right: 100px;
   padding-right: 32px;
   margin-bottom: 200px;
   width: 580px;
 }
 
 .login__logo {
-  height: 106px;
+  /* height: 106px; */
+  width: 100%;
 }
 
 .login__intro > p {

@@ -23,7 +23,7 @@ import {
   editComment,
   deletePostById,
 } from "../../store/actions/grow";
-import { Bootbox } from "bootbox-react";
+// import { Bootbox } from "bootbox-react";
 
 function Post(props) {
   const [user, setUser] = useState(null);
