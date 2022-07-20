@@ -6,7 +6,9 @@ const initState = {
   test: null,
 };
 
-export default (state = initState, action) => {
+
+
+const mainReducer = (state = initState, action) => {
   switch (action.type) {
     case AUTHENTICATION: {
       // console.log("action", action);
@@ -23,7 +25,10 @@ export default (state = initState, action) => {
       };
       break;
     }
+    default: return state;
   }
   // console.log("state", state);
   return state;
 };
+
+export default mainReducer;

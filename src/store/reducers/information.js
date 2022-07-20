@@ -1,4 +1,4 @@
-import { FETCHFRIENDS, FETCHPOSTS, Fe } from "../actions/information";
+import { FETCHFRIENDS, FETCHPOSTS } from "../actions/information";
 
 
 const initState = {

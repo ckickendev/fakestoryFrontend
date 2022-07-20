@@ -20,6 +20,8 @@
 .photoTitle {
   font-weight: 600;
   color: black;
+  line-height: 30px;
+  margin-left: 10px;
 }
 
 .photoBarDetail {
@@ -31,7 +33,6 @@
 
 .photoCollection {
   display: flex;
-  max-width: fit-content;
 }
 
 .photoList {

@@ -82,7 +82,7 @@ function Login() {
             src="https://firebasestorage.googleapis.com/v0/b/fakestory-9fb8d.appspot.com/o/file%2F23j74494428j5?alt=media&token=abaaab8d-98b0-40f8-b796-9c3c9a856074"
             alt="fakebook"
           />
-          <p class="text-center">
+          <p className="text-center">
             Viết lên câu chuyện của bạn 
           </p>
         </div>

@@ -22,7 +22,7 @@ export const YourSpaceComment = (props) => {
     <div className="post__comment">
       <div className="post__comment-avatar">
         <Avatar
-          style={{ width: "32px", height: "32px" }}
+          style={{ width: "36px", height: "36px" }}
           src={props.user ? props.user.avatar : ""}
         />
       </div>

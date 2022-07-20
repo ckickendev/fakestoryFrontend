@@ -1,8 +1,7 @@
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 export const AUTHENTICATION = "AUTHENTICATION";
 
 export const login = async (username, password) => {
-  let mess = "";
   return fetch("http://localhost:8080/FakeStory/api/login", {
     method: "POST",
     headers: {

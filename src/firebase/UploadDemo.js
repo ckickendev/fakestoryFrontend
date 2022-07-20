@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
 import { storage } from "./index";
 import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage";
 import checkLogin from "../components/login/LogicLogin";
 import NotFound from "../components/main/NotFound";
 import { fetchAllInfo } from "../store/actions/information";
-import { addPost } from "../store/actions/grow";
-import { padding } from "@mui/system";
 import "../css/UploadDemo.css"
 
 const UploadDemo = (props) => {
@@ -48,9 +45,10 @@ const UploadDemo = (props) => {
   };
   const idlogin = checkLogin();
   console.log("idlogin", idlogin);
-  let [isAdmin, setIsAdmin] = useState("");
+  const [isAdmin, setIsAdmin] = useState(0);
   const check = async () => {
     await fetchAllInfo(idlogin).then((data) => {
+      console.log(data)
       setIsAdmin(data.role_id);
     });
   };
@@ -59,18 +57,20 @@ const UploadDemo = (props) => {
   return (
     <div style={{ width: "100%" }}>
       {isAdmin ? (
-        <div style={{ width: "100%" }}>
-          <form style={{display: "flex", flexDirection: "column", padding: "0.4em"}}>
-            <input type="file" id="file" class="custom-file-upload"/>
-            <div style={{display:"flex", justifyContent: "space-between", marginTop: "0.25em"}}> 
-              <button type="button" style={{border: "1px solid grey", borderRadius:"5px" ,padding: "0.5em"}} onClick={inputHandler}>
+        <div style={{ }} >
+          <form style={{display: "flex", flexDirection: "column" ,justifyContent: "space-between", padding: "0.4em"}}>
+            <input type="file" id="file" class="custom-file-upload form-control form-control-lg "  />
+            <div style={{display:"flex", flexDirection:"column", justifyContent: "space-between" , alignItems: "center", marginTop: "0.25em"}}> 
+              <button type="button" style={{border: "1px solid grey", width:"100%" , borderRadius:"5px" ,padding: "0.5em"}} onClick={inputHandler}>
                 Upload Image
               </button>   
-              <h3 style={{marginTop: "1em"}}>Uploaded {progress}%</h3>
+              <button type="button" onClick={() => props.setIsUploadImage(!props.isUploadImage)}  style={{border: "1px solid grey", width:"100%" , borderRadius:"5px" ,padding: "0.5em"}}>
+                Cancel
+              </button>  
+              <h3 style={{marginTop: "1em", textAlign: "center"}}>Uploaded {progress}%</h3>
             </div>
             
           </form>
-          
         </div>
       ) : (
         <NotFound />

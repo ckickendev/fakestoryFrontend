@@ -28,10 +28,10 @@ const RightBarProfile = (props) => {
   };
 
   useEffect(async () => {
-    await fetch9Photos(userId).then((data) => {
+    await fetch9Photos(props.user.id).then((data) => {
       setPhotos(data);
     });
-  }, []);
+  });
 
   const printPhotos = () => {
     return photos ? (
@@ -92,7 +92,6 @@ const RightBarProfile = (props) => {
             </button>
           </div>
 
-          {/* Photos */}
           <div className="subWrapper">
             <div className="rightbarNav">
               <h4 className="rightbarTitle">Photos</h4>

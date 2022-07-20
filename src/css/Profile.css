@@ -34,6 +34,27 @@
   border: 3px solid white;
 }
 
+.iconEdit{
+  position: absolute;
+  left: 350px;
+  right: 200px;
+  margin: auto;
+  border: 3px solid white;
+}
+
+.edit_control{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  border: 1px solid red;
+  position: absolute;
+  left: 800px;
+  right: 100px;
+  margin: auto;
+  border: 3px solid white;
+}
+
 .profileInfo {
   display: flex;
   flex-direction: column;
@@ -54,6 +75,7 @@
 }
 
 .profileRightBottom {
+  padding: 30px 60px;
   display: flex;
 }
 

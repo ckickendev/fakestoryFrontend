@@ -21,6 +21,7 @@
 .friendTitle {
   font-weight: 600;
   color: black;
+  line-height: 30px;
 }
 
 .friendBarDetail {
@@ -29,29 +30,27 @@
 }
 
 .friendCollection {
-  max-width: fit-content;
   display: flex;
 }
 
 .friendList {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
-  padding-right: 5rem;
   border: 1px solid rgb(240, 240, 240);
   box-shadow: 0 0 2px 1px rgba(191, 191, 191, 0.34);
   border-radius: 7px;
+  height: 200px;
 }
 
 .friendList img {
   cursor: pointer;
-  border-radius: 1em;
+  border-radius: 50%;
   margin: 0 auto;
   padding: 10px;
-  width: 120px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   display: block;
-  margin-top: 1.5em;
 }
 
 .friendList a {
@@ -66,15 +65,12 @@
   text-decoration: underline;
 }
 
-.friendList button {
-  margin-top: 85px;
-  margin-bottom: 95px;
+.friendList .button {
   border: none;
   background-color: white;
-  margin-right: 2rem;
 }
 
-.friendList button:hover {
+.friendList .button:hover {
   background-color: rgb(194, 194, 194);
   border-radius: 50%;
 }

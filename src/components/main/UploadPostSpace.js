@@ -35,7 +35,7 @@ function UploadPostSpace(props) {
           </div>
 
           {isUploadImage ? (
-            <UploadDemo setImage={setImage} content={input} />
+            <UploadDemo setIsUploadImage={setIsUploadImage} isUploadImage={isUploadImage} setImage={setImage} content={input} />
           ) : (
             <div></div>
           )}

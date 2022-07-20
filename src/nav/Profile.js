@@ -7,22 +7,34 @@ import Photos from "../components/profile/Photos";
 import Friends from "../components/profile/Friends";
 import { ImageViewer } from "react-image-viewer-dv";
 import "../css/Profile.css";
+import "../css/EditAvatart.css";
 import Header from "../components/main/Header";
 import checkLogin from "../components/login/LogicLogin";
 import { fetch9Friends, fetchAllInfo } from "../store/actions/information";
 import { useParams } from "react-router-dom";
+import { Icon } from "@mui/material";
+import EditIcon from "@mui/icons-material/Edit";
+import { EditAvatar } from "../components/profile/EditAvatar";
 
 function Profile(props) {
   const [status, onStatus] = useState(null);
   const [user, setUser] = useState(null);
   const [listFriends, setListFriend] = useState([]);
+  const [editProfile, setEditProfile] = useState(false);
+  const [editAvatar, setEditAvatar] = useState(false);
   // const id = props.match.params.id ? props.match.params.id : checkLogin();
   const { userId } = useParams();
   const userCurrentId = checkLogin();
   const id = userId ? userId : checkLogin();
+  const editAvatarHandler = () => {
+    setEditProfile(!editProfile);
+  };
+  const editAvatarStatus = () => {
+    setEditAvatar(!editAvatar);
+  };
 
   useEffect(async () => {
-    console.log(id);
+    // console.log(id);
     await fetchAllInfo(id).then((data) => {
       console.log(data);
       setUser(data);
@@ -35,9 +47,15 @@ function Profile(props) {
   const handleClick = (step) => {
     onStatus(step);
   };
+
   return (
     <div className="profile">
-      <div className="profileRight">
+      {editAvatar ? (
+        <EditAvatar editAvatarStatus={editAvatarStatus} />
+      ) : (
+        <div></div>
+      )}
+      <div className="profileRight" style={{ backgroundColor: "#eee" }}>
         <Header />
         <div className="profileRightTop">
           <div className="profileCover">
@@ -55,6 +73,15 @@ function Profile(props) {
                 alt="user image"
               />
             </ImageViewer>
+            <EditIcon className="iconEdit" onClick={editAvatarHandler} />
+            {editProfile ? (
+              <div class="edit_control">
+                <button onClick={editAvatarStatus}>Đổi ảnh</button>
+                <button>Xem</button>
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
           <div className="profileInfo">
             <h4 className="profileInfoName">{user ? user.fullname : ""}</h4>
@@ -63,23 +90,36 @@ function Profile(props) {
             </span>
           </div>
           <div className="profileNav">
-            <a href="/profile" onClick={() => handleClick(0)}>
-              Posts
+            <a href="#" onClick={() => handleClick(0)}>
+              Bài viết
             </a>
             <a href="#" onClick={() => handleClick(1)}>
-              About
+              Thông tin
             </a>
             <a href="#" onClick={() => handleClick(2)}>
-              Friends
+              Bạn bè
             </a>
             <a href="#" onClick={() => handleClick(3)}>
-              Photos
+              Ảnh
             </a>
           </div>
         </div>
+
+        {status === 1 && (
+          <div className="profileRightBottom">
+            <About />
+          </div>
+        )}
+
+        {status === 2 && (
+          <div className="profileRightBottom">
+            <Friends listFriends={listFriends} />
+          </div>
+        )}
+
         {status === 3 && (
           <div className="profileRightBottom">
-            <Photos />
+            <Photos userId={id} />
           </div>
         )}
 
@@ -91,18 +131,6 @@ function Profile(props) {
               user={user ? user : null}
               changeStatus={handleClick}
             />
-          </div>
-        )}
-
-        {status === 1 && (
-          <div className="profileRightBottom">
-            <About />
-          </div>
-        )}
-
-        {status === 2 && (
-          <div className="profileRightBottom">
-            <Friends />
           </div>
         )}
       </div>

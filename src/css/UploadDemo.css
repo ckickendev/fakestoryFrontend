@@ -2,4 +2,7 @@
     display: inline-block;
     margin: auto;
     cursor: pointer;
+    width: 100%;
+    background-color: red;
+    color: yellow;
 }

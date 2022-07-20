@@ -39,7 +39,7 @@ function ProfileFeed(props) {
   }, []);
   return (
     <div className="subFeed">
-      {props.isPost ? <UploadPostSpace /> : <></>}
+      {props.isPost ? <UploadPostSpace user={user} /> : <></>}
       {showPosts()}
     </div>
   );

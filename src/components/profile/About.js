@@ -63,19 +63,6 @@ function About() {
                 <b>{user ? convert(user.dateCreate)  : ""}</b>
               </span>
             </div>
-            {/* <div className="aboutBarItem">
-              <CelebrationIcon className="rightBarInfoKey" />
-              <span className="rightbarInfoValue">
-                <b>In a relationship</b>
-              </span>
-            </div> */}
-            {/* <div className="aboutBarItem">
-              <SchoolIcon className="rightBarInfoKey" />
-              <span className="rightbarInfoValue">
-                Studied Information of Technology (IT) at{" "}
-                <b>FPT University Da Nang</b>
-              </span>
-            </div> */}
             <div className="aboutBarItem">
               <HomeIcon className="rightBarInfoKey" />
               <span className="rightbarInfoValue">

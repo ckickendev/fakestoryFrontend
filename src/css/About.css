@@ -13,11 +13,17 @@
   border-bottom: 1px solid rgb(230, 230, 230);
 }
 
+.aboutBarTitle h4{ 
+  line-height: 30px;
+
+}
+
 .inconInfo {
   color: black;
 }
 
 .aboutTitle {
+  margin-left: 10px;
   font-weight: 600;
   color: black;
 }
@@ -56,6 +62,6 @@
     margin-top: 2vh;
   }
 
-  .buttonEdit {
-  }
+  /* .buttonEdit {
+  } */
 }

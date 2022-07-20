@@ -21,8 +21,8 @@ export const fetchPost = async (id) => {
     });
 }
 
-export const fetchPostFeed = async (user_id) => {
-  return fetch(`http://localhost:8080/FakeStory/api/filter/postuser?id=${user_id}`)
+export const fetchPostFeed = async (user_id, offset) => {
+  return fetch(`http://localhost:8080/FakeStory/api/filter/postuser?id=${user_id}&offset=${offset}`)
   .then((response) => response.json())
   .then((data) => {
     return data;

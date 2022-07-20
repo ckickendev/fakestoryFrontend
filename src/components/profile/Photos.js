@@ -10,7 +10,7 @@ import { fetch9Friends, fetch9Photos } from "../../store/actions/information";
 
 function PhotoIcon(props) {
   return (
-    <Grid item xs={2} md={2}>
+    <div class="col-md-2 mt-4">
       <div className="imgView">
         <ImageViewer>
           <img src={props.image ? props.image : ""} alt="image" />
@@ -19,12 +19,10 @@ function PhotoIcon(props) {
           <DeleteIcon className="iconDel" />
         </button>
       </div>
-    </Grid>
+    </div>
   );
 }
-function Photos() {
-  const { userId } = useParams();
-  const id = userId ? userId : checkLogin();
+function Photos({ userId }) {
   const [listPhotos, setListPhotos] = useState([]);
 
   useEffect(async () => {
@@ -32,13 +30,13 @@ function Photos() {
       console.log(data);
       setListPhotos(data);
     });
-  }, [id]);
+  }, [userId]);
 
   const printListPhoto = () => {
     console.log("list photos", listPhotos);
     return listPhotos ? (
       listPhotos.map((photo) => {
-        if(photo){
+        if (photo) {
           return <PhotoIcon image={photo} />;
         }
       })
@@ -54,15 +52,11 @@ function Photos() {
           <h4>
             <ImageIcon className="iconImage" />
           </h4>
-          <h4 className="photoTitle">Photos</h4>
+          <h4 className="photoTitle">Tất cả ảnh</h4>
         </div>
 
         <div className="photoBarDetail">
-          <div className="photoCollection">
-            <Grid container xs={12} spacing={2}>
-              {printListPhoto()}
-            </Grid>
-          </div>
+          <div className="photoCollection row">{printListPhoto()}</div>
         </div>
       </div>
     </div>
