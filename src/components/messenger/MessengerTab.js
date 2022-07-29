@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import "../../css/MessengerTab.css";
 import { fetchAllInfo } from "../../store/actions/information";
 import checkLogin from "../login/LogicLogin";
+import { NotificationBoard } from "../main/NotificationBoard";
+import { MessengerBoard } from "./MessengerBoard";
 import { OptionTag } from "./OptionTag";
 function MessengerTab() {
   const [user, setUser] = useState();
+  const id = checkLogin();
   useEffect(async () => {
-    const id = checkLogin();
     await fetchAllInfo(id).then((data) => {
-      console.log(data);
       setUser(data);
     });
   }, []);
@@ -31,8 +32,7 @@ function MessengerTab() {
             href="#"
             className="btn_action hover:bg-gray-100 mr-2 px-2 py-1 rounded-md underline"
           >
-            {" "}
-            Checkout{" "}
+            Checkout
           </a>
         </div>
 
@@ -43,8 +43,8 @@ function MessengerTab() {
             </div>
             <div className="cart_text">
               <div className=" font-semibold leading-4 mb-1.5 text-base line-clamp-1">
-                {" "}
-                Wireless headphones{" "}
+    
+                Wireless headphones
               </div>
               <p className="text-sm">Type Accessories </p>
             </div>
@@ -58,119 +58,16 @@ function MessengerTab() {
         <div className="cart_footer">
           <p> Subtotal : $ 320 </p>
           <h1>
-            {" "}
-            Total : <strong> $ 320</strong>{" "}
+            Total : <strong> $ 320</strong>
           </h1>
         </div>
       </div>
-
-      <a href="#" className="is_icon" uk-tooltip="title: Notifications">
-        <svg
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
-        </svg>
-        <span>3</span>
-      </a>
-      <div uk-drop="mode: click" className="header_dropdown">
-        <div className="dropdown_scrollbar" data-simplebar>
-          <div className="drop_headline">
-            <h4>Notifications </h4>
-            <div className="btn_action">
-              <a href="#" data-tippy-placement="left" title="Notifications">
-                <ion-icon name="settings-outline"></ion-icon>
-              </a>
-              <a href="#" data-tippy-placement="left" title="Mark as read all">
-                <ion-icon name="checkbox-outline"></ion-icon>
-              </a>
-            </div>
-          </div>
-          <ul>
-            <li>
-              <a href="#">
-                <div className="drop_avatar">
-                  <img src="assets/images/avatars/avatar-1.jpg" alt="" />
-                </div>
-                <span className="drop_icon bg-gradient-primary">
-                  <i className="icon-feather-thumbs-up"></i>
-                </span>
-                <div className="drop_text">
-                  <p>
-                    <strong>Adrian Mohani</strong> Like Your Comment On Video
-                    <span className="text-link">Learn Prototype Faster </span>
-                  </p>
-                  <time> 2 hours ago </time>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <a href="#" className="is_icon" uk-tooltip="title: Message">
-        <svg
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fillRule="evenodd"
-            d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z"
-            clipRule="evenodd"
-          ></path>
-        </svg>
-        <span>4</span>
-      </a>
-      <div uk-drop="mode: click" className="header_dropdown is_message">
-        <div className="dropdown_scrollbar" data-simplebar>
-          <div className="drop_headline">
-            <h4>Messages </h4>
-            <div className="btn_action">
-              <a href="#" data-tippy-placement="left" title="Notifications">
-                <ion-icon
-                  name="settings-outline"
-                  uk-tooltip="title: Message settings ; pos: left"
-                ></ion-icon>
-              </a>
-              <a href="#" data-tippy-placement="left" title="Mark as read all">
-                <ion-icon name="checkbox-outline"></ion-icon>
-              </a>
-            </div>
-          </div>
-          <input
-            type="text"
-            className="uk-input"
-            placeholder="Search in Messages"
-          />
-          <ul>
-            <li className="un-read">
-              <a href="#">
-                <div className="drop_avatar">
-                  {" "}
-                  <img src="assets/images/avatars/avatar-7.jpg" alt="" />
-                </div>
-                <div className="drop_text">
-                  <strong> Stella Johnson </strong> <time>12:43 PM</time>
-                  <p> Alex will explain you how ... </p>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <a href="./messenger" className="see-all">
-          {" "}
-          See all in Messages
-        </a>
-      </div>
+      <NotificationBoard />
+      <MessengerBoard id={id} />
+      
 
       <a href="#">
-        <img
-          src={user ? user.avatar : ""}
-          className="is_avatar"
-          alt=""
-        />
+        <img src={user ? user.avatar : ""} className="is_avatar" alt="" />
       </a>
       <OptionTag />
     </div>

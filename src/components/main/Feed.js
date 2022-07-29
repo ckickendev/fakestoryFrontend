@@ -13,7 +13,7 @@ function Feed() {
     return posts ? (
       posts.map((post) => {
         if (post.status === 1) {
-          return <Post post={post} />;
+          return <Post key={post.id} post={post} />;
         }
       })
     ) : (

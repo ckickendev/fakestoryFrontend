@@ -13,7 +13,6 @@ import Profile from "./nav/Profile";
 import Page from "./components/PageFake/Page";
 import Register from "./components/register/Register";
 import UploadDemo from "./firebase/UploadDemo";
-import Post from "./components/main/Post";
 import { fetchAllInfo } from "./store/actions/information";
 import NotFound404 from "./components/main/NotFound404";
 import NotFound from "./components/main/NotFound";
@@ -21,6 +20,7 @@ import NotFound from "./components/main/NotFound";
 import Group from "./components/group/Group";
 import SuccessRegister from "./components/register/SuccessRegister";
 import Messenger from "./components/messenger/Messenger";
+import PostScreen from "./nav/PostScreen";
 
 const rootReducer = combineReducers({
   auth,
@@ -62,8 +62,8 @@ function App() {
                 <Route path="/page/:pageId" element={<Page />} />
                 <Route path="/group/:groupId" element={<Group />} />
                 <Route path="/success" element={<SuccessRegister />} />
-                <Route path="/messenger" element={<Messenger />} />
-                <Route path="/post" element={<Post />} />
+                <Route path="/messenger/:userId" element={<Messenger />} />
+                <Route path="/post/:postId" element={<PostScreen />} />
                 <Route path="/404" element={<NotFound404 />} />
                 <Route path="/403" element={<NotFound />} />
                 <Route path="/upload" element={< UploadDemo />} />

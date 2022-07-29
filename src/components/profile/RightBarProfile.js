@@ -12,6 +12,20 @@ import { fetch9Photos, fetchAllInfo } from "../../store/actions/information";
 import checkLogin from "../login/LogicLogin";
 import { useParams } from "react-router-dom";
 
+const PhotoElement = ({ photo, index }) => {
+  if (photo == null) {
+    return <></>;
+  } else {
+    return (
+      <div key={index}>
+        <div className="rightbarFollowing">
+          <img src={photo} alt="img" className="rightbarFollowingImg" />
+        </div>
+      </div>
+    );
+  }
+};
+
 const RightBarProfile = (props) => {
   const [show, setShow] = useState(false);
   const [photos, setPhotos] = useState([]);
@@ -21,33 +35,24 @@ const RightBarProfile = (props) => {
 
   const printProfile = () => {
     return props.listFriends ? (
-      props.listFriends.map((list) => <SmallProfile user={list} />)
+      props.listFriends.map((list) => (
+        <SmallProfile key={list.id} user={list} />
+      ))
     ) : (
       <div></div>
     );
   };
 
   useEffect(async () => {
-    await fetch9Photos(props.user.id).then((data) => {
-      setPhotos(data);
+    await fetch9Photos(userId).then((data) => {
+      if (data != null) {
+        setPhotos(data);
+      }
     });
-  });
+  }, []);
 
   const printPhotos = () => {
-    return photos ? (
-      photos.map((photo) => (
-        photo ? (<div className="rightbarFollowing">
-        <img
-          src={photo}
-          alt="img"
-          className="rightbarFollowingImg"
-        />
-      </div>) : <div></div>
-        
-      ))
-    ) : (
-      <div></div>
-    );
+    return photos ? photos.map((photo, index) => <PhotoElement key={index} photo={photo} index={index} />) : <></>;
   };
 
   const changeStatusHandler = (status) => {
@@ -104,9 +109,7 @@ const RightBarProfile = (props) => {
                 See All My Photos
               </button>
             </div>
-            <div className="rightbarFollowings">
-              {printPhotos()}
-            </div>
+            <div className="rightbarFollowings">{printPhotos()}</div>
           </div>
 
           <div className="subWrapper">

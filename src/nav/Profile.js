@@ -10,10 +10,21 @@ import "../css/Profile.css";
 import "../css/EditAvatart.css";
 import Header from "../components/main/Header";
 import checkLogin from "../components/login/LogicLogin";
-import { fetch9Friends, fetchAllInfo } from "../store/actions/information";
+import {
+  checkRecieveOrSent,
+  checkStatusFriend,
+  fetch9Friends,
+  fetchAllInfo,
+  sendFriendRequest,
+} from "../store/actions/information";
 import { useParams } from "react-router-dom";
-import { Icon } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
+import SwapHorizontalCircleIcon from "@mui/icons-material/SwapHorizontalCircle";
+import ForwardIcon from "@mui/icons-material/Forward";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CancelPresentationIcon from "@mui/icons-material/CancelPresentation";
+import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
+import CheckIcon from '@mui/icons-material/Check';
 import { EditAvatar } from "../components/profile/EditAvatar";
 
 function Profile(props) {
@@ -22,10 +33,16 @@ function Profile(props) {
   const [listFriends, setListFriend] = useState([]);
   const [editProfile, setEditProfile] = useState(false);
   const [editAvatar, setEditAvatar] = useState(false);
-  // const id = props.match.params.id ? props.match.params.id : checkLogin();
   const { userId } = useParams();
   const userCurrentId = checkLogin();
-  const id = userId ? userId : checkLogin();
+  const [enableCancelFriendRequest, setEnableCancelFriendRequest] =
+    useState(false);
+  const [enableUnfriend, setEnableUnfriend] = useState(false);
+  const [recieve_or_send, setRecieve] = useState();
+
+  let id = userId === undefined ? userCurrentId : userId;
+  //0: myself, 1: friend, 2: not friend, 3: sentrequest
+  const [statusFriend, setStatusFriend] = useState(0);
   const editAvatarHandler = () => {
     setEditProfile(!editProfile);
   };
@@ -33,10 +50,55 @@ function Profile(props) {
     setEditAvatar(!editAvatar);
   };
 
+  const handleSendRequest = async () => {
+    await sendFriendRequest(userId, userCurrentId, 3);
+    await checkStatusFriend(userId, userCurrentId).then((data) => {
+      setStatusFriend(() => data);
+    });
+  };
+
+  const handleCancelRequestFriend = async () => {
+    setEnableCancelFriendRequest(false);
+    await sendFriendRequest(userId, userCurrentId, 2);
+    await checkStatusFriend(userId, userCurrentId).then((data) => {
+      setStatusFriend(() => data);
+    });
+  };
+
+  const handleAcceptFriend = async () => {
+    await sendFriendRequest(userId, userCurrentId, 5);
+    await checkStatusFriend(userId, userCurrentId).then((data) => {
+      setStatusFriend(() => data);
+    });
+  };
+
+  const handleUnfriend = async () => {
+    setEnableUnfriend(false);
+    await sendFriendRequest(userId, userCurrentId, -1);
+    await checkStatusFriend(userId, userCurrentId).then((data) => {
+      setStatusFriend(() => data);
+    });
+  };
+
   useEffect(async () => {
-    // console.log(id);
+    await checkStatusFriend(userId, userCurrentId).then((data) => {
+      console.log("status", data);
+      setStatusFriend(() => data);
+      if (data === 3) {
+        checkRecieveOrSent(userId, userCurrentId).then((data) => {
+          setStatusFriend(4);
+        });
+      }
+    });
+  }, []);
+
+  useEffect(async () => {
+    if (userId == undefined) {
+      id = userCurrentId;
+    } else {
+      id = userId;
+    }
     await fetchAllInfo(id).then((data) => {
-      console.log(data);
       setUser(data);
     });
     await fetch9Friends(id).then((data) => {
@@ -44,6 +106,7 @@ function Profile(props) {
       setListFriend(data);
     });
   }, []);
+
   const handleClick = (step) => {
     onStatus(step);
   };
@@ -89,6 +152,74 @@ function Profile(props) {
               {user ? user.description : ""}
             </span>
           </div>
+          {statusFriend == 1 && (
+            <div className="text-center space-status d-flex flex-column m-4">
+              <div
+                className="addFriendSpace m-auto btn btn-success"
+                onClick={() => setEnableUnfriend((status) => !status)}
+              >
+                Bạn bè <CheckCircleIcon />
+              </div>
+
+              {enableUnfriend && (
+                <div
+                  className="addFriendSpace m-auto btn btn-danger"
+                  onClick={handleUnfriend}
+                >
+                  Hủy kết bạn
+                  <PersonRemoveIcon />
+                </div>
+              )}
+            </div>
+          )}
+          {statusFriend == 2 && (
+            <div className="text-center space-status m-4">
+              <div
+                className="addFriendSpace m-auto btn btn-primary"
+                onClick={handleSendRequest}
+              >
+                Gửi lời mời kết bạn <SwapHorizontalCircleIcon />{" "}
+              </div>
+            </div>
+          )}
+          {statusFriend == 3 && (
+            <div className="text-center space-status d-flex flex-column m-4">
+              <div
+                className="addFriendSpace m-auto btn btn-warning"
+                onClick={() =>
+                  setEnableCancelFriendRequest((status) => !status)
+                }
+              >
+                Đã gửi lời mời
+                <ForwardIcon />
+              </div>
+              {enableCancelFriendRequest && (
+                <div
+                  className="addFriendSpace m-auto btn btn-warning"
+                  onClick={handleCancelRequestFriend}
+                >
+                  Hủy lời mời
+                  <CancelPresentationIcon />
+                </div>
+              )}
+            </div>
+          )}
+
+          {statusFriend == 4 && (
+            <div className="text-center space-status d-flex flex-column m-4">
+              Đã gửi cho bạn một lời mời kết bạn
+              <div
+                className="addFriendSpace m-auto btn btn-danger"
+                onClick={() =>
+                  handleAcceptFriend()
+                }
+              >
+                Chấp nhận
+                <CheckIcon />
+              </div>
+            </div>
+          )}
+
           <div className="profileNav">
             <a href="#" onClick={() => handleClick(0)}>
               Bài viết

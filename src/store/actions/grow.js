@@ -111,3 +111,13 @@ export const deleteCommentById = async (id) => {
     body: JSON.stringify({ id: id }),
   });
 };
+
+export const addMessenger = async (id) => {
+  return fetch(`http://localhost:8080/FakeStory/api/admin/comment`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id: id }),
+  });
+};

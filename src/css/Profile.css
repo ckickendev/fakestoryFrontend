@@ -74,6 +74,16 @@
   padding-bottom: 15px;
 }
 
+.addFriendSpace {
+  width: 250px;
+  margin: 0px auto !important;
+}
+
+.space-status svg {
+  vertical-align: middle !important;
+  margin-left: 12px;
+}
+
 .profileRightBottom {
   padding: 30px 60px;
   display: flex;

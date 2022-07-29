@@ -198,7 +198,7 @@ function Post(props) {
   return (
     <div className="post">
       <div className="post__top">
-        <a href={link}>
+        <a href={link} className="post-top__link">
           <div className="post__avatar">
             <Avatar
               src={user ? user.avatar : ""}
@@ -209,8 +209,8 @@ function Post(props) {
 
         <div className="post__top-info">
           <div style={{ display: "flex", alignItems: "center" }}>
-            <a href={link ? link : ""}>
-              <h3>{user ? user.fullname : ""}</h3>
+            <a href={link ? link : ""} className="post-top__link">
+              <h3 className="post-top__underline">{user ? user.fullname : ""} </h3>
             </a>
             {group ? (
               <div>

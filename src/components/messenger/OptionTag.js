@@ -46,6 +46,7 @@ export const OptionTag = () => {
             clipRule="evenodd"
           ></path>
         </svg>
+        Tin nhắn
       </a>
       <hr />
       <a href="http://localhost:3000/profile">
@@ -60,7 +61,7 @@ export const OptionTag = () => {
             clipRule="evenodd"
           ></path>
         </svg>
-        My Account
+        Tài khoản
       </a>
       <a href="groups.html">
         <svg
@@ -74,7 +75,7 @@ export const OptionTag = () => {
             clipRule="evenodd"
           />
         </svg>
-        Manage Pages
+        Quản lí fanpage
       </a>
       <a href="pages-setting.html">
         <svg
@@ -89,7 +90,7 @@ export const OptionTag = () => {
             clipRule="evenodd"
           ></path>
         </svg>
-        My Billing
+        Quản lí nhóm
       </a>
       <a href="#" id="night-mode" className="btn-night-mode">
         <svg
@@ -99,7 +100,7 @@ export const OptionTag = () => {
         >
           <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
         </svg>
-        Night mode
+        Chế độ sáng
         <span className="btn-night-mode-switch">
           <span className="uk-switch-button"></span>
         </span>
@@ -118,7 +119,7 @@ export const OptionTag = () => {
             d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
           ></path>
         </svg>
-        Log Out
+        Đăng xuất
       </a>
     </div>
   );

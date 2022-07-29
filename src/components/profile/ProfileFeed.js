@@ -15,7 +15,7 @@ function ProfileFeed(props) {
     return posts ? (
       posts.map((post) => {
         if (post.status == 1) {
-          return (<Post post={post} />);
+          return (<Post key={post.id} post={post} />);
         }
       })
     ) : (
@@ -23,17 +23,17 @@ function ProfileFeed(props) {
     );
   };
   const { userId } = useParams();
-  console.log("userId", userId);
+  // console.log("userId", userId);
   const id = userId ? userId : checkLogin();
   const [user, setUser] = useState();
   const [posts, setPosts] = useState([]);
   useEffect(async () => {
     await fetchAllInfo(id).then((data) => {
-      console.log(data);
+
       setUser(data);
     });
     await fetchPostByUserId(id).then((data) => {
-      console.log(data);
+
       setPosts(data);
     });
   }, []);

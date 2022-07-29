@@ -1,3 +1,49 @@
 .messenger {
     display: flex;
 }
+
+.message-bubble {
+    margin: 20px 40px !important;
+}
+
+.main_messenger {
+    /* padding: 30px; */
+    background-color: white;
+}
+
+.container-messenger {
+    margin: 10px 0px;
+    padding: 0px !important;
+    background-color: white;
+    border: 1px solid #eaeaea;
+}
+
+.message-content {
+    border: 1px solid #eaeaea;
+    
+}
+
+.name_user_chat {
+    font-size: 30px;
+    color: #d17676;
+}
+.messages-inbox {
+    border: 1px solid #eaeaea;
+}
+
+.message-reply {
+    border: none;
+} 
+
+.message-new {
+    display: flex;
+    align-items: center;
+
+}
+
+.message-new input {
+    background-color: #f3c9c9;
+}
+.message-new button {
+    height: 46px;
+}
