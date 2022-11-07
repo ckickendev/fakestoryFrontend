@@ -37,14 +37,12 @@ export const BubleMe = ({ message, avatar }) => {
       <div className="message-bubble me">
         <div className="message-bubble-inner">
           <div className="message-avatar">
-            <img
-              src={avatar}
-              alt=""
-            />
+            <img src={avatar} alt="" />
           </div>
           <div className="message-text">
-            <div>{message}</div>
+            <div>{message.content}</div>
           </div>
+          <div className="time_hover">{fetchTime(message.dateTime)}</div>
         </div>
         <div className="clearfix"></div>
       </div>
@@ -54,22 +52,24 @@ export const BubleMe = ({ message, avatar }) => {
 
 export const BubleOpp = ({ message, avatar }) => {
   return (
-    <div className="message-bubble">
-      <div className="message-bubble-inner">
-        <div className="message-avatar">
-          <img
-            src={avatar}
-            alt=""
-          />
+    <>
+      <div className="message-bubble">
+        <div className="message-bubble-inner">
+          <div className="message-avatar">
+            <img src={avatar} alt="" />
+          </div>
+          <div className="message-text message-text-left">
+            <p>{message.content}</p>
+          </div>
+          <div className="time_hover">{fetchTime(message.dateTime)}</div>
         </div>
-        <div className="message-text">
-          <p>{message}</p>
-        </div>
+        <div className="clearfix"></div>
       </div>
-      <div className="clearfix"></div>
-    </div>
+    </>
   );
 };
+
+
 
 export const ChatHistory = () => {
   return (

@@ -25,10 +25,11 @@ function Messenger() {
   const [historyMessage, setHistoryMessage] = useState([]);
   const socket = io.connect("http://localhost:8001");
 
+
   useEffect(() => {
     socket.on("recieve_message", (data) => {
       // console.log("data_recieve_message", data);
-      setHistoryMessage((oldMess) => [...oldMess, data.message]);
+      setHistoryMessage((oldMess) => [ data.message, ...oldMess]);
     });
   }, [socket]);
 
@@ -53,18 +54,18 @@ function Messenger() {
 
   const sendMessage = async () => {
     if (currentMessage !== "") {
+      console.log(Date().toString())
       const messageData = {
         room: room,
         authorId: id,
         message: {
           userFrom: parseInt(id),
           userTo: parseInt(userId),
-          dateTime: Date.now(),
           content: currentMessage,
         },
       };
       await socket.emit("send_message", messageData);
-      await addMessenger();
+      await addMessenger(messageData);
     }
     setCurrentMessage("");
   };
@@ -85,11 +86,12 @@ function Messenger() {
   const renderHistoryMessenger = () => {
     if (historyMessage.length !== 0) {
       return historyMessage.map((mess, index) => {
+        console.log(mess);
         if (mess.userFrom === parseInt(id)) {
           return (
-            <BubleMe
+            <BubleMe 
               key={index}
-              message={mess.content}
+              message={mess}
               avatar={yourInfo.avatar}
             />
           );
@@ -97,7 +99,7 @@ function Messenger() {
         return (
           <BubleOpp
             key={index}
-            message={mess.content}
+            message={mess}
             avatar={oppUserInfo.avatar}
           />
         );
@@ -105,6 +107,7 @@ function Messenger() {
     }
   };
 
+  
   return (
     <div>
       <Header />
@@ -136,9 +139,6 @@ function Messenger() {
                 <i className="icon-feather-trash-2"></i>{" "}
               </a>
             </div>
-            <div className="message-history flex-1">
-              {renderHistoryMessenger()}
-            </div>
             <div className="message-new-message">
               <div className="message-new">
                 <input
@@ -159,6 +159,10 @@ function Messenger() {
                 </button>
               </div>
             </div>
+            <div className="message-history flex-1" id="messenger-div">
+              {renderHistoryMessenger()}
+            </div>
+            
           </div>
         </div>
       </div>

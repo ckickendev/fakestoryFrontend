@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Avatar } from "@mui/material";
 import checkLogin from "../login/LogicLogin";
 import { addMoreComment } from "../../store/actions/grow";
+import { async } from "@firebase/util";
+import { fetchAllInfo } from "../../store/actions/information";
 
 export const YourSpaceComment = (props) => {
   const userid = checkLogin();
   const [content, setContent] = useState("");
+  const [userCurrentInfo, setUserCurrentInfo] = useState({});
   const post_id = props.post ? props.post.id : null;
   const addComment = async () => {
     const data = { userid, content, post_id, rep_id: -1 };
@@ -18,12 +21,17 @@ export const YourSpaceComment = (props) => {
       props.setLoad(false);
     });
   };
+  useEffect( async () => {
+    await fetchAllInfo(userid).then((data) => {
+      setUserCurrentInfo(data);
+    })
+  },[])
   return (
     <div className="post__comment">
       <div className="post__comment-avatar">
         <Avatar
           style={{ width: "36px", height: "36px" }}
-          src={props.user ? props.user.avatar : ""}
+          src={userCurrentInfo ? userCurrentInfo.avatar : ""}
         />
       </div>
 

@@ -60,10 +60,10 @@ export const MessengerBoard = ({ id }) => {
       return <MessageElement key={message.dateTime} message={message} id={id} />;
     });
   };
+  
   return (
     <>
       <MessengerIcon number={listMessenger.length} />
-
       <div uk-drop="mode: click" className="header_dropdown is_message">
         <div className="dropdown_scrollbar" data-simplebar>
           <div className="drop_headline">

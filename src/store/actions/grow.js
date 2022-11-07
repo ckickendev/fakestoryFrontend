@@ -103,7 +103,7 @@ export const deletePostById = async (id) => {
 };
 
 export const deleteCommentById = async (id) => {
-  return fetch(`http://localhost:8080/FakeStory/api/admin/comment`, {
+  return fetch(`http://localhost:8080/FakeStory/api/admin/comment `, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -112,12 +112,17 @@ export const deleteCommentById = async (id) => {
   });
 };
 
-export const addMessenger = async (id) => {
-  return fetch(`http://localhost:8080/FakeStory/api/admin/comment`, {
-    method: "DELETE",
+export const addMessenger = async (messageData) => {
+  return fetch(`http://localhost:8080/FakeStory/api/admin/messagesbetween`, {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ id: id }),
+    body: JSON.stringify({
+      userFrom: messageData.message.userFrom,
+      userTo: messageData.message.userTo,
+      content: messageData.message.content,
+      dateTime: messageData.message.dateTime,
+    }),
   });
 };
